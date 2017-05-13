@@ -8,7 +8,7 @@ Namespace GroupDocs.Watermark.Examples.VBasic
             '  Applying product license
             '  Please uncomment the statement if you do have license.            '             
 
-            Utilities.ApplyLicense()
+            'Utilities.ApplyLicense()
             'ExEnd:ApplyingLicense
 
             '#Region "Working with Watermark Operations"
@@ -181,6 +181,33 @@ Namespace GroupDocs.Watermark.Examples.VBasic
             ' Remve watermark
             'Documents.PowerPoint.RemoveWatermark()
             '#End Region
+
+            '#Region "Working with Visio Documents"
+
+            ' Add watermark to a particular page
+            'Documents.Visio.AddWatermarkToParticularPage();
+            ' Add watermark to all pages of a particular type 
+            'Documents.Visio.AddWatermarkToAllPagesOfParticularType();
+            ' Add watermark to all images in a particular page
+            'Documents.Visio.AddWatermarkToImages();
+            ' Add watermark to a separate newly created background pages
+            'Documents.Visio.AddWatermarkToSeparateBackgroundPage();
+            ' Get information about headers&footers 
+            'Documents.Visio.GetHeaderFooterInformation();
+            ' Get information about pages
+            'Documents.Visio.GetPagesInformation();
+            ' Get information about shapes
+            'Documents.Visio.GetShapesInformation();
+            ' Lock watermark shape to prevent editing
+            'Documents.Visio.LockWatermarkShape();
+            ' Remove watermark 
+            'Documents.Visio.RemoveWatermark();
+            ' Remove or replace a particular header&footer
+            'Documents.Visio.RemoveOrReplaceHeaderFooter();
+            ' Remove a particular shape
+            'Documents.Visio.RemoveShape();
+            '#End Region
+
             Console.Write("done...")
             Console.ReadKey()
         End Sub

@@ -8,6 +8,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
 Imports System.Threading.Tasks
+Imports GroupDocs.Watermark.Office.Diagram
 
 Namespace GroupDocs.Watermark.Examples.VBasic
     Public NotInheritable Class Documents
@@ -496,6 +497,30 @@ Namespace GroupDocs.Watermark.Examples.VBasic
                     Console.Write(exp.Message)
                 End Try
             End Sub
+
+            ''' <summary>
+            ''' Adds watermark to a PDF document specifying page margin type
+            ''' </summary> 
+            Public Shared Sub AddWatermarkWithPageMrginType()
+                Try
+                    'ExStart:AddWatermarkWithPageMrginType
+                    Using doc As PdfDocument = Document.Load(Of PdfDocument)(Utilities.MapSourceFilePath(FilePath))
+                        Dim watermark = New TextWatermark("Test watermark", New Font("Arial", 42))
+                        watermark.HorizontalAlignment = HorizontalAlignment.Right
+                        watermark.VerticalAlignment = VerticalAlignment.Top
+                        watermark.SizingType = SizingType.ScaleToParentDimensions
+                        watermark.ScaleFactor = 1
+
+                        doc.PageMarginType = PdfPageMarginType.BleedBox
+                        watermark.ConsiderParentMargins = True
+                        doc.AddWatermark(watermark)
+                        doc.Save()
+                    End Using
+                    'ExEnd:AddWatermarkWithPageMrginType
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
         End Class
         Public NotInheritable Class Word
             Private Sub New()
@@ -576,6 +601,23 @@ Namespace GroupDocs.Watermark.Examples.VBasic
                         doc.Save()
                     End Using
                     'ExEnd:LinkAllHeaderFooterInSection
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Sets different headers/footers for even/odd numbered pages and for the first page of the document
+            ''' </summary> 
+            Public Shared Sub SetDifferentFirstPageHeaderFooter()
+                Try
+                    'ExStart:SetDifferentFirstPageHeaderFooter
+                    Using doc As WordsDocument = Document.Load(Of WordsDocument)(Utilities.MapSourceFilePath(FilePath))
+                        doc.Sections(0).PageSetup.DifferentFirstPageHeaderFooter = True
+                        doc.Sections(0).PageSetup.OddAndEvenPagesHeaderFooter = True
+                        doc.Save()
+                    End Using
+                    'ExEnd:SetDifferentFirstPageHeaderFooter
                 Catch exp As Exception
                     Console.Write(exp.Message)
                 End Try
@@ -855,6 +897,8 @@ Namespace GroupDocs.Watermark.Examples.VBasic
                     Console.Write(exp.Message)
                 End Try
             End Sub
+
+            
         End Class
         Public NotInheritable Class Excel
             Private Sub New()
@@ -1798,13 +1842,309 @@ Namespace GroupDocs.Watermark.Examples.VBasic
                         For Each slide As SlidesSlide In doc.Slides
                             If slide.BackgroundImage IsNot Nothing Then
                                 ' Add watermark to the image
-                                slide.AddWatermark(watermark)
+                                slide.BackgroundImage.AddWatermark(watermark)
                             End If
                         Next
 
                         doc.Save()
                     End Using
                     'ExEnd:AddWatermarkToAllBackgroundImagesPowerPointSlide
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+        End Class
+
+        Public NotInheritable Class Visio
+            Private Sub New()
+            End Sub
+            ' initialize file path
+            'ExStart:SourceVisioFilePath
+            Private Const FilePath As String = "Documents/sample.vsdx"
+            'ExEnd:SourceVisioFilePath
+
+            ''' <summary>
+            ''' Adds watermark to all pages of a particular type 
+            ''' </summary> 
+            Public Shared Sub AddWatermarkToAllPagesOfParticularType()
+                Try
+                    'ExStart:AddWatermarkToAllPagesOfParticularType
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        ' Initialize text watermark
+                        Dim textWatermark As New TextWatermark("Test watermark 1", New Font("Calibri", 19))
+
+                        ' Add text watermark to all background pages
+                        doc.AddWatermark(textWatermark, DiagramWatermarkPlacementType.BackgroundPages)
+
+                        ' Initialize image watermark
+                        Using imageWatermark As New ImageWatermark("D:\logo.jpg")
+                            ' Add image watermark to all background pages
+                            doc.AddWatermark(imageWatermark, DiagramWatermarkPlacementType.ForegroundPages)
+                        End Using
+                        doc.Save()
+                    End Using
+                    'ExEnd:AddWatermarkToAllPagesOfParticularType
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Adds watermark to separate newly created backround pages 
+            ''' </summary> 
+            Public Shared Sub AddWatermarkToSeparateBackgroundPage()
+                Try
+                    'ExStart:AddWatermarkToSeparateBackgroundPage
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        ' Initialize watermark of any supported type
+                        Dim textWatermark As New TextWatermark("Test watermark 1", New Font("Calibri", 19))
+
+                        ' Create separate background for each page where it is not set. Add watermark to it.
+                        doc.AddWatermark(textWatermark, DiagramWatermarkPlacementType.SeparateBackgrounds)
+
+                        doc.Save()
+                    End Using
+                    'ExEnd:AddWatermarkToSeparateBackgroundPage
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Adds watermark to a particular page
+            ''' </summary> 
+            Public Shared Sub AddWatermarkToParticularPage()
+                Try
+                    'ExStart:AddWatermarkToParticularPage
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        ' Add text watermark
+                        Dim textWatermark As New TextWatermark("Test watermark", New Font("Calibri", 19))
+                        doc.Pages(0).AddWatermark(textWatermark)
+
+                        ' Add image watermark
+                        Using imageWatermark As New ImageWatermark("D:\logo.jpg")
+                            doc.Pages(1).AddWatermark(imageWatermark)
+                        End Using
+                        doc.Save()
+                    End Using
+                    'ExEnd:AddWatermarkToParticularPage
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Gets information about the pages
+            ''' </summary> 
+            Public Shared Sub GetPagesInformation()
+                Try
+                    'ExStart:GetPagesInformationVisio
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        For Each page As DiagramPage In doc.Pages
+                            Console.WriteLine(page.Width)
+                            Console.WriteLine(page.Height)
+                            Console.WriteLine(page.LeftMargin)
+                            Console.WriteLine(page.RightMargin)
+                            Console.WriteLine(page.TopMargin)
+                            Console.WriteLine(page.BottomMargin)
+                            Console.WriteLine(page.Name)
+                            Console.WriteLine(page.IsBackground)
+                            Console.WriteLine(page.IsVisible)
+                            If page.BackgroundPage IsNot Nothing Then
+                                Console.WriteLine(page.BackgroundPage.Name)
+                            End If
+                        Next
+                    End Using
+                    'ExEnd:GetPagesInformationVisio
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Adds watermark to all images of a particular page
+            ''' </summary> 
+            Public Shared Sub AddWatermarkToImages()
+                Try
+                    'ExStart:AddWatermarkToImagesVisio
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        Dim watermark As New TextWatermark("Protected image", New Font("Arial", 8))
+                        watermark.HorizontalAlignment = HorizontalAlignment.Center
+                        watermark.VerticalAlignment = VerticalAlignment.Center
+                        watermark.RotateAngle = 45
+                        watermark.SizingType = SizingType.ScaleToParentDimensions
+                        watermark.ScaleFactor = 1
+
+                        ' Get all images from the first slide
+                        Dim images As WatermarkableImageCollection = doc.Pages(0).FindImages()
+
+                        ' Add watermark to all found images
+                        For Each image As WatermarkableImage In images
+                            image.AddWatermark(watermark)
+                        Next
+
+                        doc.Save()
+                    End Using
+                    'ExEnd:AddWatermarkToImagesVisio
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Locks the watermark shape to prevent editing in MS Visio
+            ''' </summary> 
+            Public Shared Sub LockWatermarkShape()
+                Try
+                    'ExStart:LockWatermarkShape
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        Dim watermark As New TextWatermark("Test watermark", New Font("Arial", 19))
+
+                        ' Editing of the shape in Visio is forbidden
+                        doc.AddWatermark(watermark, New DiagramShapeSettings() With { _
+                             .IsLocked = True _
+                        })
+
+                        doc.Save()
+                    End Using
+                    'ExEnd:LockWatermarkShape
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Removes watermark from a particular page
+            ''' </summary> 
+            Public Shared Sub RemoveWatermark()
+                Try
+                    'ExStart:RemoveWatermarkVisio
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        ' Initialize search criteria
+                        Dim imageSearchCriteria As ImageSearchCriteria = New ImageDctHashSearchCriteria("D:\logo.png")
+                        Dim textSearchCriteria As New TextSearchCriteria("Company Name")
+
+                        ' Call FindWatermarks method for the first page
+                        Dim possibleWatermarks As PossibleWatermarkCollection = doc.Pages(0).FindWatermarks(textSearchCriteria.[Or](imageSearchCriteria))
+
+                        ' Remove all found watermarks
+                        possibleWatermarks.Clear()
+
+                        doc.Save()
+                    End Using
+                    'ExEnd:RemoveWatermarkVisio
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Extracts information about the shapes
+            ''' </summary> 
+            Public Shared Sub GetShapesInformation()
+                Try
+                    'ExStart:GetShapesInformationVisio
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        For Each page As DiagramPage In doc.Pages
+                            For Each shape As DiagramShape In page.Shapes
+                                If shape.Image IsNot Nothing Then
+                                    Console.WriteLine(shape.Image.Width)
+                                    Console.WriteLine(shape.Image.Height)
+                                    Console.WriteLine(shape.Image.GetBytes().Length)
+                                End If
+                                Console.WriteLine(shape.Name)
+                                Console.WriteLine(shape.X)
+                                Console.WriteLine(shape.Y)
+                                Console.WriteLine(shape.Width)
+                                Console.WriteLine(shape.Height)
+                                Console.WriteLine(shape.RotateAngle)
+                                Console.WriteLine(shape.Text)
+                                Console.WriteLine(shape.Id)
+                            Next
+                        Next
+                    End Using
+                    'ExEnd:GetShapesInformationVisio
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Removes a particular shape
+            ''' </summary> 
+            Public Shared Sub RemoveShape()
+                Try
+                    'ExStart:RemoveShapeVisio
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        ' Remove shape by index
+                        doc.Pages(0).Shapes.RemoveAt(0)
+
+                        ' Remove shape by reference
+                        doc.Pages(0).Shapes.Remove(doc.Pages(0).Shapes(0))
+
+                        doc.Save()
+                    End Using
+                    'ExEnd:RemoveShapeVisio
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Extracts information about all the headers&footers
+            ''' </summary> 
+            Public Shared Sub GetHeaderFooterInformation()
+                Try
+                    'ExStart:GetHeaderFooterInformationVisio
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        ' Get header&footer font settings
+                        Console.WriteLine(doc.HeaderFooter.Font.FamilyName)
+                        Console.WriteLine(doc.HeaderFooter.Font.Size)
+                        Console.WriteLine(doc.HeaderFooter.Font.Bold)
+                        Console.WriteLine(doc.HeaderFooter.Font.Italic)
+                        Console.WriteLine(doc.HeaderFooter.Font.Underline)
+                        Console.WriteLine(doc.HeaderFooter.Font.Strikeout)
+
+                        ' Get text contained in headers&footers
+                        Console.WriteLine(doc.HeaderFooter.HeaderLeft)
+                        Console.WriteLine(doc.HeaderFooter.HeaderCenter)
+                        Console.WriteLine(doc.HeaderFooter.HeaderRight)
+                        Console.WriteLine(doc.HeaderFooter.FooterLeft)
+                        Console.WriteLine(doc.HeaderFooter.FooterCenter)
+                        Console.WriteLine(doc.HeaderFooter.FooterRight)
+
+                        ' Get text color
+                        Console.WriteLine(doc.HeaderFooter.TextColor.ToArgb())
+
+                        ' Get header&footer margins
+                        Console.WriteLine(doc.HeaderFooter.FooterMargin)
+                        Console.WriteLine(doc.HeaderFooter.HeaderMargin)
+                    End Using
+                    'ExEnd:GetHeaderFooterInformationVisio
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Removes or replaces particular header&footer
+            ''' </summary> 
+            Public Shared Sub RemoveOrReplaceHeaderFooter()
+                Try
+                    'ExStart:RemoveOrReplaceHeaderFooter
+                    Using doc As DiagramDocument = Document.Load(Of DiagramDocument)(Utilities.MapSourceFilePath(FilePath))
+                        ' Remove header
+                        doc.HeaderFooter.HeaderCenter = Nothing
+
+                        ' Replace footer
+                        doc.HeaderFooter.FooterCenter = "Footer center"
+                        doc.HeaderFooter.Font.Size = 19
+                        doc.HeaderFooter.Font.FamilyName = "Calibri"
+                        doc.HeaderFooter.TextColor = Color.Red
+
+                        doc.Save()
+                    End Using
+                    'ExEnd:RemoveOrReplaceHeaderFooter
                 Catch exp As Exception
                     Console.Write(exp.Message)
                 End Try

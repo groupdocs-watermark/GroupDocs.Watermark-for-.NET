@@ -235,6 +235,38 @@ namespace GroupDocs.Watermark.Examples.CSharp
         }
 
         /// <summary>
+        /// Adds watermark according to the parent margins
+        /// </summary> 
+        public static void AddWatermarkWithParentMargin()
+        {
+            try
+            {
+                //ExStart:AddWatermarkWithParentMargin
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DocFilePath)))
+                {
+                    var watermark = new TextWatermark("Test watermark", new Font("Arial", 42));
+                    watermark.HorizontalAlignment = HorizontalAlignment.Right;
+                    watermark.VerticalAlignment = VerticalAlignment.Top;
+                    watermark.SizingType = SizingType.ScaleToParentDimensions;
+                    watermark.ScaleFactor = 1;
+                    watermark.RotateAngle = 45;
+                    watermark.ForegroundColor = Color.Red;
+                    watermark.BackgroundColor = Color.Aqua;
+
+                    // Add watermark considering parent margins
+                    watermark.ConsiderParentMargins = true;
+                    doc.AddWatermark(watermark);
+                    doc.Save();
+                }
+                //ExEnd:AddWatermarkWithParentMargin
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
+
+        /// <summary>
         /// Adds watermark with rotation angle
         /// <param name="RotationAngle">Rotation angle</param>
         /// </summary> 

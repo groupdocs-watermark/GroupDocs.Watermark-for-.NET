@@ -1,5 +1,6 @@
 ﻿using GroupDocs.Watermark.Office;
 using GroupDocs.Watermark.Office.Cells;
+using GroupDocs.Watermark.Office.Diagram;
 using GroupDocs.Watermark.Office.Slides;
 using GroupDocs.Watermark.Office.Words;
 using GroupDocs.Watermark.Pdf;
@@ -608,6 +609,35 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+
+            /// <summary>
+            /// Adds watermark to a PDF document specifying page margin type
+            /// </summary> 
+            public static void AddWatermarkWithPageMrginType()
+            {
+                try
+                {
+                    //ExStart:AddWatermarkWithPageMrginType
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        var watermark = new TextWatermark("Test watermark", new Font("Arial", 42));
+                        watermark.HorizontalAlignment = HorizontalAlignment.Right;
+                        watermark.VerticalAlignment = VerticalAlignment.Top;
+                        watermark.SizingType = SizingType.ScaleToParentDimensions;
+                        watermark.ScaleFactor = 1;
+
+                        doc.PageMarginType = PdfPageMarginType.BleedBox;
+                        watermark.ConsiderParentMargins = true;
+                        doc.AddWatermark(watermark);
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkWithPageMrginType
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
         }
         public static class Word
         {
@@ -705,6 +735,28 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Save();
                     }
                     //ExEnd:LinkAllHeaderFooterInSection
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Sets different headers/footers for even/odd numbered pages and for the first page of the document
+            /// </summary> 
+            public static void SetDifferentFirstPageHeaderFooter()
+            {
+                try
+                {
+                    //ExStart:SetDifferentFirstPageHeaderFooter
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        doc.Sections[0].PageSetup.DifferentFirstPageHeaderFooter = true;
+                        doc.Sections[0].PageSetup.OddAndEvenPagesHeaderFooter = true;
+                        doc.Save();
+                    }
+                    //ExEnd:SetDifferentFirstPageHeaderFooter
                 }
                 catch (Exception exp)
                 {
@@ -2227,13 +2279,368 @@ namespace GroupDocs.Watermark.Examples.CSharp
                             if (slide.BackgroundImage != null)
                             {
                                 // Add watermark to the image
-                                slide.AddWatermark(watermark);
+                                slide.BackgroundImage.AddWatermark(watermark);
                             }
                         }
 
                         doc.Save();
                     }
                     //ExEnd:AddWatermarkToAllBackgroundImagesPowerPointSlide
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+        }
+        public static class Visio
+        {
+            // initialize file path
+            //ExStart:SourceVisioFilePath
+            private const string FilePath = "Documents/sample.vsdx";
+            //ExEnd:SourceVisioFilePath
+
+            /// <summary>
+            /// Adds watermark to all pages of a particular type 
+            /// </summary> 
+            public static void AddWatermarkToAllPagesOfParticularType()
+            {
+                try
+                {
+                    //ExStart:AddWatermarkToAllPagesOfParticularType
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Initialize text watermark
+                        TextWatermark textWatermark = new TextWatermark("Test watermark 1", new Font("Calibri", 19));
+
+                        // Add text watermark to all background pages
+                        doc.AddWatermark(textWatermark, DiagramWatermarkPlacementType.BackgroundPages);
+
+                        // Initialize image watermark
+                        using (ImageWatermark imageWatermark = new ImageWatermark(@"D:\logo.jpg"))
+                        {
+                            // Add image watermark to all background pages
+                            doc.AddWatermark(imageWatermark, DiagramWatermarkPlacementType.ForegroundPages);
+                        }
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkToAllPagesOfParticularType
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Adds watermark to separate newly created backround pages 
+            /// </summary> 
+            public static void AddWatermarkToSeparateBackgroundPage()
+            {
+                try
+                {
+                    //ExStart:AddWatermarkToSeparateBackgroundPage
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Initialize watermark of any supported type
+                        TextWatermark textWatermark = new TextWatermark("Test watermark 1", new Font("Calibri", 19));
+
+                        // Create separate background for each page where it is not set. Add watermark to it.
+                        doc.AddWatermark(textWatermark, DiagramWatermarkPlacementType.SeparateBackgrounds);
+
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkToSeparateBackgroundPage
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Adds watermark to a particular page
+            /// </summary> 
+            public static void AddWatermarkToParticularPage()
+            {
+                try
+                {
+                    //ExStart:AddWatermarkToParticularPage
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Add text watermark
+                        TextWatermark textWatermark = new TextWatermark("Test watermark", new Font("Calibri", 19));
+                        doc.Pages[0].AddWatermark(textWatermark);
+
+                        // Add image watermark
+                        using (ImageWatermark imageWatermark = new ImageWatermark(@"D:\logo.jpg"))
+                        {
+                            doc.Pages[1].AddWatermark(imageWatermark);
+                        }
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkToParticularPage
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Gets information about the pages
+            /// </summary> 
+            public static void GetPagesInformation()
+            {
+                try
+                {
+                    //ExStart:GetPagesInformationVisio
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (DiagramPage page in doc.Pages)
+                        {
+                            Console.WriteLine(page.Width);
+                            Console.WriteLine(page.Height);
+                            Console.WriteLine(page.LeftMargin);
+                            Console.WriteLine(page.RightMargin);
+                            Console.WriteLine(page.TopMargin);
+                            Console.WriteLine(page.BottomMargin);
+                            Console.WriteLine(page.Name);
+                            Console.WriteLine(page.IsBackground);
+                            Console.WriteLine(page.IsVisible);
+                            if (page.BackgroundPage != null)
+                            {
+                                Console.WriteLine(page.BackgroundPage.Name);
+                            }
+                        }
+                    }
+                    //ExEnd:GetPagesInformationVisio
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Adds watermark to all images of a particular page
+            /// </summary> 
+            public static void AddWatermarkToImages()
+            {
+                try
+                {
+                    //ExStart:AddWatermarkToImagesVisio
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
+                        watermark.HorizontalAlignment = HorizontalAlignment.Center;
+                        watermark.VerticalAlignment = VerticalAlignment.Center;
+                        watermark.RotateAngle = 45;
+                        watermark.SizingType = SizingType.ScaleToParentDimensions;
+                        watermark.ScaleFactor = 1;
+
+                        // Get all images from the first slide
+                        WatermarkableImageCollection images = doc.Pages[0].FindImages();
+
+                        // Add watermark to all found images
+                        foreach (WatermarkableImage image in images)
+                        {
+                            image.AddWatermark(watermark);
+                        }
+
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkToImagesVisio
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Locks the watermark shape to prevent editing in MS Visio
+            /// </summary> 
+            public static void LockWatermarkShape()
+            {
+                try
+                {
+                    //ExStart:LockWatermarkShape
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
+
+                        // Editing of the shape in Visio is forbidden
+                        doc.AddWatermark(watermark, new DiagramShapeSettings { IsLocked = true });
+
+                        doc.Save();
+                    }
+                    //ExEnd:LockWatermarkShape
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Removes watermark from a particular page
+            /// </summary> 
+            public static void RemoveWatermark()
+            {
+                try
+                {
+                    //ExStart:RemoveWatermarkVisio
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Initialize search criteria
+                        ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(@"D:\logo.png");
+                        TextSearchCriteria textSearchCriteria = new TextSearchCriteria("Company Name");
+
+                        // Call FindWatermarks method for the first page
+                        PossibleWatermarkCollection possibleWatermarks = doc.Pages[0].FindWatermarks(textSearchCriteria.Or(imageSearchCriteria));
+
+                        // Remove all found watermarks
+                        possibleWatermarks.Clear();
+
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveWatermarkVisio
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Extracts information about the shapes
+            /// </summary> 
+            public static void GetShapesInformation()
+            {
+                try
+                {
+                    //ExStart:GetShapesInformationVisio
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (DiagramPage page in doc.Pages)
+                        {
+                            foreach (DiagramShape shape in page.Shapes)
+                            {
+                                if (shape.Image != null)
+                                {
+                                    Console.WriteLine(shape.Image.Width);
+                                    Console.WriteLine(shape.Image.Height);
+                                    Console.WriteLine(shape.Image.GetBytes().Length);
+                                }
+                                Console.WriteLine(shape.Name);
+                                Console.WriteLine(shape.X);
+                                Console.WriteLine(shape.Y);
+                                Console.WriteLine(shape.Width);
+                                Console.WriteLine(shape.Height);
+                                Console.WriteLine(shape.RotateAngle);
+                                Console.WriteLine(shape.Text);
+                                Console.WriteLine(shape.Id);
+                            }
+                        }
+                    }
+                    //ExEnd:GetShapesInformationVisio
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Removes a particular shape
+            /// </summary> 
+            public static void RemoveShape()
+            {
+                try
+                {
+                    //ExStart:RemoveShapeVisio
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Remove shape by index
+                        doc.Pages[0].Shapes.RemoveAt(0);
+
+                        // Remove shape by reference
+                        doc.Pages[0].Shapes.Remove(doc.Pages[0].Shapes[0]);
+
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveShapeVisio
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Extracts information about all the headers&footers
+            /// </summary> 
+            public static void GetHeaderFooterInformation()
+            {
+                try
+                {
+                    //ExStart:GetHeaderFooterInformationVisio
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Get header&footer font settings
+                        Console.WriteLine(doc.HeaderFooter.Font.FamilyName);
+                        Console.WriteLine(doc.HeaderFooter.Font.Size);
+                        Console.WriteLine(doc.HeaderFooter.Font.Bold);
+                        Console.WriteLine(doc.HeaderFooter.Font.Italic);
+                        Console.WriteLine(doc.HeaderFooter.Font.Underline);
+                        Console.WriteLine(doc.HeaderFooter.Font.Strikeout);
+
+                        // Get text contained in headers&footers
+                        Console.WriteLine(doc.HeaderFooter.HeaderLeft);
+                        Console.WriteLine(doc.HeaderFooter.HeaderCenter);
+                        Console.WriteLine(doc.HeaderFooter.HeaderRight);
+                        Console.WriteLine(doc.HeaderFooter.FooterLeft);
+                        Console.WriteLine(doc.HeaderFooter.FooterCenter);
+                        Console.WriteLine(doc.HeaderFooter.FooterRight);
+
+                        // Get text color
+                        Console.WriteLine(doc.HeaderFooter.TextColor.ToArgb());
+
+                        // Get header&footer margins
+                        Console.WriteLine(doc.HeaderFooter.FooterMargin);
+                        Console.WriteLine(doc.HeaderFooter.HeaderMargin);
+                    }
+                    //ExEnd:GetHeaderFooterInformationVisio
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Removes or replaces particular header&footer
+            /// </summary> 
+            public static void RemoveOrReplaceHeaderFooter()
+            {
+                try
+                {
+                    //ExStart:RemoveOrReplaceHeaderFooter
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Remove header
+                        doc.HeaderFooter.HeaderCenter = null;
+
+                        // Replace footer
+                        doc.HeaderFooter.FooterCenter = "Footer center";
+                        doc.HeaderFooter.Font.Size = 19;
+                        doc.HeaderFooter.Font.FamilyName = "Calibri";
+                        doc.HeaderFooter.TextColor = Color.Red;
+
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveOrReplaceHeaderFooter
                 }
                 catch (Exception exp)
                 {

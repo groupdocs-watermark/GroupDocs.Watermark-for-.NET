@@ -171,6 +171,33 @@ Namespace GroupDocs.Watermark.Examples.VBasic
         End Sub
 
         ''' <summary>
+        ''' Adds watermark according to the parent margins
+        ''' </summary> 
+        Public Shared Sub AddWatermarkWithParentMargin()
+            Try
+                'ExStart:AddWatermarkWithParentMargin
+                Using doc As Document = Document.Load(Utilities.MapSourceFilePath(DocFilePath))
+                    Dim watermark = New TextWatermark("Test watermark", New Font("Arial", 42))
+                    watermark.HorizontalAlignment = HorizontalAlignment.Right
+                    watermark.VerticalAlignment = VerticalAlignment.Top
+                    watermark.SizingType = SizingType.ScaleToParentDimensions
+                    watermark.ScaleFactor = 1
+                    watermark.RotateAngle = 45
+                    watermark.ForegroundColor = Color.Red
+                    watermark.BackgroundColor = Color.Aqua
+
+                    ' Add watermark considering parent margins
+                    watermark.ConsiderParentMargins = True
+                    doc.AddWatermark(watermark)
+                    doc.Save()
+                    'ExEnd:AddWatermarkWithParentMargin
+                End Using
+            Catch exp As Exception
+                Console.Write(exp.Message)
+            End Try
+        End Sub
+
+        ''' <summary>
         ''' Adds watermark with a particular size type
         ''' </summary> 
         Public Shared Sub AddWatermarkWithSizeType()
