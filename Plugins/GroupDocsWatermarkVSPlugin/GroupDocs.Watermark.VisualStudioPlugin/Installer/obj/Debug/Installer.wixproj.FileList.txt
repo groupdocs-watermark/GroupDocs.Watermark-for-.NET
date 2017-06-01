@@ -1,0 +1,6 @@
+obj\Debug\Product.wixobj
+obj\Debug\Installer.wixproj.BindContentsFileListnull.txt
+obj\Debug\Installer.wixproj.BindOutputsFileListnull.txt
+obj\Debug\Installer.wixproj.BindBuiltOutputsFileListnull.txt
+E:\out\Installer GroupDocs.Watermark for .NET API Examples.msi
+E:\out\Installer GroupDocs.Watermark for .NET API Examples.wixpdb
