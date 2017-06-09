@@ -9,6 +9,7 @@ Imports System.Linq
 Imports System.Text
 Imports System.Threading.Tasks
 Imports GroupDocs.Watermark.Office.Diagram
+Imports System.IO
 
 Namespace GroupDocs.Watermark.Examples.VBasic
     Public NotInheritable Class Documents
@@ -551,6 +552,27 @@ Namespace GroupDocs.Watermark.Examples.VBasic
             End Sub
 
             ''' <summary>
+            ''' Adds watermark to a particular page of Word document
+            ''' </summary> 
+            Public Shared Sub AddWatermarkToParticuarPage()
+                Try
+                    'ExStart:AddWatermarkToParticuarPageWord
+                    Using doc As WordsDocument = Document.Load(Of WordsDocument)(Utilities.MapSourceFilePath(FilePath))
+                        Dim textWatermark As New TextWatermark("DRAFT", New Font("Arial", 42))
+
+                        ' Add watermark to the last page
+                        doc.AddWatermark(textWatermark, doc.PageCount)
+                        doc.Save()
+
+                        'ExEnd:AddWatermarkToParticuarPageWord
+                    End Using
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+
+            ''' <summary>
             ''' Gets properties of a section of Word document
             ''' </summary> 
             Public Shared Sub GetSectionProperties()
@@ -898,7 +920,7 @@ Namespace GroupDocs.Watermark.Examples.VBasic
                 End Try
             End Sub
 
-            
+
         End Class
         Public NotInheritable Class Excel
             Private Sub New()
@@ -1471,6 +1493,25 @@ Namespace GroupDocs.Watermark.Examples.VBasic
                 End Try
             End Sub
 
+            ''' <summary>
+            ''' Sets background image for a chart in a Excel worksheet 
+            ''' </summary> 
+            Public Shared Sub SetBackgroundImageForChart()
+                Try
+                    'ExStart:SetBackgroundImageForChart
+                    Using doc As CellsDocument = Document.Load(Of CellsDocument)(Utilities.MapSourceFilePath(FilePath))
+                        doc.Worksheets(0).Charts(0).ImageFillFormat.BackgroundImage = New CellsWatermarkableImage(File.ReadAllBytes("D:\test.png"))
+                        doc.Worksheets(0).Charts(0).ImageFillFormat.Transparency = 0.5
+                        doc.Worksheets(0).Charts(0).ImageFillFormat.TileAsTexture = True
+                        doc.Save()
+
+                        'ExEnd:SetBackgroundImageForChart
+                    End Using
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
         End Class
         Public NotInheritable Class PowerPoint
             Private Sub New()
@@ -1849,6 +1890,45 @@ Namespace GroupDocs.Watermark.Examples.VBasic
                         doc.Save()
                     End Using
                     'ExEnd:AddWatermarkToAllBackgroundImagesPowerPointSlide
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Sets tiled semitransparent image background for a particular slide.
+            ''' </summary> 
+            Public Shared Sub SetTiledSemitransparentBackground()
+                Try
+                    'ExStart:SetTiledSemitransparentBackground
+                    Using doc As SlidesDocument = Document.Load(Of SlidesDocument)(Utilities.MapSourceFilePath(FilePath))
+                        Dim slide As SlidesSlide = doc.Slides(0)
+                        slide.ImageFillFormat.BackgroundImage = New SlidesWatermarkableImage(File.ReadAllBytes("D:\background.png"))
+                        slide.ImageFillFormat.TileAsTexture = True
+                        slide.ImageFillFormat.Transparency = 0.5
+                        doc.Save()
+
+                        'ExEnd:SetTiledSemitransparentBackground
+                    End Using
+                Catch exp As Exception
+                    Console.Write(exp.Message)
+                End Try
+            End Sub
+
+            ''' <summary>
+            ''' Sets background image for a chart in a PowerPoint presentation
+            ''' </summary> 
+            Public Shared Sub SetBackgroundImageForChart()
+                Try
+                    'ExStart:SetBackgroundImageForChartPowerPoint
+                    Using doc As SlidesDocument = Document.Load(Of SlidesDocument)(Utilities.MapSourceFilePath(FilePath))
+                        doc.Slides(0).Charts(0).ImageFillFormat.BackgroundImage = New SlidesWatermarkableImage(File.ReadAllBytes("D:\test.png"))
+                        doc.Slides(0).Charts(0).ImageFillFormat.Transparency = 0.5
+                        doc.Slides(0).Charts(0).ImageFillFormat.TileAsTexture = True
+                        doc.Save()
+
+                        'ExEnd:SetBackgroundImageForChartPowerPoint
+                    End Using
                 Catch exp As Exception
                     Console.Write(exp.Message)
                 End Try

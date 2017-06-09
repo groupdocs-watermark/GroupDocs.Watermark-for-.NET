@@ -7,6 +7,7 @@ using GroupDocs.Watermark.Pdf;
 using GroupDocs.Watermark.Search;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -664,6 +665,30 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Save();
                     }
                     //ExEnd:AddWatermarkToSection
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Adds watermark to a particular page of Word document
+            /// </summary> 
+            public static void AddWatermarkToParticuarPage()
+            {
+                try
+                {
+                    //ExStart:AddWatermarkToParticuarPageWord
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        TextWatermark textWatermark = new TextWatermark("DRAFT", new Font("Arial", 42));
+
+                        // Add watermark to the last page
+                        doc.AddWatermark(textWatermark, doc.PageCount);
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkToParticuarPageWord
                 }
                 catch (Exception exp)
                 {
@@ -1820,6 +1845,29 @@ namespace GroupDocs.Watermark.Examples.CSharp
                 }
             }
 
+            /// <summary>
+            /// Sets background image for a chart in a Excel worksheet 
+            /// </summary> 
+            public static void SetBackgroundImageForChart()
+            {
+                try
+                {
+                    //ExStart:SetBackgroundImageForChart
+                    using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        doc.Worksheets[0].Charts[0].ImageFillFormat.BackgroundImage = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                        doc.Worksheets[0].Charts[0].ImageFillFormat.Transparency = 0.5;
+                        doc.Worksheets[0].Charts[0].ImageFillFormat.TileAsTexture = true;
+                        doc.Save();
+                    }
+                    //ExEnd:SetBackgroundImageForChart
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
         }
         public static class PowerPoint
         {
@@ -2286,6 +2334,53 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Save();
                     }
                     //ExEnd:AddWatermarkToAllBackgroundImagesPowerPointSlide
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Sets tiled semitransparent image background for a particular slide.
+            /// </summary> 
+            public static void SetTiledSemitransparentBackground()
+            {
+                try
+                {
+                    //ExStart:SetTiledSemitransparentBackground
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        SlidesSlide slide = doc.Slides[0];
+                        slide.ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\background.png"));
+                        slide.ImageFillFormat.TileAsTexture = true;
+                        slide.ImageFillFormat.Transparency = 0.5;
+                        doc.Save();
+                    }
+                    //ExEnd:SetTiledSemitransparentBackground
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Sets background image for a chart in a PowerPoint presentation
+            /// </summary> 
+            public static void SetBackgroundImageForChart()
+            {
+                try
+                {
+                    //ExStart:SetBackgroundImageForChartPowerPoint
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        doc.Slides[0].Charts[0].ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                        doc.Slides[0].Charts[0].ImageFillFormat.Transparency = 0.5;
+                        doc.Slides[0].Charts[0].ImageFillFormat.TileAsTexture = true;
+                        doc.Save();
+                    }
+                    //ExEnd:SetBackgroundImageForChartPowerPoint
                 }
                 catch (Exception exp)
                 {
