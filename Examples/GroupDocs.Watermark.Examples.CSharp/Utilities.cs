@@ -58,6 +58,28 @@ namespace GroupDocs.Watermark.Examples.CSharp
         }
 
         /// <summary>
+        /// Set metered license 
+        /// </summary>
+        public static void ApplyMeteredLicense()
+        {
+            try
+            {
+                //ExStart:ApplyMeteredLicense
+                string publicKey = "[Your Dynabic.Metered public key]";
+                string privateKey = "[Your Dynabic.Metered private key]";
+
+                Metered metered = new Metered();
+                metered.SetMeteredKey(publicKey, privateKey);
+                // Use the library in licensed mode
+                //ExEnd:ApplyMeteredLicense
+            }
+            catch (System.Exception exc)
+            {
+                Console.Write(exc.Message);
+            }
+        }
+
+        /// <summary>
         /// Gets document information
         /// </summary> 
         public static void GetDocumentInformation()

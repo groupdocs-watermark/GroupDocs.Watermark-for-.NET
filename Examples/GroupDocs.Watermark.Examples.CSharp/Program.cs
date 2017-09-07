@@ -59,6 +59,12 @@ namespace GroupDocs.Watermark.Examples.CSharp
             
             // Search watermark with combined search criteria
             //WatermarkOperations.SearchWatermarkWithCombinedSearch();
+
+            //Search for watermark specifying which objects should be included in the search for all document instances
+            //WatermarkOperations.SearchWatermarkInParticularObjects();
+
+            //Search for watermark specifying which objects should be included in the search for particular document instance
+            //WatermarkOperations.SearchWatermarkInParticularObjectsForParticularDocument();
             #endregion 
 
             #region Working with PDF Documents
