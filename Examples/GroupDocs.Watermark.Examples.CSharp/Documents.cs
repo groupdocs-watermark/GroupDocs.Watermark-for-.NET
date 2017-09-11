@@ -2654,16 +2654,103 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
                     {
                         // Replace hyperlink
-                        doc.Slides[0].Charts[0].Hyperlink = "https://www.aspose.com/";
-                        doc.Slides[0].Shapes[0].Hyperlink = "https://www.groupdocs.com/";
+                        doc.Slides[0].Charts[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick, "https://www.aspose.com/");
+                        doc.Slides[0].Shapes[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick,"https://www.groupdocs.com/");
 
                         // Remove hyperlink
-                        doc.Slides[1].Charts[0].Hyperlink = null;
-                        doc.Slides[1].Shapes[0].Hyperlink = null;
+                        doc.Slides[1].Charts[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick,null);
+                        doc.Slides[1].Shapes[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick, null);
 
                         doc.Save();
                     }
                     //ExEnd:RemoveHyperlinksPowerPoint
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces hyperlinks that are activated on mouse over
+            /// </summary> 
+            public static void ReplaceMouseOverHyperlinks()
+            {
+                try
+                {
+                    //ExStart:ReplaceMouseOverHyperlinks
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (var slide in doc.Slides)
+                        {
+                            string oldUrl = "http://aspose.com/";
+
+                            // Assign null to remove hyperlink
+                            string newUrl = "http://groupdocs.com/";
+
+                            // Replace hyperlinks in shapes
+                            foreach (var shape in slide.Shapes)
+                            {
+                                ReplaceHyperlink(shape, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
+                                ReplaceHyperlink(shape, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
+
+                                // Replace hyperlinks in text fragments
+                                foreach (var fragment in shape.FormattedTextFragments)
+                                {
+                                    ReplaceHyperlink((ISlidesHyperlinkContainer)fragment, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
+                                    ReplaceHyperlink((ISlidesHyperlinkContainer)fragment, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
+                                }
+                            }
+
+                            // Replace hyperlinks in charts
+                            foreach (var chart in slide.Charts)
+                            {
+                                ReplaceHyperlink(chart, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
+                                ReplaceHyperlink(chart, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceMouseOverHyperlinks
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            private static void ReplaceHyperlink(ISlidesHyperlinkContainer hyperlinkContainer, SlidesHyperlinkActionType hyperlinkActionType, string oldUrl, string newUrl)
+            {
+                if (hyperlinkContainer.GetHyperlink(hyperlinkActionType) == oldUrl)
+                {
+                    hyperlinkContainer.SetHyperlink(hyperlinkActionType, newUrl);
+                }
+            }
+
+            /// <summary>
+            /// Removes hyperlinks of all types using FindWatermarks method
+            /// </summary> 
+            public static void RemoveHyperlinksUsingFindWatermark()
+            {
+                try
+                {
+                    //ExStart:RemoveHyperlinksUsingFindWatermark
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        doc.SearchableObjects.SlidesSearchableObjects = SlidesSearchableObjects.Hyperlinks;
+
+                        // Find all hyperlinks
+                        var watermarks = doc.FindWatermarks();
+
+                        // Remove found watermarks
+                        watermarks.Clear();
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveHyperlinksUsingFindWatermark
                 }
                 catch (Exception exp)
                 {

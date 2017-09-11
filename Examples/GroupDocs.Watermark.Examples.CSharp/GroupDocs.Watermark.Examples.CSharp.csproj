@@ -35,8 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GroupDocs.Watermark">
-      <HintPath>..\packages\groupdocs-watermark-dotnet.17.8.0\lib\net\GroupDocs.Watermark.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\groupdocs-watermark-dotnet.17.9.0\lib\net\GroupDocs.Watermark.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -274,6 +274,12 @@ namespace GroupDocs.Watermark.Examples.CSharp
             
             // Remve watermark
             //Documents.PowerPoint.RemoveWatermark();
+
+            //Replace hyperlinks that are activated on mouse over
+            //Documents.PowerPoint.ReplaceMouseOverHyperlinks();
+
+            //Remove hyperlinks of all types using FindWatermarks method
+            //Documents.PowerPoint.RemoveHyperlinksUsingFindWatermark();
             #endregion
 
             #region Working with Visio Documents
