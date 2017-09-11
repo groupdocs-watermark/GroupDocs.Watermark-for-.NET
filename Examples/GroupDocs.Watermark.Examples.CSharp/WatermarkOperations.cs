@@ -355,6 +355,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
         #endregion
 
         #region Searching and Removing Watermark
+
         /// <summary>
         /// Searches for watermark in a document
         /// </summary> 
@@ -529,6 +530,132 @@ namespace GroupDocs.Watermark.Examples.CSharp
                 Console.Write(exp.Message);
             }
         }
+
+        /// <summary>
+        /// Removes watermark with a prticular text formatting
+        /// </summary> 
+        public static void RemoveWatermarkWithParticularTextFormatting()
+        {
+            try
+            {
+                //ExStart:RemoveWatermarkWithParticularTextFormatting
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DocFilePath)))
+                {
+                    TextFormattingSearchCriteria criteria = new TextFormattingSearchCriteria();
+                    criteria.ForegroundColorRange = new ColorRange();
+                    criteria.ForegroundColorRange.MinHue = -5;
+                    criteria.ForegroundColorRange.MaxHue = 10;
+                    criteria.ForegroundColorRange.MinBrightness = 0.01f;
+                    criteria.ForegroundColorRange.MaxBrightness = 0.99f;
+                    criteria.BackgroundColorRange = new ColorRange();
+                    criteria.BackgroundColorRange.IsEmpty = true;
+                    criteria.FontName = "Arial";
+                    criteria.MinFontSize = 19;
+                    criteria.MaxFontSize = 42;
+                    criteria.FontBold = true;
+
+                    PossibleWatermarkCollection watermarks = doc.FindWatermarks(criteria);
+                    watermarks.Clear();
+                    doc.Save();
+                }
+                //ExEnd:RemoveWatermarkWithParticularTextFormatting
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
+
+        /// <summary>
+        /// Searches for watermark specifying which objects should be included in the search for all document instances
+        /// </summary> 
+        public static void SearchWatermarkInParticularObjects()
+        {
+            try
+            {
+                //ExStart:SearchWatermarkInParticularObjectsAllInstances
+                Document.DefaultSearchableObjects = new SearchableObjects
+                {
+                    WordsSearchableObjects = WordsSearchableObjects.Hyperlinks | WordsSearchableObjects.Text,
+                    CellsSearchableObjects = CellsSearchableObjects.HeadersFooters,
+                    SlidesSearchableObjects = SlidesSearchableObjects.SlidesBackgrounds | SlidesSearchableObjects.Shapes,
+                    DiagramSearchableObjects = DiagramSearchableObjects.None,
+                    PdfSearchableObjects = PdfSearchableObjects.All
+                };
+
+                foreach (var file in Directory.GetFiles(@"D:\files"))
+                {
+                    using (var doc = Document.Load(file))
+                    {
+                        var watermarks = doc.FindWatermarks();
+
+                        // The code for working with found watermarks goes here.
+                    }
+                }
+                //ExEnd:SearchWatermarkInParticularObjectsAllInstances
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
+
+        /// <summary>
+        /// Searches for watermark specifying which objects should be included in the search for particular document instance
+        /// </summary> 
+        public static void SearchWatermarkInParticularObjectsForParticularDocument()
+        {
+            try
+            {
+                //ExStart:SearchWatermarkInParticularObjectsForParticularDocument
+                using (var doc = Document.Load(Utilities.MapSourceFilePath(DocFilePath)))
+                {
+                    // Search for hyperlinks only.
+                    doc.SearchableObjects.PdfSearchableObjects = PdfSearchableObjects.Hyperlinks;
+                    var watermarks = doc.FindWatermarks();
+
+                    // The code for working with found watermarks goes here.
+                }
+                //ExEnd:SearchWatermarkInParticularObjectsForParticularDocument
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
         #endregion
+
+        /// <summary>
+        /// Removes hyperlinks with a particular URL
+        /// </summary> 
+        public static void RemoveHyperlinksWithParticularURL()
+        {
+            try
+            {
+                //ExStart:RemoveHyperlinksWithParticularURL
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DocFilePath)))
+                {
+                    PossibleWatermarkCollection watermarks = doc.FindWatermarks(new TextSearchCriteria(new Regex(@"someurl\.com")));
+                    for (int i = watermarks.Count - 1; i >= 0; i--)
+                    {
+                        // Ensure that only hyperlinks will be removed.
+                        if (watermarks[i] is HyperlinkPossibleWatermark)
+                        {
+                            // Output the full url of the hyperlink
+                            Console.WriteLine(watermarks[i].Text);
+
+                            // Remove hyperlink from the document
+                            watermarks.RemoveAt(i);
+                        }
+                    }
+                    doc.Save();
+                }
+                //ExEnd:RemoveHyperlinksWithParticularURL
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
     }
 }

@@ -59,6 +59,12 @@ namespace GroupDocs.Watermark.Examples.CSharp
             
             // Search watermark with combined search criteria
             //WatermarkOperations.SearchWatermarkWithCombinedSearch();
+
+            //Search for watermark specifying which objects should be included in the search for all document instances
+            //WatermarkOperations.SearchWatermarkInParticularObjects();
+
+            //Search for watermark specifying which objects should be included in the search for particular document instance
+            //WatermarkOperations.SearchWatermarkInParticularObjectsForParticularDocument();
             #endregion 
 
             #region Working with PDF Documents
@@ -268,6 +274,12 @@ namespace GroupDocs.Watermark.Examples.CSharp
             
             // Remve watermark
             //Documents.PowerPoint.RemoveWatermark();
+
+            //Replace hyperlinks that are activated on mouse over
+            //Documents.PowerPoint.ReplaceMouseOverHyperlinks();
+
+            //Remove hyperlinks of all types using FindWatermarks method
+            //Documents.PowerPoint.RemoveHyperlinksUsingFindWatermark();
             #endregion
 
             #region Working with Visio Documents

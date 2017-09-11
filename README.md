@@ -13,7 +13,7 @@ GroupDocs.Watermark is a library for adding text and image watermarks to documen
 
 Directory | Description
 --------- | -----------
-[Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Examples)  | Contains the package of all .NET examples (C# & VB) and sample files that will help you learn how to use API features. 
+[Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Examples)  | Contains the package of all .NET examples (C#) and sample files that will help you learn how to use API features. 
 [Plugins](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Plugins/GroupDocsWatermarkVSPlugin) | Contains Visual Studio Add-in to explore GroupDocs.Watermark for .NET examples.
 ## Resources
 
