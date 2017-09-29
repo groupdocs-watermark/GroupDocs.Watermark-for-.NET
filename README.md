@@ -21,6 +21,6 @@ Directory | Description
 + **Product Home:** [GroupDocs.Watermark for .NET](https://www.groupdocs.com/products/watermark/net)
 + **Download:** [Download GroupDocs.Watermark for .NET](https://downloads.groupdocs.com/watermark/net)
 + **Documentation:** [GroupDocs.Watermark for .NET Documentation](https://docs.groupdocs.com/display/watermarknet/Introducing+GroupDocs.Watermark+for+.NET)
-+ **Forum:** [GroupDocs.Watermark for .NET Forum](http://groupdocs.com/Community/forums/groupdocs.watermark-product-family/55/showforum.aspx)
++ **Forum:** [GroupDocs.Watermark for .NET Forum](https://forum.groupdocs.com/c/watermark)
 + **Blog:** [GroupDocs.Watermark for .NET Blog](https://blog.groupdocs.com/category/groupdocs-watermark-product-family/)
 
