@@ -13,7 +13,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
     {
         //ExStart:CommonProperties
         private const string SourceFolderPath = "../../../Data/";
-        public const string licensePath = "D:/license/GroupDocs.Total.lic";
+        public const string licensePath = "E:/GroupDocs/Licenses/GroupDocs.Total.lic";
         //ExEnd:CommonProperties
 
         //ExStart:MapSourceFilePath

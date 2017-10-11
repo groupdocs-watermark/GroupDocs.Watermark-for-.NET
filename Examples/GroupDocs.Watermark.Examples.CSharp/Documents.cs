@@ -21,6 +21,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             // initialize file path
             //ExStart:SourcePDFFilePath
             private const string FilePath = "Documents/sample.pdf";
+            private const string AttachmentPath = "Documents/sample.docx";
             //ExEnd:SourcePDFFilePath
 
             /// <summary>
@@ -741,6 +742,149 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+            /// <summary>
+            /// Extract all attachments from a PDF document
+            /// </summary>
+            public static void ExtractAllAttachments()
+            {
+                try
+                {
+                    //ExStart:ExtractAllAttachments
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (PdfAttachment attachment in doc.Attachments)
+                        {
+                            Console.WriteLine("Name: {0}", attachment.Name);
+                            Console.WriteLine("Description: {0}", attachment.Description);
+                            Console.WriteLine("File format: {0}", attachment.DocumentInfo.FileFormat);
+
+                            // Save the attached file on disk
+                            //File.WriteAllBytes(Path.Combine(Utilities.MapSourceFilePath(FilePath), attachment.Name), attachment.Content);
+                        }
+                    }
+                    //ExEnd:ExtractAllAttachments
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Add an attachment to a PDF document
+            /// </summary>
+            public static void AddAttachment()
+            {
+                try
+                {
+                    //ExStart:AddAttachment
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        //foreach (PdfAttachment attachment in doc.Attachments)
+                        {
+                            // Add the attachment
+                            doc.Attachments.Add(File.ReadAllBytes(Utilities.MapSourceFilePath(AttachmentPath)), "sample", "sample doc as attachment");
+
+                            // Save changes
+                            doc.Save();
+                        }
+                    }
+                    //ExEnd:AddAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Remove particular attachments from a PDF document
+            /// </summary>
+            public static void RemoveAttachment()
+            {
+                try
+                {
+                    //ExStart:RemoveAttachment
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        for (int i = doc.Attachments.Count - 1; i >= 0; i--)
+                        {
+                            PdfAttachment attachment = doc.Attachments[i];
+
+                            // Remove all attached pdf files with a particular name
+                            if (attachment.Name.Contains("sample") && attachment.DocumentInfo.FileFormat == FileFormat.Docx)
+                            {
+                                doc.Attachments.RemoveAt(i);
+                            }
+                        }
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Add watermark to all attached files of supported types
+            /// </summary>
+            public static void AddWatermarkToAttachment()
+            {
+                try
+                {
+
+                    //ExStart:AddWatermarkToAttachment
+                    TextWatermark watermark = new TextWatermark("This is WaterMark on Attachment", new Font("Arial", 19));
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (PdfAttachment attachment in doc.Attachments)
+                        {
+                            // Check if the attached file is supported by GroupDocs.Watermark
+                            if (attachment.DocumentInfo.FileFormat != FileFormat.Undefined && !attachment.DocumentInfo.IsEncrypted)
+                            {
+                                // Load the attached document
+                                using (Document attachedDocument = attachment.LoadDocument())
+                                {
+                                    // Add wateramrk
+                                    attachedDocument.AddWatermark(watermark);
+
+                                    // Save changes in the attached file
+                                    attachedDocument.Save();
+                                }
+                            }
+                        }
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkToAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Search for images in the attached files 
+            /// </summary>
+            public static void SearchImageInAttachment()
+            {
+                try
+                {
+                    //ExStart:SearchImageInAttachment
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Consider only the attached images
+                        doc.SearchableObjects.PdfSearchableObjects = PdfSearchableObjects.AttachedImages;
+
+                        // Search for similar images
+                        WatermarkableImageCollection possibleWatermarks = doc.FindImages();
+
+                    }
+                    //ExEnd:SearchImageInAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
         }
         public static class Word
         {
@@ -1297,6 +1441,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             // initialize file path
             //ExStart:SourceExcelFilePath
             private const string FilePath = "Documents/sample.xlsx";
+            private const string AttachmentPath = "Images/sample.jpg";
             //ExEnd:SourceExcelFilePath
 
             /// <summary>
@@ -2081,9 +2226,216 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Worksheets[1].Charts[0].Hyperlink = null;
                         doc.Worksheets[1].Shapes[0].Hyperlink = null;
 
-                        doc.Save();  
+                        doc.Save();
                     }
                     //ExEnd:RemoveHyperlinksExcel
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Extract information about all attachments in an Excel document
+            /// </summary>
+            public static void ExtractAllAttachments()
+            {
+                try
+                {
+                    //ExStart:ExtractAllAttachments
+                    using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (CellsWorksheet worksheet in doc.Worksheets)
+                        {
+                            foreach (CellsAttachment attachment in worksheet.Attachments)
+                            {
+                                Console.WriteLine("Alternative text: {0}", attachment.AlternativeText);
+                                Console.WriteLine("Attachment frame x-coordinate: {0}", attachment.X);
+                                Console.WriteLine("Attachment frame y-coordinate: {0}", attachment.Y);
+                                Console.WriteLine("Attachment frame width: {0}", attachment.Width);
+                                Console.WriteLine("Attachment frame height: {0}", attachment.Height);
+                                Console.WriteLine("Preview image size: {0}", attachment.PreviewImageContent != null ? attachment.PreviewImageContent.Length : 0);
+
+                                if (attachment.IsLink)
+                                {
+                                    // The document contains only a link to the attached file
+                                    Console.WriteLine("Full path to the attached file: {0}", attachment.SourceFullName);
+                                }
+                                else
+                                {
+                                    // The attached file is stored in the document
+                                    Console.WriteLine("File format: {0}", attachment.DocumentInfo.FileFormat);
+                                    Console.WriteLine("Name of the source file: {0}", attachment.SourceFullName);
+                                    Console.WriteLine("File size: {0}", attachment.Content.Length);
+                                }
+                            }
+                        }
+                    }
+                    //ExEnd:ExtractAllAttachments
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Add an attachment to an Excel document
+            /// </summary>
+            public static void AddAttachment()
+            {
+                try
+                {
+                    //ExStart:AddAttachment
+                    using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        CellsWorksheet worksheet = doc.Worksheets[0];
+
+                        // Add the attachment
+                        worksheet.Attachments.AddAttachment(
+                            File.ReadAllBytes(Utilities.MapSourceFilePath(AttachmentPath)), // File content
+                            "sample document", // Source file full name (the extension is used to determine appropriate application to open the file) 
+                            File.ReadAllBytes(Utilities.MapSourceFilePath(AttachmentPath)), // Preview image content
+                            50, // X-coordinate of the attachment frame
+                            100, // Y-coordinate of the attachment frame
+                            200, // Attachment frame width
+                            400); // Attachment frame height
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:AddAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Add a linked file to an Excel document
+            /// </summary>
+            public static void AddLinkedAttachment()
+            {
+                try
+                {
+                    //ExStart:AddLinkedAttachment
+                    using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        CellsWorksheet worksheet = doc.Worksheets[0];
+
+                        // Add the attachment
+                        worksheet.Attachments.AddLink(
+                            Utilities.MapSourceFilePath(AttachmentPath), // Source file path
+                            File.ReadAllBytes(Utilities.MapSourceFilePath(AttachmentPath)), // Preview image content
+                            50, // X-coordinate of the attachment frame
+                            100, // Y-coordinate of the attachment frame
+                            200, // Attachment frame width
+                            400); // Attachment frame height
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:AddLinkedAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Remove particular attachments from an Excel document
+            /// </summary>
+            public static void RemoveAttachment()
+            {
+                try
+                {
+                    //ExStart:RemoveAttachment
+                    using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (CellsWorksheet worksheet in doc.Worksheets)
+                        {
+                            for (int i = worksheet.Attachments.Count - 1; i >= 0; i--)
+                            {
+                                CellsAttachment attachment = worksheet.Attachments[i];
+                                if (attachment.IsLink && !File.Exists(attachment.SourceFullName) || // Linked file that is not available at this moment
+                                    attachment.DocumentInfo.IsEncrypted) // Attached file protected with a password
+                                {
+                                    // Remove the file if it meets at least one of the conditions above
+                                    worksheet.Attachments.RemoveAt(i);
+                                }
+                            }
+                        }
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Add watermark to all attached files of supported types
+            /// </summary>
+            public static void AddWatermarkToAttachment()
+            {
+                try
+                {
+                    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
+                    //ExStart:AddWatermarkToAttachment
+                    using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (CellsWorksheet worksheet in doc.Worksheets)
+                        {
+                            foreach (CellsAttachment attachment in worksheet.Attachments)
+                            {
+                                // Check if the attached file is supported by GroupDocs.Watermark
+                                if (attachment.DocumentInfo.FileFormat != FileFormat.Undefined && !attachment.DocumentInfo.IsEncrypted)
+                                {
+                                    // Load the attached document
+                                    using (Document attachedDocument = attachment.LoadDocument())
+                                    {
+                                        // Add wateramrk
+                                        attachedDocument.AddWatermark(watermark);
+
+                                        // Save changes in the attached file
+                                        attachedDocument.Save();
+                                    }
+                                }
+                            }
+                        }
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkToAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Search for images in the attached files using FindImages or FindWatermarks method
+            /// </summary>
+            public static void SearchImageInAttachment()
+            {
+                try
+                {
+                    //ExStart:SearchImageInAttachment
+                    using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Consider only the attached images
+                        doc.SearchableObjects.CellsSearchableObjects = CellsSearchableObjects.AttachedImages;
+
+                        // Specify sample image to compare document images with
+                        ImageSearchCriteria criteria = new ImageDctHashSearchCriteria(Utilities.MapSourceFilePath(AttachmentPath));
+
+                        // Search for similar images
+                        PossibleWatermarkCollection possibleWatermarks = doc.FindWatermarks(criteria);
+
+                        // Remove or modify found image watermarks
+                    }
+                    //ExEnd:SearchImageInAttachment
                 }
                 catch (Exception exp)
                 {
@@ -2655,10 +3007,10 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     {
                         // Replace hyperlink
                         doc.Slides[0].Charts[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick, "https://www.aspose.com/");
-                        doc.Slides[0].Shapes[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick,"https://www.groupdocs.com/");
+                        doc.Slides[0].Shapes[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick, "https://www.groupdocs.com/");
 
                         // Remove hyperlink
-                        doc.Slides[1].Charts[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick,null);
+                        doc.Slides[1].Charts[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick, null);
                         doc.Slides[1].Shapes[0].SetHyperlink(SlidesHyperlinkActionType.MouseClick, null);
 
                         doc.Save();
