@@ -356,6 +356,38 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //Documents.Visio.RemoveShape();
             #endregion
 
+            #region Working with Emails
+            // Load an email message
+            // Documents.Email.LoadEmailMessage();
+
+            // Extract all attachments from an email message 
+            // Documents.Email.ExtractAllAttachments();
+
+            // Remove particular attachments from an email message
+            // Documents.Email.RemoveAttachment();
+
+            // Add watermark to all attached files of supported types
+            //Documents.Email.AddWatermarkToAllAttachment();
+
+            // Add an attachment to an email message
+            //Documents.Email.AddAttachment();
+
+            // Modify email message body and subject
+            //Documents.Email.UpdateEmailBody();
+
+            // Remove all embedded jpeg images from an email message
+            //Documents.Email.RemoveEmbeddedImages();
+
+            // Embed image into email message body
+            //Documents.Email.AddEmbeddedImage();
+
+            // List all message recipients 
+            //Documents.Email.ListEmailRecipients();
+
+            // Find particular text fragments in email message body/subject
+            //Documents.Email.SearchTextInBody();
+
+            #endregion
             Console.Write("Operation completed...");
             Console.ReadKey();
         }
