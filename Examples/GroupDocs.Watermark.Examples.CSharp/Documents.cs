@@ -2841,11 +2841,11 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     {
                         foreach (SlidesSlide slide in doc.Slides)
                         {
-                            if (slide.BackgroundImage != null)
+                            if (slide.ImageFillFormat.BackgroundImage != null)
                             {
-                                Console.WriteLine(slide.BackgroundImage.Width);
-                                Console.WriteLine(slide.BackgroundImage.Height);
-                                Console.WriteLine(slide.BackgroundImage.GetBytes().Length);
+                                Console.WriteLine(slide.ImageFillFormat.BackgroundImage.Width);
+                                Console.WriteLine(slide.ImageFillFormat.BackgroundImage.Height);
+                                Console.WriteLine(slide.ImageFillFormat.BackgroundImage.GetBytes().Length);
                             }
                         }
                     }
@@ -2867,7 +2867,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     //ExStart:RemoveBackgroundPowerPointSlide
                     using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
                     {
-                        doc.Slides[0].BackgroundImage = null;
+                        doc.Slides[0].ImageFillFormat.BackgroundImage = null;
                     }
                     //ExEnd:RemoveBackgroundPowerPointSlide
                 }
@@ -2897,10 +2897,10 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
                         foreach (SlidesSlide slide in doc.Slides)
                         {
-                            if (slide.BackgroundImage != null)
+                            if (slide.ImageFillFormat.BackgroundImage != null)
                             {
                                 // Add watermark to the image
-                                slide.BackgroundImage.AddWatermark(watermark);
+                                slide.ImageFillFormat.BackgroundImage.AddWatermark(watermark);
                             }
                         }
 
