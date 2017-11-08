@@ -1,4 +1,5 @@
-﻿using GroupDocs.Watermark.Office;
+﻿using GroupDocs.Watermark.Email;
+using GroupDocs.Watermark.Office;
 using GroupDocs.Watermark.Office.Cells;
 using GroupDocs.Watermark.Office.Diagram;
 using GroupDocs.Watermark.Office.Slides;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace GroupDocs.Watermark.Examples.CSharp
@@ -2841,11 +2843,11 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     {
                         foreach (SlidesSlide slide in doc.Slides)
                         {
-                            if (slide.BackgroundImage != null)
+                            if (slide.ImageFillFormat.BackgroundImage != null)
                             {
-                                Console.WriteLine(slide.BackgroundImage.Width);
-                                Console.WriteLine(slide.BackgroundImage.Height);
-                                Console.WriteLine(slide.BackgroundImage.GetBytes().Length);
+                                Console.WriteLine(slide.ImageFillFormat.BackgroundImage.Width);
+                                Console.WriteLine(slide.ImageFillFormat.BackgroundImage.Height);
+                                Console.WriteLine(slide.ImageFillFormat.BackgroundImage.GetBytes().Length);
                             }
                         }
                     }
@@ -2867,7 +2869,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     //ExStart:RemoveBackgroundPowerPointSlide
                     using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
                     {
-                        doc.Slides[0].BackgroundImage = null;
+                        doc.Slides[0].ImageFillFormat.BackgroundImage = null;
                     }
                     //ExEnd:RemoveBackgroundPowerPointSlide
                 }
@@ -2897,10 +2899,10 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
                         foreach (SlidesSlide slide in doc.Slides)
                         {
-                            if (slide.BackgroundImage != null)
+                            if (slide.ImageFillFormat.BackgroundImage != null)
                             {
                                 // Add watermark to the image
-                                slide.BackgroundImage.AddWatermark(watermark);
+                                slide.ImageFillFormat.BackgroundImage.AddWatermark(watermark);
                             }
                         }
 
@@ -3528,6 +3530,307 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+        }
+        public static class Email
+        {
+            // initialize file path
+            //ExStart:SourceEmailFilePath
+            private const string FilePath = "Documents/sample.msg";
+            private const string AttachmentPath = "Documents/samplewithattachments.msg";
+            private const string ImagePath = "Images/sample.jpg";
+            //ExEnd:SourceEmailFilePath
+
+            /// <summary>
+            /// Load an email message 
+            /// </summary> 
+            public static void LoadEmailMessage()
+            {
+                try
+                {
+                    //ExStart:LoadEmailMessage
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // ...
+                    }
+                    //ExEnd:LoadEmailMessage
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Extract all attachments from an email message 
+            /// </summary> 
+            public static void ExtractAllAttachments()
+            {
+                try
+                {
+                    //ExStart:ExtractAllAttachments
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(AttachmentPath)))
+                    {
+                        foreach (EmailAttachment attachment in doc.Attachments)
+                        {
+                            Console.WriteLine("Name: {0}", attachment.Name);
+                            Console.WriteLine("File format: {0}", attachment.DocumentInfo.FileFormat);
+                            //File.WriteAllBytes(attachment.Name, attachment.Content);
+                        }
+                    }
+                    //ExEnd:ExtractAllAttachments
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Remove particular attachments from an email message
+            /// </summary> 
+            public static void RemoveAttachment()
+            {
+                try
+                {
+                    //ExStart:RemoveAttachment
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(AttachmentPath)))
+                    {
+                        for (int i = doc.Attachments.Count - 1; i >= 0; i--)
+                        {
+                            EmailAttachment attachment = doc.Attachments[i];
+
+                            // Remove all attached pdf files with a particular name
+                            if (attachment.Name.Contains("sample") && attachment.DocumentInfo.FileFormat == FileFormat.Docx)
+                            {
+                                doc.Attachments.RemoveAt(i);
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Add watermark to all attached files of supported types
+            /// </summary> 
+            public static void AddWatermarkToAllAttachment()
+            {
+                try
+                {
+                    //ExStart:AddWatermarkToAllAttachment
+                    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(AttachmentPath)))
+                    {
+                        foreach (EmailAttachment attachment in doc.Attachments)
+                        {
+                            // Check if the attached file is supported by GroupDocs.Watermark
+                            if (attachment.DocumentInfo.FileFormat != FileFormat.Undefined && !attachment.DocumentInfo.IsEncrypted)
+                            {
+                                // Load the attached document
+                                using (Document attachedDocument = attachment.LoadDocument())
+                                {
+                                    // Add wateramrk
+                                    attachedDocument.AddWatermark(watermark);
+
+                                    // Save changes in the attached file
+                                    attachedDocument.Save();
+                                }
+                            }
+                        }
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:AddWatermarkToAllAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Add an attachment to an email message
+            /// </summary> 
+            public static void AddAttachment()
+            {
+                try
+                {
+                    //ExStart:AddAttachment
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        doc.Attachments.Add(File.ReadAllBytes(Utilities.MapSourceFilePath(AttachmentPath)), "sample.msg");
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:AddAttachment
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Modify email message body and subject
+            /// </summary> 
+            public static void UpdateEmailBody()
+            {
+                try
+                {
+                    //ExStart:UpdateEmailBody
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // Set the plain text body
+                        doc.Body = "Test plain text body";
+
+                        // Set the html body
+                        doc.HtmlBody = "<html><body>Test html body</body></html>";
+
+                        // Set the email subject
+                        doc.Subject = "Test subject";
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:UpdateEmailBody
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Remove all embedded jpeg images from an email message
+            /// </summary> 
+            public static void RemoveEmbeddedImages()
+            {
+                try
+                {
+                    //ExStart:RemoveEmbeddedImages
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        for (int i = doc.EmbeddedObjects.Count - 1; i >= 0; i--)
+                        {
+                            if (doc.EmbeddedObjects[i].DocumentInfo.FileFormat == FileFormat.Jpeg)
+                            {
+                                // Remove reference to the image from html body
+                                string pattern = string.Format("<img[^>]*src=\"cid:{0}\"[^>]*>", doc.EmbeddedObjects[i].ContentId);
+                                doc.HtmlBody = Regex.Replace(doc.HtmlBody, pattern, string.Empty);
+
+                                // Remove the image
+                                doc.EmbeddedObjects.RemoveAt(i);
+                            }
+                        }
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveEmbeddedImages
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Embed image into email message body
+            /// </summary> 
+            public static void AddEmbeddedImage()
+            {
+                try
+                {
+                    //ExStart:AddEmbeddedImage
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        doc.EmbeddedObjects.Add(File.ReadAllBytes(Utilities.MapSourceFilePath(ImagePath)), "sample.jpg");
+                        EmailEmbeddedObject embeddedObject = doc.EmbeddedObjects[doc.EmbeddedObjects.Count - 1];
+                        doc.HtmlBody = string.Format("<html><body>This is an embedded image: <img src=\"cid:{0}\"></body></html>", embeddedObject.ContentId);
+                        doc.Save();
+                    }
+                    //ExEnd:AddEmbeddedImage
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// List all message recipients
+            /// </summary> 
+            public static void ListEmailRecipients()
+            {
+                try
+                {
+                    //ExStart:ListEmailRecipients
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        // List all direct recipients
+                        foreach (EmailAddress address in doc.To)
+                        {
+                            Console.WriteLine(address.Address);
+                        }
+
+                        // List all CC recipients
+                        foreach (EmailAddress address in doc.Cc)
+                        {
+                            Console.WriteLine(address.Address);
+                        }
+
+                        // List all BCC recipients
+                        foreach (EmailAddress address in doc.Bcc)
+                        {
+                            Console.WriteLine(address.Address);
+                        }
+                    }
+                    //ExEnd:ListEmailRecipients
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Find particular text fragments in email message body/subject
+            /// </summary> 
+            public static void SearchTextInBody()
+            {
+                try
+                {
+                    //ExStart:SearchTextInBody
+                    using (EmailDocument doc = Document.Load<EmailDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        SearchCriteria criteria = new TextSearchCriteria("test", false);
+
+                        // Specify search locations
+                        doc.SearchableObjects.EmailSearchableObjects = EmailSearchableObjects.Subject | EmailSearchableObjects.HtmlBody | EmailSearchableObjects.PlainTextBody;
+
+                        // Note, search is performed only if you pass TextSearchCriteria instance to FindWatermarks method
+                        PossibleWatermarkCollection watermarks = doc.FindWatermarks(criteria);
+
+                        // Remove found text fragments
+                        watermarks.Clear();
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:SearchTextInBody
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            
         }
     }
 }
