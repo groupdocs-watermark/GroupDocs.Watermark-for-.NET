@@ -2237,6 +2237,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+
             /// <summary>
             /// Extract information about all attachments in an Excel document
             /// </summary>
@@ -2280,6 +2281,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+
             /// <summary>
             /// Add an attachment to an Excel document
             /// </summary>
@@ -2312,6 +2314,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+
             /// <summary>
             /// Add a linked file to an Excel document
             /// </summary>
@@ -2343,6 +2346,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+
             /// <summary>
             /// Remove particular attachments from an Excel document
             /// </summary>
@@ -2376,6 +2380,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+
             /// <summary>
             /// Add watermark to all attached files of supported types
             /// </summary>
@@ -2416,6 +2421,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+
             /// <summary>
             /// Search for images in the attached files using FindImages or FindWatermarks method
             /// </summary>
@@ -2443,6 +2449,114 @@ namespace GroupDocs.Watermark.Examples.CSharp
                 {
                     Console.Write(exp.Message);
                 }
+            }
+
+            /// <summary>
+            /// Replaces text for particular shapes
+            /// </summary>
+            public static void ReplaceTextForParticularShapes()
+            {
+                //ExStart:ReplaceTextForParticularShapes_17.12
+                using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                {
+                    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+                    {
+                        if (shape.Text == "© Aspose 2016")
+                        {
+                            shape.Text = "© GroupDocs 2017";
+                        }
+                    }
+                    doc.Save();
+                }
+                //ExEnd:ReplaceTextForParticularShapes_17.12
+            }
+
+            /// <summary>
+            /// Replaces text with formatting for particular shapes
+            /// </summary>
+            public static void ReplaceTextWithFormattingForParticularShapes()
+            {
+                //ExStart:ReplaceTextWithFormattingForParticularShapes_17.12
+                using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                {
+                    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+                    {
+                        if (shape.Text == "© Aspose 2016")
+                        {
+                            shape.FormattedTextFragments.Clear();
+                            shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+                        }
+                    }
+                    doc.Save();
+                }
+                //ExEnd:ReplaceTextWithFormattingForParticularShapes_17.12
+            }
+
+            /// <summary>
+            /// Replaces image of particular shapes
+            /// </summary>
+            public static void ReplaceImageOfParticularShapes()
+            {
+                //ExStart:ReplaceImageOfParticularShapes_17.12
+                using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                {
+                    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+                    {
+                        if (shape.Image != null)
+                        {
+                            shape.Image = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                        }
+                    }
+                    doc.Save();
+                }
+                //ExEnd:ReplaceImageOfParticularShapes_17.12
+            }
+
+            /// <summary>
+            /// Sets background image for particular shapes
+            /// </summary>
+            public static void SetBackgroundImageForParticularShapes()
+            {
+                //ExStart:SetBackgroundImageForParticularShapes_17.12
+                using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                {
+                    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+                    {
+                        if (shape.Text == "© Aspose 2016")
+                        {
+                            shape.ImageFillFormat.BackgroundImage = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                            shape.ImageFillFormat.Transparency = 0.5;
+                            shape.ImageFillFormat.TileAsTexture = true;
+                        }
+                    }
+                    doc.Save();
+                }
+                //ExEnd:SetBackgroundImageForParticularShapes_17.12
+            }
+
+            /// <summary>
+            /// Updates shape properties
+            /// </summary>
+            public static void UpdateShapeProperties()
+            {
+                //ExStart:UpdateShapeProperties_17.12
+                using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FilePath)))
+                {
+                    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+                    {
+                        if (shape.Text == "© Aspose 2016")
+                        {
+                            shape.AlternativeText = "watermark";
+                            shape.RotateAngle = 30;
+                            shape.X = 200;
+                            shape.Y = 200;
+                            shape.Width = 400;
+                            shape.Height = 100;
+                        }
+                    }
+                    doc.Save();
+                }
+                //ExEnd:UpdateShapeProperties_17.12
             }
         }
         public static class PowerPoint
@@ -3830,7 +3944,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
-            
+
         }
     }
 }
