@@ -744,6 +744,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+            
             /// <summary>
             /// Extract all attachments from a PDF document
             /// </summary>
@@ -771,6 +772,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+            
             /// <summary>
             /// Add an attachment to a PDF document
             /// </summary>
@@ -797,6 +799,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+            
             /// <summary>
             /// Remove particular attachments from a PDF document
             /// </summary>
@@ -826,6 +829,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+            
             /// <summary>
             /// Add watermark to all attached files of supported types
             /// </summary>
@@ -863,6 +867,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+           
             /// <summary>
             /// Search for images in the attached files 
             /// </summary>
@@ -3226,6 +3231,158 @@ namespace GroupDocs.Watermark.Examples.CSharp
                 }
             }
 
+            /// <summary>
+            /// Replaces text for a particular shape
+            /// </summary> 
+            public static void ReplaceTextForParticularShape()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextForParticularShapePowerPoint_18.1
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (SlidesShape shape in doc.Slides[0].Shapes)
+                        {
+                            if (shape.Text == "© Aspose 2016")
+                            {
+                                shape.Text = "© GroupDocs 2018";
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceTextForParticularShapePowerPoint_18.1
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces text with a particular formatting
+            /// </summary> 
+            public static void ReplaceTextWithParticularFormatting()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextWithParticularFormattingPowerPoint_18.1
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (SlidesShape shape in doc.Slides[0].Shapes)
+                        {
+                            if (shape.Text == "© Aspose 2016")
+                            {
+                                shape.FormattedTextFragments.Clear();
+                                shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceTextWithParticularFormattingPowerPoint_18.1
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces shape image
+            /// </summary> 
+            public static void ReplaceShapeImage()
+            {
+                try
+                {
+                    //ExStart:ReplaceShapeImagePowerPoint_18.1
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (SlidesShape shape in doc.Slides[0].Shapes)
+                        {
+                            if (shape.Image != null)
+                            {
+                                shape.Image = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceShapeImagePowerPoint_18.1
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Sets background image for particular shapes
+            /// </summary> 
+            public static void SetBackgroundImageForParticularShapes()
+            {
+                try
+                {
+                    //ExStart:SetBackgroundImageForParticularShapesPowerPoint_18.1
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (SlidesShape shape in doc.Slides[0].Shapes)
+                        {
+                            if (shape.Text == "© Aspose 2016")
+                            {
+                                shape.ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                                shape.ImageFillFormat.Transparency = 0.5;
+                                shape.ImageFillFormat.TileAsTexture = true;
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:SetBackgroundImageForParticularShapesPowerPoint_18.1
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Modifies shape properties
+            /// </summary> 
+            public static void ModifyShapeProperties()
+            {
+                try
+                {
+                    //ExStart:ModifyShapePropertiesPowerPoint_18.1
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (SlidesShape shape in doc.Slides[0].Shapes)
+                        {
+                            if (shape.Text == "© Aspose 2016")
+                            {
+                                shape.AlternativeText = "watermark";
+                                shape.RotateAngle = 30;
+                                shape.X = 200;
+                                shape.Y = 200;
+                                shape.Width = 400;
+                                shape.Height = 100;
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:ModifyShapePropertiesPowerPoint_18.1
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
         }
         public static class Visio
         {
@@ -3638,6 +3795,94 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Save();
                     }
                     //ExEnd:RemoveHyperlinksVisio
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces text for particular shapes
+            /// </summary> 
+            public static void ReplaceTextForParticularShapes()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextForParticularShapesVisio_18.1
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (DiagramShape shape in doc.Pages[0].Shapes)
+                        {
+                            if (shape.Text != null && shape.Text.Contains("© Aspose 2016"))
+                            {
+                                shape.Text = "© GroupDocs 2017";
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceTextForParticularShapesVisio_18.1
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces text with formatting
+            /// </summary> 
+            public static void ReplaceTextWithFormatting()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextWithFormattingVisio_18.1
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (DiagramShape shape in doc.Pages[0].Shapes)
+                        {
+                            if (shape.Text != null && shape.Text.Contains("© Aspose 2016"))
+                            {
+                                shape.FormattedTextFragments.Clear();
+                                shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceTextWithFormattingVisio_18.1
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces shape image
+            /// </summary> 
+            public static void ReplaceShapeImage()
+            {
+                try
+                {
+                    //ExStart:ReplaceShapeImageVisio_18.1
+                    using (DiagramDocument doc = Document.Load<DiagramDocument>(Utilities.MapSourceFilePath(FilePath)))
+                    {
+                        foreach (DiagramShape shape in doc.Pages[0].Shapes)
+                        {
+                            if (shape.Image != null)
+                            {
+                                shape.Image = new DiagramWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                            }
+                        }
+
+                        // Save changes
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceShapeImageVisio_18.1
                 }
                 catch (Exception exp)
                 {
