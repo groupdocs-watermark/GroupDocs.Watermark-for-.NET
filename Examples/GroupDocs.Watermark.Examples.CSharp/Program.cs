@@ -16,7 +16,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
              *  Applying product license
              *  Please uncomment the statement if you do have license.
              */
-            Utilities.ApplyLicense();
+            //Utilities.ApplyLicense();
             //ExEnd:ApplyingLicense
 
 
@@ -183,6 +183,18 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             // Remove watermark from section
             //Documents.Word.RemoveWatermarkFromSection();
+
+            // Replace text for particular shape
+            //Documents.Word.ReplaceTextForParticularShape();
+
+            // Replace shape text with formatted text
+            //Documents.Word.ReplaceShapeTextWithFormattedText();
+
+            // Replace shape image
+            //Documents.Word.ReplaceShapeImage();
+
+            // Modify shape properties
+            //Documents.Word.ModifyShapeProperties();
             #endregion
 
             #region Working with Excel Documents
