@@ -746,7 +746,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             }
             
             /// <summary>
-            /// Extract all attachments from a PDF document
+            /// Extracts all attachments from a PDF document
             /// </summary>
             public static void ExtractAllAttachments()
             {
@@ -774,7 +774,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             }
             
             /// <summary>
-            /// Add an attachment to a PDF document
+            /// Adds an attachment to a PDF document
             /// </summary>
             public static void AddAttachment()
             {
@@ -801,7 +801,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             }
             
             /// <summary>
-            /// Remove particular attachments from a PDF document
+            /// Removes particular attachments from a PDF document
             /// </summary>
             public static void RemoveAttachment()
             {
@@ -831,7 +831,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             }
             
             /// <summary>
-            /// Add watermark to all attached files of supported types
+            /// Adds watermark to all attached files of supported types
             /// </summary>
             public static void AddWatermarkToAttachment()
             {
@@ -869,7 +869,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             }
            
             /// <summary>
-            /// Search for images in the attached files 
+            /// Searches for images in the attached files 
             /// </summary>
             public static void SearchImageInAttachment()
             {
@@ -892,6 +892,284 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+
+            /// <summary>
+            /// Replaces text for particular XObject
+            /// </summary>
+            public static void ReplaceTextForParticularXObject()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextForParticularXObject_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        foreach (PdfXObject xObject in doc.Pages[0].XObjects)
+                        {
+                            // Replace text
+                            if (xObject.Text.Contains("Test"))
+                            {
+                                xObject.Text = "Passed";
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+
+                    }
+                    //ExEnd:ReplaceTextForParticularXObject_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces text for particular artifact 
+            /// </summary>
+            public static void ReplaceTextForParticularArtifact()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextForParticularArtifact_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        foreach (PdfArtifact artifact in doc.Pages[0].Artifacts)
+                        {
+                            // Replace text
+                            if (artifact.Text.Contains("Test"))
+                            {
+                                artifact.Text = "Passed";
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+
+                    }
+                    //ExEnd:ReplaceTextForParticularArtifact_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces text for particular annotation 
+            /// </summary>
+            public static void ReplaceTextForParticularAnnotation()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextForParticularAnnotation_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        foreach (PdfAnnotation annotation in doc.Pages[0].Annotations)
+                        {
+                            // Replace text 
+                            if (annotation.Text.Contains("Test"))
+                            {
+                                annotation.Text = "Passed";
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+
+                    }
+                    //ExEnd:ReplaceTextForParticularAnnotation_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces text for particular XObject with formatting 
+            /// </summary>
+            public static void ReplaceTextForParticularXObjectWithFormatting()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextForParticularXObjectWithFormatting_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        foreach (PdfXObject xObject in doc.Pages[0].XObjects)
+                        {
+                            // Replace text
+                            if (xObject.Text.Contains("Test"))
+                            {
+                                xObject.FormattedTextFragments.Clear();
+                                xObject.FormattedTextFragments.Add("Passed", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+
+                    }
+                    //ExEnd:ReplaceTextForParticularXObjectWithFormatting_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces text for particular artifact with formatting 
+            /// </summary>
+            public static void ReplaceTextForParticularArtifactWithFormatting()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextForParticularArtifactWithFormatting_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        foreach (PdfArtifact artifact in doc.Pages[0].Artifacts)
+                        {
+                            // Replace text
+                            if (artifact.Text.Contains("Test"))
+                            {
+                                artifact.FormattedTextFragments.Clear();
+                                artifact.FormattedTextFragments.Add("Passed", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceTextForParticularArtifactWithFormatting_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces text for particular annotation with formatting 
+            /// </summary>
+            public static void ReplaceTextForParticularAnnotationWithFormatting()
+            {
+                try
+                {
+                    //ExStart:ReplaceTextForParticularAnnotationWithFormatting_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        foreach (PdfAnnotation annotation in doc.Pages[0].Annotations)
+                        {
+                            // Replace text
+                            if (annotation.Text.Contains("Test"))
+                            {
+                                annotation.FormattedTextFragments.Clear();
+                                annotation.FormattedTextFragments.Add("Passed", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceTextForParticularAnnotationWithFormatting_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces image for particular XObject
+            /// </summary>
+            public static void ReplaceImageForParticularXObject()
+            {
+                try
+                {
+                    //ExStart:ReplaceImageForParticularXObject_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        // Replace image
+                        foreach (PdfXObject xObject in doc.Pages[0].XObjects)
+                        {
+                            if (xObject.Image != null)
+                            {
+                                xObject.Image = new PdfWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceImageForParticularXObject_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces image for particular artifact
+            /// </summary>
+            public static void ReplaceImageForParticularArtifact()
+            {
+                try
+                {
+                    //ExStart:ReplaceImageForParticularArtifact_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        // Replace image
+                        foreach (PdfArtifact artifact in doc.Pages[0].Artifacts)
+                        {
+                            if (artifact.Image != null)
+                            {
+                                artifact.Image = new PdfWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceImageForParticularArtifact_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Replaces image for particular annotation
+            /// </summary>
+            public static void ReplaceImageForParticularAnnotation()
+            {
+                try
+                {
+                    //ExStart:ReplaceImageForParticularAnnotation_18.3
+                    using (PdfDocument doc = Document.Load<PdfDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        // Replace image
+                        foreach (PdfAnnotation annotation in doc.Pages[0].Annotations)
+                        {
+                            if (annotation.Image != null)
+                            {
+                                annotation.Image = new PdfWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+                    }
+                    //ExEnd:ReplaceImageForParticularAnnotation_18.3
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
         }
         public static class Word
         {
