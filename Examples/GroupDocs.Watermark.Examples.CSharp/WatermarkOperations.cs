@@ -13,10 +13,11 @@ namespace GroupDocs.Watermark.Examples.CSharp
     {
         // initialize file paths
         //ExStart:SourceDocumentFilesPath
-        private const string PngFilePath = "Images/sample.JPG";
-        private const string DocFilePath = "Documents/sample.docx";
-        private const string PptFilePath = "Documents/sample.pptx";
-        private const string XlsFilePath = "Documents/sample.xlsx";
+        private const string PNG_FILE_PATH = "Images/sample.JPG";
+        private const string DOC_FILE_PATH = "Documents/sample.docx";
+        private const string PPT_FILE_PATH = "Documents/sample.pptx";
+        private const string XLS_FILE_PATH = "Documents/sample.xlsx";
+        private const string PDF_FILE_PATH = "Documents/sample.pdf";
         //ExEnd:SourceDocumentFilesPath
 
         #region Adding Watermark 
@@ -28,7 +29,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddTextWatermark
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PngFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PNG_FILE_PATH)))
                 {
                     // Initialize the font to be used for watermark
                     Font font = new Font("Arial", 19, FontStyle.Bold | FontStyle.Italic);
@@ -61,7 +62,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddImageWatermark
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PptFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PPT_FILE_PATH)))
                 {
                     // Use path to the image as constructor parameter
                     using (ImageWatermark watermark = new ImageWatermark(@"D:\watermark.jpg"))
@@ -90,7 +91,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                 //ExStart:AddImageWatermarkUsingStream
                 using (Stream watermarkStream = File.OpenRead(@"D:\watermark.jpg"))
                 {
-                    using (Document doc = Document.Load(Utilities.MapSourceFilePath (PngFilePath)))
+                    using (Document doc = Document.Load(Utilities.MapSourceFilePath (PNG_FILE_PATH)))
                     {
                         // Use stream containing an image as constructor parameter
                         using (ImageWatermark watermark = new ImageWatermark(watermarkStream))
@@ -118,7 +119,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddWatermarkToAbsolutePosition
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DocFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DOC_FILE_PATH)))
                 {
                     Font font = new Font("Times New Roman", 8);
                     TextWatermark watermark = new TextWatermark("Test watermark", font);
@@ -150,7 +151,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddWatermarkToRelativePosition
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (XlsFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (XLS_FILE_PATH)))
                 {
                     Font font = new Font("Calibri", 12);
                     TextWatermark watermark = new TextWatermark("Test watermark", font);
@@ -180,7 +181,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddWatermarkWithMarginType
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (XlsFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (XLS_FILE_PATH)))
                 {
                     Font font = new Font("Calibri", 12);
                     TextWatermark watermark = new TextWatermark("Test watermark", font);
@@ -212,7 +213,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddWatermarkWithSizeType
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PngFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PNG_FILE_PATH)))
                 {
                     Font font = new Font("Calibri", 12);
                     TextWatermark watermark = new TextWatermark("This is a test watermark", font);
@@ -242,7 +243,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddWatermarkWithParentMargin
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DocFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DOC_FILE_PATH)))
                 {
                     var watermark = new TextWatermark("Test watermark", new Font("Arial", 42));
                     watermark.HorizontalAlignment = HorizontalAlignment.Right;
@@ -275,7 +276,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddTextWatermarkWithRotationAngle
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DocFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DOC_FILE_PATH)))
                 {
                     Font font = new Font("Calibri", 8);
                     TextWatermark watermark = new TextWatermark("Test watermark", font);
@@ -306,7 +307,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:AddWatermarkToImages
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PptFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PPT_FILE_PATH)))
                 {
                     // Initialize text watermark
                     TextWatermark textWatermark = new TextWatermark("Protected image", new Font("Arial", 8));
@@ -364,7 +365,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:SearchWatermark
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DocFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DOC_FILE_PATH)))
                 {
                     PossibleWatermarkCollection possibleWatermarks = doc.FindWatermarks();
                     foreach (PossibleWatermark possibleWatermark in possibleWatermarks)
@@ -398,7 +399,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:SearchWatermarkWithSearchString
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PptFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PPT_FILE_PATH)))
                 {
                     // Search by exact string
                     TextSearchCriteria textSearchCriteria = new TextSearchCriteria("© 2017");
@@ -425,7 +426,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:SearchWatermarkWithRegularExpression
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DocFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DOC_FILE_PATH)))
                 {
                     Regex regex = new Regex(@"^© \d{4}$");
 
@@ -453,7 +454,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:SearchImageWatermark
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PptFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (PPT_FILE_PATH)))
                 {
                     // Initialize criteria with the image
                     ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(@"D:\watermark.jpg");
@@ -481,7 +482,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:SearchWatermarkWithCombinedSearch
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DocFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (DOC_FILE_PATH)))
                 {
                     ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(@"D:\logo.png");
                     imageSearchCriteria.MaxDifference = 0.9;
@@ -511,7 +512,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:RemoveWatermark
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath (XlsFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath (XLS_FILE_PATH)))
                 {
                     PossibleWatermarkCollection possibleWatermarks = doc.FindWatermarks();
 
@@ -539,7 +540,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:RemoveWatermarkWithParticularTextFormatting
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DocFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DOC_FILE_PATH)))
                 {
                     TextFormattingSearchCriteria criteria = new TextFormattingSearchCriteria();
                     criteria.ForegroundColorRange = new ColorRange();
@@ -608,7 +609,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:SearchWatermarkInParticularObjectsForParticularDocument
-                using (var doc = Document.Load(Utilities.MapSourceFilePath(DocFilePath)))
+                using (var doc = Document.Load(Utilities.MapSourceFilePath(DOC_FILE_PATH)))
                 {
                     // Search for hyperlinks only.
                     doc.SearchableObjects.PdfSearchableObjects = PdfSearchableObjects.Hyperlinks;
@@ -617,6 +618,125 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     // The code for working with found watermarks goes here.
                 }
                 //ExEnd:SearchWatermarkInParticularObjectsForParticularDocument
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
+
+        /// <summary>
+        /// Updates text in the found watermarks
+        /// </summary>
+        public static void EditTextInFoundWatermarks()
+        {
+            try
+            {
+                //ExStart:EditTextInFoundWatermarks_18.3
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(PPT_FILE_PATH)))
+                {
+                    TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
+                    PossibleWatermarkCollection watermarks = doc.FindWatermarks(searchCriteria);
+                    foreach (PossibleWatermark watermark in watermarks)
+                    {
+                        try
+                        {
+                            // Edit text
+                            watermark.Text = "passed";
+                        }
+                        catch (Exception e)
+                        {
+                            // Found entity may not support text editing
+                            // Passed argument can have inappropriate value
+                            // Process such cases here
+                        }
+                    }
+
+                    // Save document
+                    doc.Save();
+                }
+                //ExEnd:EditTextInFoundWatermarks_18.3
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
+
+        /// <summary>
+        /// Updates text with formatting in the found watermarks
+        /// </summary>
+        public static void EditTextWithFormattingInFoundWatermarks()
+        {
+            try
+            {
+                //ExStart:EditTextWithFormattingInFoundWatermarks_18.3
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DOC_FILE_PATH)))
+                {
+                    TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
+                    PossibleWatermarkCollection watermarks = doc.FindWatermarks(searchCriteria);
+                    foreach (PossibleWatermark watermark in watermarks)
+                    {
+                        try
+                        {
+                            // Edit text 
+                            watermark.FormattedTextFragments.Clear();
+                            watermark.FormattedTextFragments.Add("passed", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+                        }
+                        catch (Exception e)
+                        {
+                            // Found entity may not support text editing
+                            // Passed arguments can have inappropriate value
+                            // Process such cases here
+                        }
+                    }
+
+                    // Save document
+                    doc.Save();
+                }
+                //ExEnd:EditTextWithFormattingInFoundWatermarks_18.3
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
+
+        /// <summary>
+        /// Replaces image in the found watermarks
+        /// </summary>
+        public static void ReplacesImageInFoundWatermarks()
+        {
+            try
+            {
+                //ExStart:ReplacesImageInFoundWatermarks_18.3
+                
+                byte[] imageData = File.ReadAllBytes(Utilities.MapSourceFilePath(PNG_FILE_PATH));
+
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(PDF_FILE_PATH)))
+                {
+                    // Search watermark matching a particular image
+                    SearchCriteria searchCriteria = new ImageDctHashSearchCriteria(@"D:\logo.bmp");
+                    PossibleWatermarkCollection watermarks = doc.FindWatermarks(searchCriteria);
+                    foreach (PossibleWatermark watermark in watermarks)
+                    {
+                        try
+                        {
+                            // Replace image
+                            watermark.ImageData = imageData;
+                        }
+                        catch (Exception e)
+                        {
+                            // Found entity may not support image replacment
+                            // Passed image can have inappropriate format
+                            // Process such cases here
+                        }
+                    }
+
+                    // Save document
+                    doc.Save();
+                }
+                //ExEnd:ReplacesImageInFoundWatermarks_18.3
             }
             catch (Exception exp)
             {
@@ -633,7 +753,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:RemoveHyperlinksWithParticularURL
-                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DocFilePath)))
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(DOC_FILE_PATH)))
                 {
                     PossibleWatermarkCollection watermarks = doc.FindWatermarks(new TextSearchCriteria(new Regex(@"someurl\.com")));
                     for (int i = watermarks.Count - 1; i >= 0; i--)
