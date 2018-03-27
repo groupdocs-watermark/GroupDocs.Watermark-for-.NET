@@ -65,6 +65,15 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             //Search for watermark specifying which objects should be included in the search for particular document instance
             //WatermarkOperations.SearchWatermarkInParticularObjectsForParticularDocument();
+
+            // Edit text in found watermarks
+            //WatermarkOperations.EditTextInFoundWatermarks();
+
+            // Edit text with formatting in found watermarks
+            //WatermarkOperations.EditTextWithFormattingInFoundWatermarks();
+
+            // Replace image in the found watermarks
+            //WatermarkOperations.ReplacesImageInFoundWatermarks();
             #endregion
 
             #region Working with PDF Documents
@@ -121,6 +130,35 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             // Add watermark with page margin type
             //Documents.PDF.AddWatermarkWithPageMrginType();
+
+            // Replaces text for particular XObject
+            //Documents.PDF.ReplaceTextForParticularXObject();
+
+            // Replaces text for particular artifact 
+            //Documents.PDF.ReplaceTextForParticularArtifact();
+
+            // Replaces text for particular annotation 
+            //Documents.PDF.ReplaceTextForParticularAnnotation();
+
+            // Replaces text for particular XObject with formatting 
+            //Documents.PDF.ReplaceTextForParticularXObjectWithFormatting();
+
+            // Replaces text for particular artifact with formatting 
+            //Documents.PDF.ReplaceTextForParticularArtifactWithFormatting();
+
+            // Replaces text for particular annotation with formatting 
+            //Documents.PDF.ReplaceTextForParticularAnnotationWithFormatting();
+
+            // Replaces image for particular XObject
+            //Documents.PDF.ReplaceImageForParticularXObject();
+
+            // Replaces image for particular artifact
+            //Documents.PDF.ReplaceImageForParticularArtifact();
+
+            // Replaces image for particular annotation
+            //Documents.PDF.ReplaceImageForParticularAnnotation();
+
+
             #endregion
 
             #region Working with attachments in a PDF document
