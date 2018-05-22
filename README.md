@@ -20,7 +20,7 @@ Directory | Description
 + **Website:** [www.groupdocs.com](http://www.groupdocs.com)
 + **Product Home:** [GroupDocs.Watermark for .NET](https://products.groupdocs.com/watermark/net)
 + **Installation:** [GroupDocs.Watermark for .NET NuGet Package](https://www.nuget.org/packages/GroupDocs.Watermark/)
-+ **API References:** [API of GroupDocs.Watermark for .NET](https://apireference.groupdocs.com/net/watermark)
++ **API References:** [GroupDocs.Watermark for .NET API Reference Guide](https://apireference.groupdocs.com/net/watermark)
 + **Documentation:** [GroupDocs.Watermark for .NET Documentation](https://docs.groupdocs.com/display/watermarknet/Introducing+GroupDocs.Watermark+for+.NET)
 + **Free Support:** [GroupDocs.Watermark for .NET Free Support Forum](https://forum.groupdocs.com/c/watermark)
 + **Paid Support:** [GroupDocs.Watermark for .NET Paid Support Helpdesk](https://helpdesk.groupdocs.com/)
