@@ -1202,6 +1202,69 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
+            /// <summary>
+            /// Adds locked watermark to a section of Word document
+            /// </summary> 
+            public static void AddLockedWatermarkToSection()
+            {
+                try
+                {
+                    //ExStart:AddLockedWatermarkToSection_18.6
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+                        watermark.ForegroundColor = Color.Red;
+
+                        WordsShapeSettings settings = new WordsShapeSettings();
+                        settings.IsLocked = true;
+                        settings.LockType = WordsLockType.ReadOnlyWithEditableContent;
+
+                        // To protect document with password
+                        //settings.Password = "7654321";
+
+                        doc.Sections[0].AddWatermark(watermark, settings);
+
+                        doc.Save();
+                    }
+                    //ExEnd:AddLockedWatermarkToSection_18.6
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Adds locked watermark to all pages of Word document
+            /// </summary> 
+            public static void AddLockedWatermarkToAllPages()
+            {
+                try
+                {
+                    //ExStart:AddLockedWatermarkToAllPages_18.6
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+                        watermark.ForegroundColor = Color.Red;
+
+                        WordsShapeSettings settings = new WordsShapeSettings();
+                        settings.IsLocked = true;
+                        settings.LockType = WordsLockType.AllowOnlyFormFields;
+
+                        // To protect document with password
+                        //settings.Password = "7654321";
+
+                        doc.AddWatermark(watermark, settings);
+
+                        doc.Save();
+                    }
+                    //ExEnd:AddLockedWatermarkToAllPages_18.6
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
 
             /// <summary>
             /// Adds watermark to a particular page of Word document
@@ -1220,6 +1283,39 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Save();
                     }
                     //ExEnd:AddWatermarkToParticuarPageWord
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Adds locked watermark to particular pages of Word document
+            /// </summary> 
+            public static void AddLockedWatermarkToParticularPages()
+            {
+                try
+                {
+                    //ExStart:AddLockedWatermarkToParticularPages_18.6
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+                        watermark.ForegroundColor = Color.Red;
+
+                        WordsShapeSettings settings = new WordsShapeSettings();
+                        settings.PageNumbers = new int[] { 1, 3 };
+                        settings.IsLocked = true;
+                        settings.LockType = WordsLockType.AllowOnlyComments;
+
+                        // To protect document with password
+                        //settings.Password = "7654321";
+
+                        doc.AddWatermark(watermark, settings);
+
+                        doc.Save();
+                    }
+                    //ExEnd:AddLockedWatermarkToParticularPages_18.6
                 }
                 catch (Exception exp)
                 {
@@ -1837,6 +1933,47 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Save();
                     }
                     //ExEnd:ModifyShapeProperties_18.2
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Protects a Word document
+            /// </summary> 
+            public static void ProtectWordDocument()
+            {
+                try
+                {
+                    //ExStart:ProtectWordDocument_18.6
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        doc.Protect(WordsProtectionType.ReadOnly, "7654321");
+                        doc.Save();
+                    }
+                    //ExEnd:ProtectWordDocument_18.6
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            /// <summary>
+            /// Protects a Word document
+            /// </summary> 
+            public static void UnProtectWordDocument()
+            {
+                try
+                {
+                    //ExStart:UnProtectWordDocument_18.6
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        doc.Unprotect();
+                        doc.Save();
+                    }
+                    //ExEnd:UnProtectWordDocument_18.6
                 }
                 catch (Exception exp)
                 {

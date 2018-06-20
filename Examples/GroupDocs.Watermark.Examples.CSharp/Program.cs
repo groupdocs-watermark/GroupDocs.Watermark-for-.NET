@@ -16,7 +16,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
              *  Applying product license
              *  Please uncomment the statement if you do have license.
              */
-            //Utilities.ApplyLicense();
+            Utilities.ApplyLicense();
             //ExEnd:ApplyingLicense
 
 
@@ -233,6 +233,22 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             // Modify shape properties
             //Documents.Word.ModifyShapeProperties();
+
+            // Protect Word document
+            //Documents.Word.ProtectWordDocument();
+
+            // UnProtect Word document
+            //Documents.Word.UnProtectWordDocument();
+
+            // Add locked watermark to a section of Word document
+            //Documents.Word.AddLockedWatermarkToSection();
+
+            // Add locked watermark to all pages of Word document
+            //Documents.Word.AddLockedWatermarkToAllPages();
+
+            // Add locked watermark to particular pages of Word document
+            //Documents.Word.AddLockedWatermarkToParticularPages();
+
             #endregion
 
             #region Working with Excel Documents
