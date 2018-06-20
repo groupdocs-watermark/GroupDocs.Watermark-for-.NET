@@ -13,7 +13,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
     {
         //ExStart:CommonProperties
         private const string SourceFolderPath = "../../../Data/";
-        public const string licensePath = "E:/GroupDocs/Licenses/GroupDocs.Total.lic";
+        public const string LICENSE_FILE_PATH = "D:/GroupDocs.Total.NET.lic";
         //ExEnd:CommonProperties
 
         //ExStart:MapSourceFilePath
@@ -44,7 +44,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             try
             {
                 //ExStart:ApplyLicence
-                using (FileStream fileStream = new FileStream(licensePath, FileMode.Open, FileAccess.Read))
+                using (FileStream fileStream = new FileStream(LICENSE_FILE_PATH, FileMode.Open, FileAccess.Read))
                 {
                     License lic = new License();
                     lic.SetLicense(fileStream);
@@ -197,7 +197,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             }
             catch(Exception exp)
             {
-
+                Console.Write(exp.Message);
             }
 
         }
