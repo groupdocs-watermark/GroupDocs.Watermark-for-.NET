@@ -16,7 +16,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
              *  Applying product license
              *  Please uncomment the statement if you do have license.
              */
-            Utilities.ApplyLicense();
+            //Utilities.ApplyLicense();
             //ExEnd:ApplyingLicense
 
 
@@ -74,6 +74,10 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             // Replace image in the found watermarks
             //WatermarkOperations.ReplacesImageInFoundWatermarks();
+
+            // Search text watermark skipping unreadable characters
+            //WatermarkOperations.SearchTextWatermarkSkippingUnreadableCharacters();
+
             #endregion
 
             #region Working with PDF Documents
@@ -314,6 +318,9 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             // Remove worksheet background
             //Documents.Excel.RemoveWorksheetBackground();
+
+            // Remove SmartArt and CustomXml shape types in an Excel worksheet 
+            //Documents.Excel.RemoveSmartArtAndCustomXmlShapes();
             #endregion
 
             #region Working with attachments in Excel document
@@ -399,6 +406,9 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             // Modify shape properties
             //Documents.PowerPoint.ModifyShapeProperties();
+
+            // Protect watermark using unreadable characters
+            //Documents.PowerPoint.ProtectWatermarkUsingUnreadableCharacters();
             #endregion
 
             #region Working with Visio Documents

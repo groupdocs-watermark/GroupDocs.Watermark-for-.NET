@@ -744,7 +744,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
-            
+
             /// <summary>
             /// Extracts all attachments from a PDF document
             /// </summary>
@@ -772,7 +772,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
-            
+
             /// <summary>
             /// Adds an attachment to a PDF document
             /// </summary>
@@ -799,7 +799,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
-            
+
             /// <summary>
             /// Removes particular attachments from a PDF document
             /// </summary>
@@ -829,7 +829,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
-            
+
             /// <summary>
             /// Adds watermark to all attached files of supported types
             /// </summary>
@@ -867,7 +867,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     Console.Write(exp.Message);
                 }
             }
-           
+
             /// <summary>
             /// Searches for images in the attached files 
             /// </summary>
@@ -3101,6 +3101,41 @@ namespace GroupDocs.Watermark.Examples.CSharp
                 }
                 //ExEnd:UpdateShapeProperties_17.12
             }
+
+            /// <summary>
+            /// Removes SmartArt and CustomXml shape types in an Excel worksheet 
+            /// </summary> 
+            public static void RemoveSmartArtAndCustomXmlShapes()
+            {
+                try
+                {
+                    //ExStart:RemoveSmartArtAndCustomXmlShapes_18.8
+                    using (CellsDocument doc = Document.Load<CellsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        // Get shapes
+                        var shapes = doc.Worksheets[0].Shapes;
+                        for (int i = shapes.Count - 1; i >= 0; i--)
+                        {
+                            CellsShape shape = shapes[i];
+                            
+                            // check if shape is SmartArt or CustomXml
+                            if (shape.MsoDrawingType == CellsMsoDrawingType.SmartArt ||
+                                shape.MsoDrawingType == CellsMsoDrawingType.CustomXml)
+                            {
+                                shapes.RemoveAt(i);
+                            }
+                        }
+
+                        // Save document
+                        doc.Save();
+                    }
+                    //ExEnd:RemoveSmartArtAndCustomXmlShapes_18.8
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
         }
         public static class PowerPoint
         {
@@ -3915,6 +3950,36 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Save();
                     }
                     //ExEnd:ModifyShapePropertiesPowerPoint_18.1
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+
+            /// <summary>
+            /// Protects watermark using unreadable characters
+            /// </summary> 
+            public static void ProtectWatermarkUsingUnreadableCharacters()
+            {
+                try
+                {
+                    //ExStart:ProtectWatermarkUsingUnreadableCharacters_18.8
+                    using (SlidesDocument doc = Document.Load<SlidesDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+
+                        SlidesShapeSettings settings = new SlidesShapeSettings();
+                        settings.IsLocked = true;
+                        settings.ProtectWithUnreadableCharacters = true;
+
+                        // Add watermark
+                        doc.AddWatermark(watermark, settings);
+
+                        // Save document
+                        doc.Save();
+                    }
+                    //ExEnd:ProtectWatermarkUsingUnreadableCharacters_18.8
                 }
                 catch (Exception exp)
                 {
