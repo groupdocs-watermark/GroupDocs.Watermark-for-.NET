@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Watermark, Version=18.6.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\GroupDocs.Watermark.18.6.0\lib\net\GroupDocs.Watermark.dll</HintPath>
+    <Reference Include="GroupDocs.Watermark, Version=18.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Watermark.18.8.0\lib\net\GroupDocs.Watermark.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

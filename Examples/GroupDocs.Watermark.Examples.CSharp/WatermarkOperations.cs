@@ -418,6 +418,34 @@ namespace GroupDocs.Watermark.Examples.CSharp
         }
 
         /// <summary>
+        /// Searches for text watermark skipping unreadable characters 
+        /// </summary> 
+        public static void SearchTextWatermarkSkippingUnreadableCharacters()
+        {
+            try
+            {
+                //ExStart:SearchTextWatermarkSkippingUnreadableCharacters_18.8
+                using (Document doc = Document.Load(Utilities.MapSourceFilePath(PPT_FILE_PATH)))
+                {
+                    string watermarkText = "Company name";
+                    TextSearchCriteria criterion = new TextSearchCriteria(watermarkText);
+
+                    // Enabling skipping of unreadable characters
+                    criterion.SkipUnreadableCharacters = true;
+
+                    PossibleWatermarkCollection result = doc.FindWatermarks(criterion);
+
+                    // ...
+                }
+                //ExEnd:SearchTextWatermarkSkippingUnreadableCharacters_18.8
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
+        }
+
+        /// <summary>
         /// Searches for watermark with a regular expression
         /// <param name="RegularExpression">Regular Expression</param>
         /// </summary> 
