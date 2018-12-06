@@ -1,6 +1,6 @@
 # GroupDocs.Watermark for .NET
 
-This package contains [Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Examples) for [GroupDocs.Watermark for .NET](https://products.groupdocs.com/watermark/net) that will help you in understanding the API's working and writing your own applications.
+This package contains [Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Examples) and [Plugins](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Plugins) for [GroupDocs.Watermark for .NET](https://products.groupdocs.com/watermark/net) that will help you in understanding the API's working and writing your own applications.
 
 GroupDocs.Watermark is a library for adding text and image watermarks to documents of different formats. It also provides an easy way to search and remove previously added watermarks (including watermarks added by third-party tools). Supported file formats include MS Word documents, MS PowerPoint documents, MS Excel documents, PDF documenst, BMP, PNG, GIF, TIFF, JPEG, and many more.
 
