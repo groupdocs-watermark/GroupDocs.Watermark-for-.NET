@@ -41,7 +41,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         doc.Pages[0].AddWatermark(textWatermark);
 
                         // Add image watermark
-                        using (ImageWatermark imageWatermark = new ImageWatermark(@"D:\protect.jpg"))
+                        using (ImageWatermark imageWatermark = new ImageWatermark(@"D:\Reader.png"))
                         {
                             doc.Pages[1].AddWatermark(imageWatermark);
                         }
@@ -1492,11 +1492,11 @@ namespace GroupDocs.Watermark.Examples.CSharp
                 try
                 {
                     //ExStart:AddWatermarkWithWordsShapeSettings
-                    using (WordsDocument doc = Document.Load<WordsDocument>(@"D:\test.docx"))
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
                     {
                         TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
                         WordsShapeSettings shapeSettings = new WordsShapeSettings();
-
+                        
                         // Set the shape name
                         shapeSettings.Name = "Shape 1";
 
@@ -1585,12 +1585,13 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
                     {
                         // Initialize search criteria
-                        ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(@"D:\logo.png");
-                        TextSearchCriteria textSearchCriteria = new TextSearchCriteria("Company Name");
+                        //ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(@"D:\logo.png");
+                        //TextSearchCriteria textSearchCriteria = new TextSearchCriteria("Company Name");
 
                         // Call FindWatermarks method for the section
-                        PossibleWatermarkCollection possibleWatermarks = doc.Sections[0].FindWatermarks(textSearchCriteria.Or(imageSearchCriteria));
+                        //PossibleWatermarkCollection possibleWatermarks = doc.Sections[0].FindWatermarks(textSearchCriteria.Or(imageSearchCriteria));
 
+                        PossibleWatermarkCollection possibleWatermarks = doc.Sections[0].FindWatermarks();
                         // Remove all found watermarks
                         for (var i = possibleWatermarks.Count - 1; i >= 0; i--)
                         {
