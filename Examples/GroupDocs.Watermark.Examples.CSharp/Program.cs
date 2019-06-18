@@ -214,6 +214,9 @@ namespace GroupDocs.Watermark.Examples.CSharp
             // Get information of shapes inside a document
             //Documents.Word.GetShapesInformation();
 
+            //Usage of ShapeType Enum
+            //Documents.Word.ShapeTypeUsage();
+
             // Link header footer in section
             //Documents.Word.LinkHeaderFooterInSection();
 

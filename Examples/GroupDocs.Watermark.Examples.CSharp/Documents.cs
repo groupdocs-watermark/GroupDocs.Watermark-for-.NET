@@ -1650,7 +1650,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                 try
                 {
                     //ExStart:GetShapesInformationWord
-                    using (WordsDocument doc = Document.Load<WordsDocument>(@"D:\test.docx"))
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
                     {
                         foreach (WordsSection section in doc.Sections)
                         {
@@ -1660,7 +1660,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
                                 {
                                     Console.WriteLine("In header/footer");
                                 }
-
+                                
                                 Console.WriteLine(shape.ShapeType);
                                 Console.WriteLine(shape.Width);
                                 Console.WriteLine(shape.Height);
@@ -1686,6 +1686,39 @@ namespace GroupDocs.Watermark.Examples.CSharp
                         }
                     }
                     //ExEnd:GetShapesInformationWord
+                }
+                catch (Exception exp)
+                {
+                    Console.Write(exp.Message);
+                }
+            }
+            //Usage of ShapeType Enum
+            public static void ShapeTypeUsage()
+            {
+                try
+                {
+                    //ExStart:ShapeTypeUsage
+                    using (WordsDocument doc = Document.Load<WordsDocument>(Utilities.MapSourceFilePath(FILE_PATH)))
+                    {
+                        foreach (WordsSection section in doc.Sections)
+                        {
+                            foreach (WordsShape shape in section.Shapes)
+                            {
+                                //Check for Diagonal Corners Rounded shapes
+                                if (shape.ShapeType== WordsShapeType.DiagonalCornersRounded)
+                                {
+                                    Console.WriteLine("Diagonal Corners Rounded shape found");
+                                    
+                                    //Write text on all Diagonal Corners Rounded shapes
+                                    shape.FormattedTextFragments.Add("I am Diagonal Corner Rounded", new Font("Calibri", 8, FontStyle.Bold), Color.Red, Color.Aqua);
+
+                                }
+                                                
+                            }
+                        }
+                        doc.Save();
+                    }
+                    //ExEnd:ShapeTypeUsage
                 }
                 catch (Exception exp)
                 {
