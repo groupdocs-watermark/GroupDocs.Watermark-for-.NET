@@ -1496,10 +1496,16 @@ namespace GroupDocs.Watermark.Examples.CSharp
                     {
                         TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
                         WordsShapeSettings shapeSettings = new WordsShapeSettings();
-                        
+
+                        watermark.VerticalAlignment = VerticalAlignment.Center;
+                        watermark.HorizontalAlignment = HorizontalAlignment.Center;
+                        watermark.RotateAngle = 25.0;
+                        watermark.ForegroundColor = Color.Red;
+                        watermark.Opacity = 1.0;
                         // Set the shape name
                         shapeSettings.Name = "Shape 1";
 
+                        
                         // Set the descriptive (alternative) text that will be associated with the shape
                         shapeSettings.AlternativeText = "Test watermark";
 

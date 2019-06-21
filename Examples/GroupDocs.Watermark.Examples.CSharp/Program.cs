@@ -203,7 +203,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //Documents.Word.AddWatermarkWithTextEffects();
 
             // Add watermark with words shape settings
-            //Documents.Word.AddWatermarkWithWordsShapeSettings();
+            Documents.Word.AddWatermarkWithWordsShapeSettings();
 
             // Add watermark in header/footer
             //Documents.Word.FindWatermarkInHeaderFooter();
