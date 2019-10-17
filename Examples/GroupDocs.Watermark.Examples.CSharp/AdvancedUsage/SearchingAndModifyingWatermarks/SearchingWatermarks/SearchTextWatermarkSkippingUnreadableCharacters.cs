@@ -1,0 +1,35 @@
+// <copyright company="Aspose Pty Ltd">
+//   Copyright (C) 2011-2019 GroupDocs. All Rights Reserved.
+// </copyright>
+
+namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.SearchingWatermarks
+{
+    using System;
+    using Search;
+    using Search.SearchCriteria;
+
+    /// <summary>
+    /// This example shows how to skip unreadable characters when searching for the watermark.
+    /// </summary>
+    public static class SearchTextWatermarkSkippingUnreadableCharacters
+    {
+        public static void Run()
+        {
+            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
+            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+            {
+                string watermarkText = "Company name";
+                TextSearchCriteria criterion = new TextSearchCriteria(watermarkText);
+
+                // Enable skipping of unreadable characters
+                criterion.SkipUnreadableCharacters = true;
+
+                PossibleWatermarkCollection result = watermarker.Search(criterion);
+
+                // ...
+
+                Console.WriteLine("Found {0} possible watermark(s).", result.Count);
+            }
+        }
+    }
+}

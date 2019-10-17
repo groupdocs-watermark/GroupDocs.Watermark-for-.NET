@@ -1,0 +1,45 @@
+// <copyright company="Aspose Pty Ltd">
+//   Copyright (C) 2011-2019 GroupDocs. All Rights Reserved.
+// </copyright>
+
+namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams
+{
+    using Contents.Diagram;
+    using Options.Diagram;
+    using Watermarks;
+
+    /// <summary>
+    /// this example shows how to add watermark to a particular type of the pages.
+    /// </summary>
+    public static class DiagramAddWatermarkToAllPagesOfParticularType
+    {
+        public static void Run()
+        {
+            DiagramLoadOptions loadOptions = new DiagramLoadOptions();
+            // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: @"C:\Docs\diagram.vsdx"
+            using (Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions))
+            {
+                // Initialize text watermark
+                TextWatermark textWatermark = new TextWatermark("Test watermark 1", new Font("Calibri", 19));
+
+                DiagramShapeWatermarkOptions textWatermarkOptions = new DiagramShapeWatermarkOptions();
+                textWatermarkOptions.PlacementType = DiagramWatermarkPlacementType.BackgroundPages;
+
+                // Add text watermark to all background pages
+                watermarker.Add(textWatermark, textWatermarkOptions);
+
+                // Initialize image watermark
+                using (ImageWatermark imageWatermark = new ImageWatermark(Constants.LogoJpg))
+                {
+                    DiagramShapeWatermarkOptions imageWatermarkOptions = new DiagramShapeWatermarkOptions();
+                    imageWatermarkOptions.PlacementType = DiagramWatermarkPlacementType.ForegroundPages;
+
+                    // Add image watermark to all foreground pages
+                    watermarker.Add(imageWatermark, imageWatermarkOptions);
+                }
+
+                watermarker.Save(Constants.OutDiagramVsdx);
+            }
+        }
+    }
+}

@@ -1,2 +1,0 @@
-E:\out\Installer GroupDocs.Watermark for .NET API Examples.msi
-E:\out\Installer GroupDocs.Watermark for .NET API Examples.wixpdb

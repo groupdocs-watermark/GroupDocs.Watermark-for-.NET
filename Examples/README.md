@@ -3,7 +3,7 @@
 This package contains C# Example Project for [GroupDocs.Watermark for .NET](https://products.groupdocs.com/watermark/net) and sample input files used in the examples.
 
 <p align="center">
-  <a title="Download complete GroupDocs.Watermark for .NET Example source code" href="https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/archive/master.zip">
+  <a title="Download complete GroupDocs.Watermark for .NET Example source code" href="https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/archive/api-v2.zip">
 	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
   </a>
 </p>
