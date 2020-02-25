@@ -1,5 +1,5 @@
 // <copyright company="Aspose Pty Ltd">
-//   Copyright (C) 2011-2019 GroupDocs. All Rights Reserved.
+//   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
@@ -27,7 +27,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     {
                         foreach (FormattedTextFragment fragment in section.Shapes[i].FormattedTextFragments)
                         {
-                            if (fragment.ForegroundColor == Color.Red && fragment.Font.FamilyName == "Arial")
+                            if (fragment.ForegroundColor.Equals(Color.Red) && fragment.Font.FamilyName == "Arial")
                             {
                                 section.Shapes.RemoveAt(i);
                                 break;

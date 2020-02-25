@@ -1,5 +1,5 @@
 ﻿// <copyright company="Aspose Pty Ltd">
-//   Copyright (C) 2011-2019 GroupDocs. All Rights Reserved.
+//   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
 namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
@@ -29,7 +29,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
                 Console.WriteLine("\nWe do not ship any license with this example. " +
                                   "\nVisit the GroupDocs site to obtain either a temporary or permanent license. " +
                                   "\nLearn more about licensing at https://purchase.groupdocs.com/faqs/licensing. " +
-                                  "\nLear how to request temporary license at https://purchase.groupdocs.com/temporary-license.");
+                                  "\nLearn how to request temporary license at https://purchase.groupdocs.com/temporary-license.");
             }
         }
     }

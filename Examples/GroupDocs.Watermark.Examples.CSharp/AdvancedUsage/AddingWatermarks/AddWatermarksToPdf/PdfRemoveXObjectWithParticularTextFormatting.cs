@@ -1,5 +1,5 @@
 // <copyright company="Aspose Pty Ltd">
-//   Copyright (C) 2011-2019 GroupDocs. All Rights Reserved.
+//   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
@@ -27,7 +27,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     {
                         foreach (FormattedTextFragment fragment in page.XObjects[i].FormattedTextFragments)
                         {
-                            if (fragment.ForegroundColor == Color.Red)
+                            if (fragment.ForegroundColor.Equals(Color.Red))
                             {
                                 page.XObjects.RemoveAt(i);
                                 break;
