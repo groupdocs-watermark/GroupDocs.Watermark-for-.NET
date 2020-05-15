@@ -7,7 +7,7 @@
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>GroupDocs.Watermark.Examples.CSharp</Import_RootNamespace>
-  </PropertyGroup>  
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToEmailAttachments\EmailAddAttachment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToEmailAttachments\EmailAddEmbeddedImage.cs" />
@@ -180,6 +180,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SearchingAndModifyingWatermarks\SearchingWatermarks\SearchWatermarkWithSearchString.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\AddAnImageWatermark.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\AddATextWatermark.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\GenerateDocumentPreview.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\GetDocumentInfoForTheFileFromStream.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\GetDocumentInfoForTheFileFromLocalDisk.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\GetSupportedFileFormats.cs" />

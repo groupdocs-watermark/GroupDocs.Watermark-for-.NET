@@ -50,6 +50,8 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //AddATextWatermark.Run();
             //AddAnImageWatermark.Run();
 
+            //GenerateDocumentPreview.Run();
+
             #endregion
 
             #region Advanced Usage
