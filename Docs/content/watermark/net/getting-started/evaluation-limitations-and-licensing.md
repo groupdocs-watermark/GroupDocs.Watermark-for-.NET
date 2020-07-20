@@ -51,15 +51,13 @@ using (FileStream fileStream = new FileStream("GroupDocs.Watermark.lic", FileMod
     lic.SetLicense(fileStream);
 }
 ```
-
-{{< alert style="info" >}}Calling License.SetLicense multiple times is not harmful but simply wastes processor time. If you are developing a Windows Forms or console application, call License.SetLicense in your startup code, before using GroupDocs.Watermark classes. When developing an ASP.NET application, you can call License.SetLicense from the Global.asax.cs (Global.asax.vb) file in the Application_Start protected method. It is called once when the application starts. Do not call License.SetLicense from within Page_Load methods since it means the license will be loaded every time a web page is loaded.{{< /alert >}}
-
+{{< alert style="info" >}}
+Calling [License.SetLicense](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.license/setlicense/methods/1) multiple times is not harmful but simply wastes processor time. If you are developing a Windows Forms or console application, call License.SetLicense in your startup code, before using GroupDocs.Watermark classes.   
+When developing an ASP.NET application, you can call License.SetLicense from the Global.asax.cs (Global.asax.vb) file in the Application\_Start protected method. It is called once when the application starts. Do not call License.SetLicense from within Page\_Load methods since it means the license will be loaded every time a web page is loaded.
+{{< /alert >}}
 ### Setting metered license
-
 You can also set [Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered) license as an alternative to license file. It is a new licensing mechanism that will be used along with existing licensing method. It is useful for the customers who want to be billed based on the usage of the API features. For more details, please refer to [Metered Licensing FAQ](https://purchase.groupdocs.com/faqs/licensing/metered) section.
-
 Here are the simple steps to use the `[Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered)` class.
-
 1.  Create an instance of `[Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered)` class.
 2.  Pass public & private keys to [S`etMeteredKey`](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered/methods/setmeteredkey) method.
 3.  Do processing (perform task).
