@@ -10,7 +10,7 @@ hideChildren: False
 ---
 ## Overview
 
-GroupDocs.Watermark for .NET does not require any external software or third party tool to be installed. Just follow one of the way as described on the [System Requirements]({{< ref "watermark/net/getting-started/system-requirements.md" >}}) page.
+GroupDocs.Watermark for .NET does not require any external software or third party tool to be installed. Just follow one of the way as described on the [Installation]({{< ref "watermark/net/getting-started/installation.md" >}}) page.
 
 ## Supported operating systems
 

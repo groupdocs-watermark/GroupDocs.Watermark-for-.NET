@@ -66,7 +66,7 @@ using (Stream watermarkStream = File.OpenRead(Constants.WatermarkJpg))
 
 For the advanced use of image watermark properties please check the following article about text watermarks, however same techniques will work for image watermark as well:
 
-*   [Adding image watermarks]({{< ref "watermark/net/developer-guide/advanced-usage/adding-watermarks/adding-image-watermarks.md" >}})
+*   [Adding Text Watermarks]({{< ref "watermark/net/developer-guide/advanced-usage/adding-watermarks/adding-text-watermarks.md" >}})
 
 ## More resources
 

@@ -57,13 +57,13 @@ When developing an ASP.NET application, you can call License.SetLicense from the
 {{< /alert >}}
 ### Setting metered license
 You can also set [Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered) license as an alternative to license file. It is a new licensing mechanism that will be used along with existing licensing method. It is useful for the customers who want to be billed based on the usage of the API features. For more details, please refer to [Metered Licensing FAQ](https://purchase.groupdocs.com/faqs/licensing/metered) section.
-Here are the simple steps to use the `[Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered)` class.
-1.  Create an instance of `[Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered)` class.
-2.  Pass public & private keys to [S`etMeteredKey`](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered/methods/setmeteredkey) method.
+Here are the simple steps to use the [Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered) class.
+1.  Create an instance of [Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered) class.
+2.  Pass public & private keys to [SetMeteredKey](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered/methods/setmeteredkey) method.
 3.  Do processing (perform task).
-4.  Call method [G`etConsumptionQuantity`](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered/methods/getconsumptionquantity) of the [`Metered`](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered) class.
+4.  Call method [GetConsumptionQuantity](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered/methods/getconsumptionquantity) of the [Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered) class.
 5.  It will return the amount/quantity of API requests that you have consumed so far.
-6.  Call method [G`etConsumptionCredit`](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered/methods/getconsumptioncredit) of the [`Metered`](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered) class.
+6.  Call method [GetConsumptionCredit](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered/methods/getconsumptioncredit) of the [Metered](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/metered) class.
 7.  It will return the credit that you have consumed so far.
 
   

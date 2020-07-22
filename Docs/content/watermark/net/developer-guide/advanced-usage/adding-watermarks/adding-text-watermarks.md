@@ -222,7 +222,7 @@ Now, the watermark is aligned with respect to page margins.
 
 ## Watermark in documents of different types
 
-Watermarks in documents of different types are represented by different objects. Some of these objects do not support some watermark properties. For example, the background color can not be set for WordArt object which is used as text watermark in a Word document. The full list of supported properties for all document types is available at [Adding text watermarks]({{< ref "watermark/net/developer-guide/advanced-usage/adding-watermarks/adding-text-watermarks.md" >}}).
+Watermarks in documents of different types are represented by different objects. Some of these objects do not support some watermark properties. For example, the background color can not be set for WordArt object which is used as text watermark in a Word document. The full list of supported properties for all document types is available at [Features Overview]({{< ref "watermark/net/getting-started/features-overview.md" >}}).
 
 ## More resources
 

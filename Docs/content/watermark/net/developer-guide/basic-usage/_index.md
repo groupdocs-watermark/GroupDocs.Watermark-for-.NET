@@ -52,7 +52,7 @@ Let’s review common usage scenarios when documents and watermarks are stored 
 
 ### Advanced usage topics
 
-To learn more about document watermarking features and get familiar how to manage watermarks and more, please refer to the [advanced usage section]({{< ref "watermark/net/developer-guide/basic-usage/_index.md" >}}).
+To learn more about document watermarking features and get familiar how to manage watermarks and more, please refer to the [advanced usage section]({{< ref "watermark/net/developer-guide/advanced-usage/_index.md" >}}).
 
 ### GitHub examples
 

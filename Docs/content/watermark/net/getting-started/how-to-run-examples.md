@@ -19,8 +19,8 @@ Please choose one from the following list:
 
 *   Open Visual Studio and go to **File** -> **New **\->** Project**.
 *   Select appropriate project type - Console App, ASP.NET Web Application etc.
-*   Install **GroupDocs.Watermark for .NET **from Nuget or official GroupDocs website following this [guide]({{< ref "watermark/net/getting-started/how-to-run-examples.md" >}}).
-*   Code your first application with **GroupDocs.Watermark for .NET **like this
+*   Install **GroupDocs.Watermark for .NET** from Nuget or official GroupDocs website following this [guide]({{< ref "watermark/net/getting-started/installation.md" >}}).
+*   Code your first application with **GroupDocs.Watermark for .NET** like this
     
     ```csharp
     string documentPath = "doc.pdf"; // NOTE: Put here actual path for your document
@@ -47,7 +47,7 @@ In case you download the ZIP file, extract the folders on your local disk. The e
 ![](watermark/net/images/how-to-run-examples.jpg)
 
 In extracted files and folders, you can find CSharp solution file. The project is created in **Microsoft Visual Studio 2019**. The **Resources **folder contains all the sample document and image files used in the examples.  
-To run the examples, open the solution file in Visual Studio and build the project. To add missing references of **GroupDocs.Watermark** see [Installation](https://wiki.lisbon.dynabic.com/display/watermark/Installation). All the functions are called from **RunExamples.cs**.   
+To run the examples, open the solution file in Visual Studio and build the project. To add missing references of **GroupDocs.Watermark** see [Installation]({{< ref "watermark/net/getting-started/installation.md" >}}). All the functions are called from **RunExamples.cs**.   
 Un-comment the function you want to run and comment the rest.
 
 ![](watermark/net/images/how-to-run-examples_1.png)
