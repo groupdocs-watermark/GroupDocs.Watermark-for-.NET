@@ -5,6 +5,7 @@
 namespace GroupDocs.Watermark.Examples.CSharp
 {
     using System;
+    using AdvancedUsage;
     using AdvancedUsage.AddingWatermarks.AddingImageWatermarks;
     using AdvancedUsage.AddingWatermarks.AddingTextWatermarks;
     using AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams;
@@ -55,6 +56,8 @@ namespace GroupDocs.Watermark.Examples.CSharp
             #endregion
 
             #region Advanced Usage
+
+            //Logging.Run();
 
             #region Loading Documents
 

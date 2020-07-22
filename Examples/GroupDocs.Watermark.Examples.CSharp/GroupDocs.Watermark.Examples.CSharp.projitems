@@ -160,6 +160,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToEmailAttachments\EmailSearchTextInBody.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToEmailAttachments\EmailUpdateBody.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\LoadingDocuments\LoadPasswordProtectedWordProcessingDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\Logging.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SavingDocuments\SaveDocumentToTheSameFileOrStream.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SavingDocuments\SaveDocumentToTheSpecifiedLocation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SavingDocuments\SaveDocumentToTheSpecifiedStream.cs" />
