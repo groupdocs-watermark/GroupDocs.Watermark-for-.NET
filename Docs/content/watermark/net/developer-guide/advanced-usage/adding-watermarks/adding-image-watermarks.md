@@ -6,14 +6,14 @@ weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 GroupDocs.Watermar API supports adding the following image file types as image watermark:
 
-*   Bmp;
-*   Png;
-*   Gif;
-*   Jpeg.
+* Bmp;
+* Png;
+* Gif;
+* Jpeg.
 
 ## Add image watermark from local file
 
@@ -61,12 +61,12 @@ using (Stream watermarkStream = File.OpenRead(Constants.WatermarkJpg))
 ```
 
 {{< alert style="warning" >}}
-[ImageWatermark](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.watermarks/imagewatermark) class implements [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable)interface. Therefore, it is necessary to call [Dispose](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable.dispose) method when you are done working with the watermark. Alternatively, you can use [using](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement) statement.
+[ImageWatermark](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.watermarks/imagewatermark) class implements [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) interface. Therefore, it is necessary to call [Dispose](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable.dispose) method when you are done working with the watermark. Alternatively, you can use [using](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement) statement.
 {{< /alert >}}
 
 For the advanced use of image watermark properties please check the following article about text watermarks, however same techniques will work for image watermark as well:
 
-*   [Adding Text Watermarks]({{< ref "watermark/net/developer-guide/advanced-usage/adding-watermarks/adding-text-watermarks.md" >}})
+* [Adding Text Watermarks]({{< ref "watermark/net/developer-guide/advanced-usage/adding-watermarks/adding-text-watermarks.md" >}})
 
 ## More resources
 
@@ -74,10 +74,8 @@ For the advanced use of image watermark properties please check the following ar
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

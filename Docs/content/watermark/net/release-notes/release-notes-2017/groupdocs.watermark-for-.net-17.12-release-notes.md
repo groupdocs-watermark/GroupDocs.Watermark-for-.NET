@@ -6,7 +6,7 @@ weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 17.12.{{< /alert >}}
 
@@ -14,8 +14,8 @@ hideChildren: False
 
 There are following features in this first release:
 
-*   Support for EMLX and OFT email formats
-*   Ability to edit Excel document objects that can be considered as watermark
+* Support for EMLX and OFT email formats
+* Ability to edit Excel document objects that can be considered as watermark
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -45,7 +45,7 @@ Load an email message.
 ```csharp
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.emlx"))
 {
-	// ...
+    // ...
 }
 ```
 
@@ -79,14 +79,14 @@ Replace text for particular shapes.
 ```csharp
 using (CellsDocument doc = Document.Load<CellsDocument>(@"D:\input.xls"))
 {
-	foreach (CellsShape shape in doc.Worksheets[0].Shapes)
-	{
-		if (shape.Text == "© Aspose 2016")
-		{
-			shape.Text = "© GroupDocs 2017";
-		}
-	}
-	doc.Save(@"D:\output.xls");
+    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+    {
+        if (shape.Text == "© Aspose 2016")
+        {
+            shape.Text = "© GroupDocs 2017";
+        }
+    }
+    doc.Save(@"D:\output.xls");
 }
 ```
 
@@ -95,15 +95,15 @@ Replace text with formatting
 ```csharp
  using (CellsDocument doc = Document.Load<CellsDocument>(@"D:\input.xlsx"))
 {
-	foreach (CellsShape shape in doc.Worksheets[0].Shapes)
-	{
-		if (shape.Text == "© Aspose 2016")
-		{
-			shape.FormattedTextFragments.Clear();
-			shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
-		}
-	}
-	doc.Save(@"D:\output.xlsx");
+    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+    {
+        if (shape.Text == "© Aspose 2016")
+        {
+            shape.FormattedTextFragments.Clear();
+            shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+        }
+    }
+    doc.Save(@"D:\output.xlsx");
 }
 ```
 
@@ -112,14 +112,14 @@ Replace shape image
 ```csharp
  using (CellsDocument doc = Document.Load<CellsDocument>(@"D:\input.xls"))
 {
-	foreach (CellsShape shape in doc.Worksheets[0].Shapes)
-	{
-		if (shape.Image != null)
-		{
-			shape.Image = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
-		}
-	}
-	doc.Save(@"D:\output.xls");
+    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+    {
+        if (shape.Image != null)
+        {
+            shape.Image = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+        }
+    }
+    doc.Save(@"D:\output.xls");
 }
 ```
 
@@ -128,16 +128,16 @@ Set background image for particular shapes
 ```csharp
 using (CellsDocument doc = Document.Load<CellsDocument>(@"D:\input.xlsx"))
 {
-	foreach (CellsShape shape in doc.Worksheets[0].Shapes)
-	{
-		if (shape.Text == "© Aspose 2016")
-		{
-			shape.ImageFillFormat.BackgroundImage = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
-			shape.ImageFillFormat.Transparency = 0.5;
-			shape.ImageFillFormat.TileAsTexture = true;
-		}
-	}
-	doc.Save(@"D:\output.xlsx");
+    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+    {
+        if (shape.Text == "© Aspose 2016")
+        {
+            shape.ImageFillFormat.BackgroundImage = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+            shape.ImageFillFormat.Transparency = 0.5;
+            shape.ImageFillFormat.TileAsTexture = true;
+        }
+    }
+    doc.Save(@"D:\output.xlsx");
 }
 ```
 
@@ -146,18 +146,18 @@ Modify other shape properties
 ```csharp
 using (CellsDocument doc = Document.Load<CellsDocument>(@"D:\input.xls"))
 {
-	foreach (CellsShape shape in doc.Worksheets[0].Shapes)
-	{
-		if (shape.Text == "© Aspose 2016")
-		{
-			shape.AlternativeText = "watermark";
-			shape.RotateAngle = 30;
-			shape.X = 200;
-			shape.Y = 200;
-			shape.Width = 400;
-			shape.Height = 100;
-		}
-	}
-	doc.Save(@"D:\output.xls");
+    foreach (CellsShape shape in doc.Worksheets[0].Shapes)
+    {
+        if (shape.Text == "© Aspose 2016")
+        {
+            shape.AlternativeText = "watermark";
+            shape.RotateAngle = 30;
+            shape.X = 200;
+            shape.Y = 200;
+            shape.Width = 400;
+            shape.Height = 100;
+        }
+    }
+    doc.Save(@"D:\output.xls");
 }
 ```

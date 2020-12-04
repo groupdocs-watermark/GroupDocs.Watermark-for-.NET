@@ -6,15 +6,15 @@ weight: 2
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
-# Major features
+## Major features
 
 There are the following improvements in this release:
 
-*   Allow to edit minor shape properties in Visio documents
+* Allow to edit minor shape properties in Visio documents
 
-# Full List of Issues Covering all Changes in this Release
+## Full List of Issues Covering all Changes in this Release
 
 | Key | Summary | Issue Type |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ There are the following improvements in this release:
 | WATERMARKNET-1268 | Watermarking of Word document uses existing paragraph if available | Improvement |
 | WATERMARKNET-1269 | After removing found watermark in Word document, the empty parent paragraph is removed too | Improvement |
 
-# Public API and Backward Incompatible Changes
+## Public API and Backward Incompatible Changes
 
 ### Allow to edit minor shape properties in Visio documents
 
@@ -31,18 +31,18 @@ There are the following improvements in this release:
 
 This improvement allows to edit the following shape properties in Visio documents:
 
-*   Width
-*   Height
-*   X
-*   Y
-*   RotateAngle
+* Width
+* Height
+* X
+* Y
+* RotateAngle
 
 #### Public API changes
 
 [DiagramShape](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape) class was updated with changes as follows:
 
-*   Added the setter for the property [Width](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/width)
-*   Added the setter for the property [Height](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/height)
-*   Added the setter for the property [X](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/x)
-*   Added the setter for the property [Y](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/y)
-*   Added the setter for the property [RotateAngle](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/rotateangle)
+* Added the setter for the [property Width](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/width)
+* Added the setter for the [property Height](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/height)
+* Added the setter for the [property X](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/x)
+* Added the setter for the [property Y](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/y)
+* Added the setter for the [property RotateAngle](https://apireference.groupdocs.com/watermark/net/groupdocs.watermark.contents.diagram/diagramshape/properties/rotateangle)

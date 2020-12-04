@@ -6,10 +6,8 @@ weight: 4
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
-# Watermarks in word pocessing document
-
 When adding watermark in Microsoft Word application, it places a shape with appropriate content in section headers. GroupDocs.Watermark API uses the same approach. When calling *[Add](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker/methods/add)* method of *[Watermarker](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker)* class, the shape is added to a document.
 
 ## Using properties of [WordProcessingWatermarkBaseOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.wordprocessing/wordprocessingwatermarkbaseoptions)
@@ -109,10 +107,8 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadO
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

@@ -6,7 +6,7 @@ weight: 2
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 18.6.{{< /alert >}}
 
@@ -14,8 +14,8 @@ hideChildren: False
 
 There are the following features in this release:
 
-*   Implement ability to lock watermark in Word documents
-*   Implement ability to make Word document read-only after applying the watermark
+* Implement ability to lock watermark in Word documents
+* Implement ability to make Word document read-only after applying the watermark
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -35,11 +35,11 @@ There are the following features in this release:
 This feature allows the user to lock added watermarks for editing.  
 There are 5 variants of locking Word document when adding watermark:
 
-*   **AllowOnlyRevisions**: user can only add revision marks to the document.
-*   **AllowOnlyComments**: user can only modify comments in the document.
-*   **AllowOnlyFormFields**: the document is split into one-page sections and locked section with watermark is added between each two adjacent document sections.
-*   **ReadOnly**: the entire document is read-only.
-*   **ReadOnlyWithEditableContent**: the document is read-only, but all the content except the watermark is marked as editable.
+* **AllowOnlyRevisions**: user can only add revision marks to the document.
+* **AllowOnlyComments**: user can only modify comments in the document.
+* **AllowOnlyFormFields**: the document is split into one-page sections and locked section with watermark is added between each two adjacent document sections.
+* **ReadOnly**: the entire document is read-only.
+* **ReadOnlyWithEditableContent**: the document is read-only, but all the content except the watermark is marked as editable.
 
 ##### Public API changes
 
@@ -50,11 +50,11 @@ There are 5 variants of locking Word document when adding watermark:
 *WordsLockType* enum has been added to *GroupDocs.Watermark.Office.Words* namespace.  
 *WordsLockType* contains the following values:
 
-*   *AllowOnlyRevisions*
-*   *AllowOnlyComments*
-*   *AllowOnlyFormFields*
-*   *ReadOnly*
-*   *ReadOnlyWithEditableContent*
+* *AllowOnlyRevisions*
+* *AllowOnlyComments*
+* *AllowOnlyFormFields*
+* *ReadOnly*
+* *ReadOnlyWithEditableContent*
 
 ##### Usage
 
@@ -82,7 +82,6 @@ using (WordsDocument doc = Document.Load<WordsDocument>(inputFileName))
 }
 ```
 
-  
 Lock watermark for editing when adding to one section:
 
 **C#**
@@ -107,7 +106,6 @@ using (WordsDocument doc = Document.Load<WordsDocument>(inputFileName))
 }
 ```
 
-  
 Lock watermark for editing when adding to only several pages:
 
 **C#**
@@ -158,7 +156,6 @@ using (WordsDocument doc = Document.Load<WordsDocument>(@"D:\test.doc"))
 }
 ```
 
-  
 Remove protection from Word document regardless of password:
 
 **C#**

@@ -6,27 +6,21 @@ weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
-  
-
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 19.11{{< /alert >}}
 
 ### Major Features
 
 There are the following features, enhancements, and bug fixes in this release:
 
-*   FindWatermarks method throws System.NullReferenceException
-*   Add FormatFamily enumeration
-    
-*   Add Password property to the common LoadOptions
-    
-*   Throw FontNotFoundException when adding TextWatermark with non-existence font to PDF document
-    
-*   Add MultiframeImageWatermarkOptions
-    
+* FindWatermarks method throws System.NullReferenceException
+* Add FormatFamily enumeration
+* Add Password property to the common LoadOptions
+* Throw FontNotFoundException when adding TextWatermark with non-existence font to PDF document
+* Add MultiframeImageWatermarkOptions
 
-## Full List of Issues Covering all Changes in this Release 
+## Full List of Issues Covering all Changes in this Release
 
 | Key | Summary | Category |
 | --- | --- | --- |

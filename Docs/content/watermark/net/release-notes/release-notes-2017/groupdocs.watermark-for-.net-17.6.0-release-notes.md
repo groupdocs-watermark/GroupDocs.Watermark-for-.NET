@@ -6,7 +6,7 @@ weight: 7
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 17.6.0.{{< /alert >}}
 
@@ -14,10 +14,10 @@ hideChildren: False
 
 There are following features in this first release:
 
-*   Ability to set additional options for slide background image in PowerPoint document
-*   Ability to add watermark to a particular page of a Word document
-*   Ability to set background image for a chart in Excel document
-*   Ability to set background image for a chart in PowerPoint document
+* Ability to set additional options for slide background image in PowerPoint document
+* Ability to add watermark to a particular page of a Word document
+* Ability to set background image for a chart in Excel document
+* Ability to set background image for a chart in PowerPoint document
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -51,11 +51,11 @@ Set tiled semitransparent image background for a particular slide.
 ```csharp
 using (SlidesDocument doc = Document.Load<SlidesDocument>(@"D:\input.pptx"))
 {
-	SlidesSlide slide = doc.Slides[0];
-	slide.ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\background.png"));
-	slide.ImageFillFormat.TileAsTexture = true;
-	slide.ImageFillFormat.Transparency = 0.5;
-	doc.Save();
+    SlidesSlide slide = doc.Slides[0];
+    slide.ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\background.png"));
+    slide.ImageFillFormat.TileAsTexture = true;
+    slide.ImageFillFormat.Transparency = 0.5;
+    doc.Save();
 }
 ```
 
@@ -77,11 +77,11 @@ Add watermark to the last page of a Word document.
 ```csharp
 using (WordsDocument doc = Document.Load<WordsDocument>(@"D:\test.doc"))
 {
-	TextWatermark textWatermark = new TextWatermark("DRAFT", new Font("Arial", 42));
+    TextWatermark textWatermark = new TextWatermark("DRAFT", new Font("Arial", 42));
 
-        // Add watermark to the last page
-	doc.AddWatermark(textWatermark, doc.PageCount);
-	doc.Save();
+    // Add watermark to the last page
+    doc.AddWatermark(textWatermark, doc.PageCount);
+    doc.Save();
 }
 ```
 
@@ -108,10 +108,10 @@ Set image background for a particular chart in Excel document.
 ```csharp
 using (CellsDocument doc = Document.Load<CellsDocument>(@"D:\test.xlsx"))
 {
-	doc.Worksheets[0].Charts[0].ImageFillFormat.BackgroundImage = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
-	doc.Worksheets[0].Charts[0].ImageFillFormat.Transparency = 0.5;
-	doc.Worksheets[0].Charts[0].ImageFillFormat.TileAsTexture = true;
-	doc.Save();
+    doc.Worksheets[0].Charts[0].ImageFillFormat.BackgroundImage = new CellsWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+    doc.Worksheets[0].Charts[0].ImageFillFormat.Transparency = 0.5;
+    doc.Worksheets[0].Charts[0].ImageFillFormat.TileAsTexture = true;
+    doc.Save();
 }
 ```
 
@@ -135,17 +135,15 @@ This feature allows the user to set the background image for a chart inside Powe
 
 Set image background for a particular chart in PowerPoint document.
 
-  
-
 **C#**
 
 ```csharp
 using (var doc = Document.Load<SlidesDocument>(@"D:\test.pptx"))
 {
-	doc.Slides[0].Charts[0].ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
-	doc.Slides[0].Charts[0].ImageFillFormat.Transparency = 0.5;
-	doc.Slides[0].Charts[0].ImageFillFormat.TileAsTexture = true;
-	doc.Save();
+    doc.Slides[0].Charts[0].ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+    doc.Slides[0].Charts[0].ImageFillFormat.Transparency = 0.5;
+    doc.Slides[0].Charts[0].ImageFillFormat.TileAsTexture = true;
+    doc.Save();
 }
 ```
 

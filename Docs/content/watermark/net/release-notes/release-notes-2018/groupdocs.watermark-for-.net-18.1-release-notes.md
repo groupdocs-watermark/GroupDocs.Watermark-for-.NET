@@ -6,7 +6,7 @@ weight: 5
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 18.1.{{< /alert >}}
 
@@ -14,8 +14,8 @@ hideChildren: False
 
 There are the following features and enhancements in this release:
 
-*   Ability to edit PowerPoint document objects that can be considered as watermark
-*   Ability to edit Visio document objects that can be considered as watermark
+* Ability to edit PowerPoint document objects that can be considered as watermark
+* Ability to edit Visio document objects that can be considered as watermark
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -58,14 +58,14 @@ Replace text for particular shapes
 ```csharp
 using (SlidesDocument doc = Document.Load<SlidesDocument>(@"D:\input.pptx"))
 {
-	foreach (SlidesShape shape in doc.Slides[0].Shapes)
-	{
-		if (shape.Text == "© Aspose 2016")
-		{
-			shape.Text = "© GroupDocs 2017";
-		}
-	}
-	doc.Save(@"D:\output.pptx");
+    foreach (SlidesShape shape in doc.Slides[0].Shapes)
+    {
+        if (shape.Text == "© Aspose 2016")
+        {
+            shape.Text = "© GroupDocs 2017";
+        }
+    }
+    doc.Save(@"D:\output.pptx");
 }
 ```
 
@@ -76,15 +76,15 @@ Replace text with formatting
 ```csharp
  using (SlidesDocument doc = Document.Load<SlidesDocument>(@"D:\input.ppt"))
 {
-	foreach (SlidesShape shape in doc.Slides[0].Shapes)
-	{
-		if (shape.Text == "© Aspose 2016")
-		{
-			shape.FormattedTextFragments.Clear();
-			shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
-		}
-	}
-	doc.Save(@"D:\output.ppt");
+    foreach (SlidesShape shape in doc.Slides[0].Shapes)
+    {
+        if (shape.Text == "© Aspose 2016")
+        {
+            shape.FormattedTextFragments.Clear();
+            shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+        }
+    }
+    doc.Save(@"D:\output.ppt");
 }
 ```
 
@@ -95,14 +95,14 @@ Replace shape image
 ```csharp
  using (SlidesDocument doc = Document.Load<SlidesDocument>(@"D:\input.pptx"))
 {
-	foreach (SlidesShape shape in doc.Slides[0].Shapes)
-	{
-		if (shape.Image != null)
-		{
-			shape.Image = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
-		}
-	}
-	doc.Save(@"D:\output.pptx");
+    foreach (SlidesShape shape in doc.Slides[0].Shapes)
+    {
+        if (shape.Image != null)
+        {
+            shape.Image = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+        }
+    }
+    doc.Save(@"D:\output.pptx");
 }
 ```
 
@@ -113,16 +113,16 @@ Set background image for particular shapes
 ```csharp
   using (SlidesDocument doc = Document.Load<SlidesDocument>(@"D:\input.ppt"))
 {
-	foreach (SlidesShape shape in doc.Slides[0].Shapes)
-	{
-		if (shape.Text == "© Aspose 2016")
-		{
-			shape.ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
-			shape.ImageFillFormat.Transparency = 0.5;
-			shape.ImageFillFormat.TileAsTexture = true;
-		}
-	}
-	doc.Save(@"D:\output.ppt");
+    foreach (SlidesShape shape in doc.Slides[0].Shapes)
+    {
+        if (shape.Text == "© Aspose 2016")
+        {
+            shape.ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+            shape.ImageFillFormat.Transparency = 0.5;
+            shape.ImageFillFormat.TileAsTexture = true;
+        }
+    }
+    doc.Save(@"D:\output.ppt");
 }
 ```
 
@@ -133,19 +133,19 @@ Modify other shape properties
 ```csharp
 using (SlidesDocument doc = Document.Load<SlidesDocument>(@"D:\input.pptx"))
 {
-	foreach (SlidesShape shape in doc.Slides[0].Shapes)
-	{
-		if (shape.Text == "© Aspose 2016")
-		{
-			shape.AlternativeText = "watermark";
-			shape.RotateAngle = 30;
-			shape.X = 200;
-			shape.Y = 200;
-			shape.Width = 400;
-			shape.Height = 100;
-		}
-	}
-	doc.Save(@"D:\output.pptx");
+    foreach (SlidesShape shape in doc.Slides[0].Shapes)
+    {
+        if (shape.Text == "© Aspose 2016")
+        {
+            shape.AlternativeText = "watermark";
+            shape.RotateAngle = 30;
+            shape.X = 200;
+            shape.Y = 200;
+            shape.Width = 400;
+            shape.Height = 100;
+        }
+    }
+    doc.Save(@"D:\output.pptx");
 }
 ```
 
@@ -172,14 +172,14 @@ Replace text for particular shapes
 ```csharp
  using (DiagramDocument doc = Document.Load<DiagramDocument>(@"D:\input.vdx"))
 {
-	foreach (DiagramShape shape in doc.Pages[0].Shapes)
-	{
-		if (shape.Text != null && shape.Text.Contains("© Aspose 2016"))
-		{
-			shape.Text = "© GroupDocs 2017";
-		}
-	}
-	doc.Save(@"D:\output.vdx");
+    foreach (DiagramShape shape in doc.Pages[0].Shapes)
+    {
+        if (shape.Text != null && shape.Text.Contains("© Aspose 2016"))
+        {
+            shape.Text = "© GroupDocs 2017";
+        }
+    }
+    doc.Save(@"D:\output.vdx");
 }
 ```
 
@@ -190,15 +190,15 @@ Replace text with formatting
 ```csharp
 using (DiagramDocument doc = Document.Load<DiagramDocument>(@"D:\input.vsdx"))
 {
-	foreach (DiagramShape shape in doc.Pages[0].Shapes)
-	{
-		if (shape.Text != null && shape.Text.Contains("© Aspose 2016"))
-		{
-			shape.FormattedTextFragments.Clear();
-			shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
-		}
-	}
-	doc.Save(@"D:\output.vsdx");
+    foreach (DiagramShape shape in doc.Pages[0].Shapes)
+    {
+        if (shape.Text != null && shape.Text.Contains("© Aspose 2016"))
+        {
+            shape.FormattedTextFragments.Clear();
+            shape.FormattedTextFragments.Add("© GroupDocs 2017", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
+        }
+    }
+    doc.Save(@"D:\output.vsdx");
 }
 ```
 
@@ -209,13 +209,13 @@ Replace shape image
 ```csharp
 using (DiagramDocument doc = Document.Load<DiagramDocument>(@"D:\input.vdx"))
 {
-	foreach (DiagramShape shape in doc.Pages[0].Shapes)
-	{
-		if (shape.Image != null)
-		{
-			shape.Image = new DiagramWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
-		}
-	}
-	doc.Save(@"D:\output.vdx");
+    foreach (DiagramShape shape in doc.Pages[0].Shapes)
+    {
+        if (shape.Image != null)
+        {
+            shape.Image = new DiagramWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+        }
+    }
+    doc.Save(@"D:\output.vdx");
 }
 ```

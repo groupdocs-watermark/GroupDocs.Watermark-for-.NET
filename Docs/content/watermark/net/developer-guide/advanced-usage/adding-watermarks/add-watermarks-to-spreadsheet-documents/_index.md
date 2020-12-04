@@ -6,18 +6,18 @@ weight: 8
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
-## Adding watermark to a particular worksheet 
+## Adding watermark to a particular worksheet
 
 GroupDocs.Watermark provides an easy way to add watermark to the worksheets of any Excel document. Adding watermark to a particular Excel worksheet using GroupDocs.Watermark consists of following steps.
 
-1.  Load the document
-2.  Create and initialize watermark object
-3.  Set watermark properties
-4.  Create [SpreadsheetWatermarkShapeOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.spreadsheet/spreadsheetwatermarkshapeoptions) and set property [WorksheetIndex](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.spreadsheet/spreadsheetwatermarkshapeoptions/properties/worksheetindex)
-5.  Add watermark to the worksheet
-6.  Save the document
+1. Load the document
+2. Create and initialize watermark object
+3. Set watermark properties
+4. Create [SpreadsheetWatermarkShapeOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.spreadsheet/spreadsheetwatermarkshapeoptions) and set property [WorksheetIndex](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.spreadsheet/spreadsheetwatermarkshapeoptions/properties/worksheetindex)
+5. Add watermark to the worksheet
+6. Save the document
 
 Following code shows how to add watermark to a particular worksheet.
 
@@ -356,16 +356,19 @@ using (Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, lo
 
 ## Advanced use cases
 
+* [Shapes in spreadsheet document]({{< ref "shapes-in-spreadsheet-document" >}} "Shapes in spreadsheet document")
+* [Working with spreadsheet document attachments]({{< ref "working-with-spreadsheet-document-attachments" >}} "Working with spreadsheet document attachments")
+* [Working with worksheet backgrounds]({{< ref "working-with-worksheet-backgrounds" >}} "Working with worksheet backgrounds")
+* [Working with worksheet headers and footers]({{< ref "working-with-worksheet-headers-and-footers" >}} "Working with worksheet headers and footers")
+
 ## More resources
 
 ### GitHub examples
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

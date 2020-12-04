@@ -6,7 +6,7 @@ weight: 4
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 17.9.0.{{< /alert >}}
 
@@ -14,8 +14,8 @@ hideChildren: False
 
 There are the following features and enhancements in this release:
 
-*   Ability to work with hyperlinks that are activated on mouse over (PowerPoint)
-*   Ability to work with ODT files
+* Ability to work with hyperlinks that are activated on mouse over (PowerPoint)
+* Ability to work with ODT files
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -40,51 +40,51 @@ This feature allows user to replace/remove hyperlinks that are activated on mous
 static void Main(string[] args)
 {
         // Set license
-	License license = new License();
-	license.SetLicense(@"D:\GroupDocs.Watermark.lic");
+    License license = new License();
+    license.SetLicense(@"D:\GroupDocs.Watermark.lic");
 
-	using (var doc = Document.Load<SlidesDocument>(@"D:\test.pptx"))
-	{
-		foreach (var slide in doc.Slides)
-		{
-			string oldUrl = "http://aspose.com/";
+    using (var doc = Document.Load<SlidesDocument>(@"D:\test.pptx"))
+    {
+        foreach (var slide in doc.Slides)
+        {
+            string oldUrl = "http://aspose.com/";
 
-			// Assign null to remove hyperlink
-			string newUrl = "http://groupdocs.com/";
+            // Assign null to remove hyperlink
+            string newUrl = "http://groupdocs.com/";
 
-			// Replace hyperlinks in shapes
-			foreach (var shape in slide.Shapes)
-			{
-				ReplaceHyperlink(shape, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
-				ReplaceHyperlink(shape, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
+            // Replace hyperlinks in shapes
+            foreach (var shape in slide.Shapes)
+            {
+                ReplaceHyperlink(shape, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
+                ReplaceHyperlink(shape, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
 
-				// Replace hyperlinks in text fragments
-				foreach (var fragment in shape.FormattedTextFragments)
-				{
-					ReplaceHyperlink((ISlidesHyperlinkContainer)fragment, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
-					ReplaceHyperlink((ISlidesHyperlinkContainer)fragment, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
-				}
-			}
+                // Replace hyperlinks in text fragments
+                foreach (var fragment in shape.FormattedTextFragments)
+                {
+                    ReplaceHyperlink((ISlidesHyperlinkContainer)fragment, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
+                    ReplaceHyperlink((ISlidesHyperlinkContainer)fragment, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
+                }
+            }
 
-			// Replace hyperlinks in charts
-			foreach (var chart in slide.Charts)
-			{
-				ReplaceHyperlink(chart, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
-				ReplaceHyperlink(chart, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
-			}
-		}
+            // Replace hyperlinks in charts
+            foreach (var chart in slide.Charts)
+            {
+                ReplaceHyperlink(chart, SlidesHyperlinkActionType.MouseOver, oldUrl, newUrl);
+                ReplaceHyperlink(chart, SlidesHyperlinkActionType.MouseClick, oldUrl, newUrl);
+            }
+        }
 
-		// Save changes
-		doc.Save();
-	}
+        // Save changes
+        doc.Save();
+    }
 }
 
 private static void ReplaceHyperlink(ISlidesHyperlinkContainer hyperlinkContainer, SlidesHyperlinkActionType hyperlinkActionType, string oldUrl, string newUrl)
 {
-	if (hyperlinkContainer.GetHyperlink(hyperlinkActionType) == oldUrl)
-	{
-		hyperlinkContainer.SetHyperlink(hyperlinkActionType, newUrl);
-	}
+    if (hyperlinkContainer.GetHyperlink(hyperlinkActionType) == oldUrl)
+    {
+        hyperlinkContainer.SetHyperlink(hyperlinkActionType, newUrl);
+    }
 }
 ```
 
@@ -95,15 +95,15 @@ Hyperlinks of all types can also be removed by using *FindWatermarks* method
 ```csharp
 using (var doc = Document.Load(@"D:\test.pptx"))
 {
-	doc.SearchableObjects.SlidesSearchableObjects = SlidesSearchableObjects.Hyperlinks;
+    doc.SearchableObjects.SlidesSearchableObjects = SlidesSearchableObjects.Hyperlinks;
 
-	// Find all hyperlinks
-	var watermarks = doc.FindWatermarks();
+    // Find all hyperlinks
+    var watermarks = doc.FindWatermarks();
 
-	// Remove found watermarks
-	watermarks.Clear();
+    // Remove found watermarks
+    watermarks.Clear();
 
-	// Save changes
-	doc.Save();
+    // Save changes
+    doc.Save();
 }
 ```

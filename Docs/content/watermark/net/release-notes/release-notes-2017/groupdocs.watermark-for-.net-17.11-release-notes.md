@@ -6,7 +6,7 @@ weight: 2
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 17.11.{{< /alert >}}
 
@@ -14,8 +14,8 @@ hideChildren: False
 
 There are following features in this first release:
 
-*   *   Add support for Email Formats
-    *   Remove SlidesBaseSlide.BackgroundImage property (obsolete code)
+* Add support for Email Formats
+* Remove SlidesBaseSlide.BackgroundImage property (obsolete code)
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -58,7 +58,7 @@ Load an email message.
 ```csharp
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.eml"))
 {
-	// ...
+    // ...
 }
 ```
 
@@ -72,12 +72,12 @@ Extract all attachments from an email message
 string targetFolder = @"D:\attachments";
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.msg"))
 {
-	foreach (EmailAttachment attachment in doc.Attachments)
-	{
-		Console.WriteLine("Name: {0}", attachment.Name);
-		Console.WriteLine("File format: {0}", attachment.DocumentInfo.FileFormat);
-		File.WriteAllBytes(Path.Combine(targetFolder, attachment.Name), attachment.Content);
-	}
+    foreach (EmailAttachment attachment in doc.Attachments)
+    {
+        Console.WriteLine("Name: {0}", attachment.Name);
+        Console.WriteLine("File format: {0}", attachment.DocumentInfo.FileFormat);
+        File.WriteAllBytes(Path.Combine(targetFolder, attachment.Name), attachment.Content);
+    }
 } 
 ```
 
@@ -88,19 +88,19 @@ Remove particular attachments from an email message.
 ```csharp
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.eml"))
 {
-	for (int i = doc.Attachments.Count - 1; i >= 0; i--)
-	{
-		EmailAttachment attachment = doc.Attachments[i];
+    for (int i = doc.Attachments.Count - 1; i >= 0; i--)
+    {
+        EmailAttachment attachment = doc.Attachments[i];
 
-		// Remove all attached pdf files with a particular name
-		if (attachment.Name.Contains("EULA") && attachment.DocumentInfo.FileFormat == FileFormat.Pdf)
-		{
-			doc.Attachments.RemoveAt(i);
-		}
-	}
+        // Remove all attached pdf files with a particular name
+        if (attachment.Name.Contains("EULA") && attachment.DocumentInfo.FileFormat == FileFormat.Pdf)
+        {
+            doc.Attachments.RemoveAt(i);
+        }
+    }
 
-	// Save changes
-	doc.Save();
+    // Save changes
+    doc.Save();
 }
 ```
 
@@ -112,24 +112,24 @@ Add watermark to all attached files of supported types.
 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.msg"))
 {
-	foreach (EmailAttachment attachment in doc.Attachments)
-	{
-		// Check if the attached file is supported by GroupDocs.Watermark
-		if (attachment.DocumentInfo.FileFormat != FileFormat.Undefined && !attachment.DocumentInfo.IsEncrypted)
-		{
-			// Load the attached document
-			using (Document attachedDocument = attachment.LoadDocument())
-			{
-				// Add wateramrk
-				attachedDocument.AddWatermark(watermark);
+    foreach (EmailAttachment attachment in doc.Attachments)
+    {
+        // Check if the attached file is supported by GroupDocs.Watermark
+        if (attachment.DocumentInfo.FileFormat != FileFormat.Undefined && !attachment.DocumentInfo.IsEncrypted)
+        {
+            // Load the attached document
+            using (Document attachedDocument = attachment.LoadDocument())
+            {
+                // Add wateramrk
+                attachedDocument.AddWatermark(watermark);
 
-				// Save changes in the attached file
-				attachedDocument.Save();
-			}
-		}
-	}
-	// Save changes
-	doc.Save();
+                // Save changes in the attached file
+                attachedDocument.Save();
+            }
+        }
+    }
+    // Save changes
+    doc.Save();
 }
 ```
 
@@ -141,10 +141,10 @@ Add an attachment to an email message
 string attachmentPath = @"D:\logo.gif";
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.eml"))
 {
-	doc.Attachments.Add(File.ReadAllBytes(attachmentPath), "test_logo.gif");
-	
-	// Save changes
-	doc.Save();
+    doc.Attachments.Add(File.ReadAllBytes(attachmentPath), "test_logo.gif");
+
+    // Save changes
+    doc.Save();
 }
 ```
 
@@ -155,17 +155,17 @@ Modify email message body and subject.
 ```csharp
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.eml"))
 {
-	// Set the plain text body
-	doc.Body = "Test plain text body";
+    // Set the plain text body
+    doc.Body = "Test plain text body";
 
-	// Set the html body
-	doc.HtmlBody = "<html><body>Test html body</body></html>";
+    // Set the html body
+    doc.HtmlBody = "<html><body>Test html body</body></html>";
 
-	// Set the email subject
-	doc.Subject = "Test subject";
+    // Set the email subject
+    doc.Subject = "Test subject";
 
-	// Save changes
-	doc.Save();
+    // Save changes
+    doc.Save();
 }
 ```
 
@@ -178,19 +178,19 @@ Remove all embedded jpeg images from an email message
 ```csharp
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.eml"))
 {
-	for (int i = doc.EmbeddedObjects.Count - 1; i >= 0; i--)
-	{
-		if (doc.EmbeddedObjects[i].DocumentInfo.FileFormat == FileFormat.Jpeg)
-		{
-			// Remove reference to the image from html body
-			string pattern = string.Format("<img[^>]*src=\"cid:{0}\"[^>]*>", doc.EmbeddedObjects[i].ContentId);
-			doc.HtmlBody = Regex.Replace(doc.HtmlBody, pattern, string.Empty);
+    for (int i = doc.EmbeddedObjects.Count - 1; i >= 0; i--)
+    {
+        if (doc.EmbeddedObjects[i].DocumentInfo.FileFormat == FileFormat.Jpeg)
+        {
+            // Remove reference to the image from html body
+            string pattern = string.Format("<img[^>]*src=\"cid:{0}\"[^>]*>", doc.EmbeddedObjects[i].ContentId);
+            doc.HtmlBody = Regex.Replace(doc.HtmlBody, pattern, string.Empty);
 
-			// Remove the image
-			doc.EmbeddedObjects.RemoveAt(i);
-		}
-	}
-	doc.Save();
+            // Remove the image
+            doc.EmbeddedObjects.RemoveAt(i);
+        }
+    }
+    doc.Save();
 }
 ```
 
@@ -201,11 +201,11 @@ Embed image into email message body.
 ```csharp
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.eml"))
 {
-	string imagePath = @"D:\test.png";
-	doc.EmbeddedObjects.Add(File.ReadAllBytes(imagePath), imagePath);
-	EmailEmbeddedObject embeddedObject = doc.EmbeddedObjects[doc.EmbeddedObjects.Count - 1];
-	doc.HtmlBody = string.Format("<html><body>This is an embedded image: <img src=\"cid:{0}\"></body></html>", embeddedObject.ContentId);
-	doc.Save();
+    string imagePath = @"D:\test.png";
+    doc.EmbeddedObjects.Add(File.ReadAllBytes(imagePath), imagePath);
+    EmailEmbeddedObject embeddedObject = doc.EmbeddedObjects[doc.EmbeddedObjects.Count - 1];
+    doc.HtmlBody = string.Format("<html><body>This is an embedded image: <img src=\"cid:{0}\"></body></html>", embeddedObject.ContentId);
+    doc.Save();
 }
 ```
 
@@ -216,23 +216,23 @@ List all message recipients.
 ```csharp
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.msg"))
 {
-	// List all direct recipients
-	foreach (EmailAddress address in doc.To)
-	{
-		Console.WriteLine(address.Address);
-	}
+    // List all direct recipients
+    foreach (EmailAddress address in doc.To)
+    {
+        Console.WriteLine(address.Address);
+    }
 
-	// List all CC recipients
-	foreach (EmailAddress address in doc.Cc)
-	{
-		Console.WriteLine(address.Address);
-	}
+    // List all CC recipients
+    foreach (EmailAddress address in doc.Cc)
+    {
+        Console.WriteLine(address.Address);
+    }
 
-	// List all BCC recipients
-	foreach (EmailAddress address in doc.Bcc)
-	{
-		Console.WriteLine(address.Address);
-	}
+    // List all BCC recipients
+    foreach (EmailAddress address in doc.Bcc)
+    {
+        Console.WriteLine(address.Address);
+    }
 }
 ```
 
@@ -243,19 +243,19 @@ Find particular text fragments in email message body/subject.
 ```csharp
 using (EmailDocument doc = Document.Load<EmailDocument>(@"D:\test.msg"))
 {
-	SearchCriteria criteria = new TextSearchCriteria("test", false);
+    SearchCriteria criteria = new TextSearchCriteria("test", false);
 
-	// Specify search locations
-	doc.SearchableObjects.EmailSearchableObjects = EmailSearchableObjects.Subject | EmailSearchableObjects.HtmlBody | EmailSearchableObjects.PlainTextBody;
+    // Specify search locations
+    doc.SearchableObjects.EmailSearchableObjects = EmailSearchableObjects.Subject | EmailSearchableObjects.HtmlBody | EmailSearchableObjects.PlainTextBody;
 
-	// Note, search is performed only if you pass TextSearchCriteria instance to FindWatermarks method
-	PossibleWatermarkCollection watermarks = doc.FindWatermarks(criteria);
+    // Note, search is performed only if you pass TextSearchCriteria instance to FindWatermarks method
+    PossibleWatermarkCollection watermarks = doc.FindWatermarks(criteria);
 
-	// Remove found text fragments
-	watermarks.Clear();
+    // Remove found text fragments
+    watermarks.Clear();
 
-	// Save changes
-	doc.Save();
+    // Save changes
+    doc.Save();
 }
 ```
 
@@ -280,7 +280,7 @@ Use *SlidesBaseSlide.ImageFillFormat.BackgroundImage* property instead.
 ```csharp
 using (SlidesDocument doc = Document.Load<SlidesDocument>(@"D:\test.pptx"))
 {
-	doc.Slides[0].ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
+    doc.Slides[0].ImageFillFormat.BackgroundImage = new SlidesWatermarkableImage(File.ReadAllBytes(@"D:\test.png"));
 
         doc.Save(@"D:\result.pptx");
 }

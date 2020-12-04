@@ -6,7 +6,7 @@ weight: 4
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 The API allows you to add watermark to all the [attachments](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.email/emailcontent/properties/attachments) of supported types in an email message as shown in the following code sample.
 
@@ -44,16 +44,17 @@ using (Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOpt
 
 ## Advanced use cases
 
+* [Email attachments]({{< ref "email-attachments" >}} "Email attachments")
+* [Email messages]({{< ref "email-messages" >}} "Email messages")
+
 ## More resources
 
 ### GitHub examples
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

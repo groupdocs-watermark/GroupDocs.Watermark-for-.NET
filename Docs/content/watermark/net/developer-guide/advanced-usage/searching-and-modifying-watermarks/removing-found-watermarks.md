@@ -6,7 +6,7 @@ weight: 2
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 ## Remove watermark
 
@@ -60,7 +60,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
 }
 ```
 
-## Remove hyperlink watermarks 
+## Remove hyperlink watermarks
 
 GroupDocs.Watermark API allows you to search and remove [hyperlinks](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search/hyperlinkpossiblewatermark) in a document of any supported format. Following code sample shows how to find and remove hyperlinks with a particular URL from a document.
 
@@ -94,10 +94,8 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

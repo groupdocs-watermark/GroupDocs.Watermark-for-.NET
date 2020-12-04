@@ -6,7 +6,7 @@ weight: 4
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 19.5.{{< /alert >}}
 
@@ -14,8 +14,8 @@ hideChildren: False
 
 There are the following features, enhancements, and bug fixes in this release:
 
-*   WordsDocument.save() throws exception when setting WordsLockType.ReadOnlyWithEditableContent
-*   Add new types of a shape in a Word document
+* WordsDocument.save() throws exception when setting WordsLockType.ReadOnlyWithEditableContent
+* Add new types of a shape in a Word document
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -40,26 +40,26 @@ None.
 
 The following new elements of *GroupDocs.Watermark.Office.Words.WordsShapeType* enum have been added:
 
-*   SingleCornerSnipped
-*   TopCornersSnipped
-*   DiagonalCornersSnipped
-*   TopCornersOneRoundedOneSnipped
-*   SingleCornerRounded
-*   TopCornersRounded
-*   DiagonalCornersRounded
+* SingleCornerSnipped
+* TopCornersSnipped
+* DiagonalCornersSnipped
+* TopCornersOneRoundedOneSnipped
+* SingleCornerRounded
+* TopCornersRounded
+* DiagonalCornersRounded
 
 ##### Public API changes
 
-*SingleCornerSnipped *value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
+*SingleCornerSnipped* value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
 
-*TopCornersSnipped *value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
+*TopCornersSnipped* value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
 
-*DiagonalCornersSnipped *value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
+*DiagonalCornersSnipped* value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
 
-*TopCornersOneRoundedOneSnipped *value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
+*TopCornersOneRoundedOneSnipped* value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
 
-*SingleCornerRounded *value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
+*SingleCornerRounded* value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
 
-*TopCornersRounded *value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
+*TopCornersRounded* value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
 
 *DiagonalCornersRounded* value has been added to *GroupDocs.Watermark.Office.Words.WordsShapeType* enum.
