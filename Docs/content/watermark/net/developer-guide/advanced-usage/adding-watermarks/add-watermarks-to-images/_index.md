@@ -6,9 +6,9 @@ weight: 5
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
-## Adding watermark to multi-framed image 
+## Adding watermark to multi-framed image
 
 When you are working with an animated gif or multi-frame tiff images, you may want to add watermark to some particular frame(s) using the property [FrameIndex](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.image/multiframeimagewatermarkoptions/properties/frameindex) of [TiffImageWatermarkOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.image/tiffimagewatermarkoptions) or [GifImageWatermarkOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.image/gifimagewatermarkoptions).
 
@@ -33,16 +33,16 @@ using (Watermarker watermarker = new Watermarker(Constants.InImageTiff, loadOpti
 
 ## Advanced use cases
 
+* [Adding watermark to images inside a document]({{< ref "adding-watermark-to-images-inside-a-document" >}} "Adding watermark to images inside a document")
+
 ## More resources
 
 ### GitHub examples
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

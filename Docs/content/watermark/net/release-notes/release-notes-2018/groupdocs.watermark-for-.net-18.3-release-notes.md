@@ -6,7 +6,7 @@ weight: 3
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 18.3.{{< /alert >}}
 
@@ -14,8 +14,8 @@ hideChildren: False
 
 There are the following new features in this monthly release:
 
-*   Implement ability to edit Pdf document objects that can be considered as watermarks
-*   Implement ability to edit text and image in found possible watermarks (across all formats)
+* Implement ability to edit Pdf document objects that can be considered as watermarks
+* Implement ability to edit text and image in found possible watermarks (across all formats)
 
 ## Full List of Issues Covering all Changes in this Release
 

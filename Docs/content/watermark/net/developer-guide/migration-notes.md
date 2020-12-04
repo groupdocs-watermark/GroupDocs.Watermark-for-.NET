@@ -6,28 +6,24 @@ weight: 3
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
-  
-
-# Migration notes
-
-## Why to migrate?
+## Why to migrate
 
 Here are the key reasons to use the new updated API provided by GroupDocs.Watermark for .NET since version 19.5:
 
-*   [Watermarker](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker) class is introduced as a single entry point to manage watermarks in the document (instead of  [Document ](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.legacy/document) class from previous versions).
-*   Adding watermarks was unified for all supported document formats.
-*   Product architecture was redesigned from scratch in order to simplify passing options to manage watermarks.
-*   Document information and preview generation procedures were simplified.
+* [Watermarker](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker) class is introduced as a single entry point to manage watermarks in the document (instead of [Document](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.legacy/document) class from previous versions).
+* Adding watermarks was unified for all supported document formats.
+* Product architecture was redesigned from scratch in order to simplify passing options to manage watermarks.
+* Document information and preview generation procedures were simplified.
 
-## How to migrate?
+## How to migrate
 
 Here is a brief comparison of how to manage watermarks using the old and new API.
 
-#### Load documents
+### Load documents
 
-##### Any supported format
+#### Any supported format
 
 The folowing examples show how to load a document of any supported format.
 
@@ -51,7 +47,7 @@ using (Watermarker watermarker = new Watermarker(@"C:\test.doc"))
 }
 ```
 
-##### Document of specific format
+#### Document of specific format
 
 The following examples show how to load a diagram document.
 
@@ -76,7 +72,7 @@ using (Watermarker watermarker = new Watermarker(@"C:\diagram.vsdx", loadOptions
 }
 ```
 
-#### Add watermarks
+### Add watermarks
 
 The following examples show how to add text watermark to a document of any supported type.
 
@@ -101,22 +97,22 @@ foreach (string filePath in Directory.GetFiles(@"C:\Documents"))
 **New API**
 
 ```csharp
-foreach (string filePath in Directory.GetFiles(@"C:\Documents"))                        
-{                                                                                       
-    using (Watermarker watermarker = new Watermarker(filePath))                         
-    {                                                                                   
+foreach (string filePath in Directory.GetFiles(@"C:\Documents"))
+{
+    using (Watermarker watermarker = new Watermarker(filePath))
+    {
         TextWatermark watermark = new TextWatermark("top secret", new Font("Arial", 36));
         watermark.ForegroundColor = Color.Red;
         watermark.HorizontalAlignment = HorizontalAlignment.Center;
         watermark.VerticalAlignment = VerticalAlignment.Center;
 
-        watermarker.Add(watermark);                                            
-        watermarker.Save();                                                             
-    }                                                                                   
+        watermarker.Add(watermark);
+        watermarker.Save();
+    }
 }
 ```
 
-##### Add watermark with options
+#### Add watermark with options
 
 The following examples show how to add watermark to the first page of a diagram document.
 
@@ -146,7 +142,7 @@ using (Watermarker watermarker = new Watermarker(@"C:\diagram.vsdx"))
 }
 ```
 
-#### Search watermarks
+### Search watermarks
 
 The following examles show how to find watermarks using search criteria.
 
@@ -180,7 +176,7 @@ using (Watermarker watermarker = new Watermarker(@"C:\test.some_ext"))
 }
 ```
 
-#### Remove watermarks
+### Remove watermarks
 
 The following examples show how to remove all possible watermarks.
 
@@ -206,7 +202,7 @@ using (Watermarker watermarker = new Watermarker(@"C:\document.pdf"))
 }
 ```
 
-#### Get document info
+### Get document info
 
 The following examples show how to get document information from the local file.
 
@@ -236,10 +232,8 @@ using (Watermarker watermarker = new Watermarker(@"C:\test.ppt"))
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

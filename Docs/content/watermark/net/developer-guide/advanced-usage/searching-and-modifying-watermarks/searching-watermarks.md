@@ -6,7 +6,7 @@ weight: 3
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 ## Searching possible watermarks
 
@@ -35,12 +35,17 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
     }
 }
 ```
+
 ## Search criteria
+
 Usually, large documents may contain too many objects which can be considered as watermarks. Parameterless overload of [Search](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker/methods/search) method returns only some of them, e.g. backgrounds or floating objects which could have been added during document post-processing. You can use [search criteria](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/) to find objects with some specific parameters.
 
 ### Text search criteria
+
 Following code snippet shows how to search for the watermarks that meet a particular [text criterion](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/textsearchcriteria).
+
 **AdvancedUsage.SearchAndRemoveWatermarks.SearchWatermarkWithSearchString**
+
 ```csharp
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
 using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
@@ -52,9 +57,13 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
     Console.WriteLine("Found {0} possible watermark(s)", possibleWatermarks.Count);
 }
 ```
+
 ### Regular expression search criteria  
+
 Regular expressions are also supported by [TextSearchCriteria](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/textsearchcriteria). The below sample code uses a regular expression to search for watermarks.
+
 **AdvancedUsage.SearchAndRemoveWatermarks.SearchWatermarkWithRegularExpression**
+
 ```csharp
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
 using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
@@ -67,8 +76,10 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
     Console.WriteLine("Found {0} possible watermark(s).", possibleWatermarks.Count);
 }
 ```
+
 {{< alert style="info" >}}
 What happens when the user is passing [TextSearchCriteria](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/textsearchcriteria) instance to the method?
+
 1. It searches fragments of document's main text which match regular expression (or contain exact search string)
 2. It checks text of other objects (shapes, XObjects, annotations etc.) if they match regular expression (or contain exact search string)
 
@@ -76,8 +87,11 @@ Search in the main text of a document is performed only if you pass [TextSearchC
 {{< /alert >}}
 
 ### Image search criteria
+
 Sometimes a document can contain image watermarks, and it's necessary to find them using sample picture. For example, you may want to find all possible image watermarks that are similar to a company logo. Following sample code searches for image watermarks that resemble with a particular image using.
+
 **AdvancedUsage.SearchAndRemoveWatermarks.SearchImageWatermark**
+
 ```csharp
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
 using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
@@ -90,13 +104,19 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
     Console.WriteLine("Found {0} possible watermark(s).", possibleWatermarks.Count);
 }
 ```
-[MaxDifference ](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagesearchcriteria/properties/maxdifference) property is used to set maximum allowed difference between sample image and possible watermark. The value should be between 0 and 1. The value 0 means that only identical images will be found.
+
+[MaxDifference](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagesearchcriteria/properties/maxdifference) property is used to set maximum allowed difference between sample image and possible watermark. The value should be between 0 and 1. The value 0 means that only identical images will be found.
 Using of [ImageDctHashSearchCriteria](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagedcthashsearchcriteria) is the most efficient way to find image watermark by a sample. This criterion uses DCT (Discrete Cosine Transform) based perceptual hash for image similarity comparison. But there are other image search criteria that are based on other algorithms:
-*   [ImageColorHistogramSearchCriteria](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagecolorhistogramsearchcriteria) uses image color histograms for calculating image similarity. This criterion is invariant to rotation, scaling, and translation of the image.
-*   [ImageThumbnailSearchCriteria](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagethumbnailsearchcriteria) uses image binarized thumbnail for calculating image similarity. This criterion is invariant to rotation, scaling and insignificant changes of the color palette.
+
+* [ImageColorHistogramSearchCriteria](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagecolorhistogramsearchcriteria) uses image color histograms for calculating image similarity. This criterion is invariant to rotation, scaling, and translation of the image.
+* [ImageThumbnailSearchCriteria](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagethumbnailsearchcriteria) uses image binarized thumbnail for calculating image similarity. This criterion is invariant to rotation, scaling and insignificant changes of the color palette.
+
 ### Combined search criteria
+
 GroupDocs.Watermark API also allows you to search watermarks by a combination ([And](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/andsearchcriteria), [Or](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/orsearchcriteria), [Not](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/notsearchcriteria)) of different search criteria. Following sample code shows how to search watermark with the combination of different search criteria.
+
 **AdvancedUsage.SearchAndRemoveWatermarks.SearchWatermarkWithCombinedSearch**
+
 ```csharp
 using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
 {
@@ -109,9 +129,13 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
     Console.WriteLine("Found {0} possible watermark(s).", possibleWatermarks.Count);
 }
 ```
+
 ### Text formatting search criteria
+
 GroupDocs.Watermark also enables you to search the watermarks on the basis of some particular text formatting. You can provide a search criterion containing font name, size, color etc and the API will find the watermarks with matching properties. Following code snippet shows how to search watermark with a particular [text formatting](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/textformattingsearchcriteria).
+
 **AdvancedUsage.SearchAndRemoveWatermarks.SearchWatermarkWithParticularTextFormatting**
+
 ```csharp
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
 using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
@@ -213,10 +237,8 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

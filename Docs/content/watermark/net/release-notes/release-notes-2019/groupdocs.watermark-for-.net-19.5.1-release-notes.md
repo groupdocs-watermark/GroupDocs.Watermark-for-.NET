@@ -6,7 +6,7 @@ weight: 3
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 19.5.1{{< /alert >}}
 
@@ -14,7 +14,7 @@ hideChildren: False
 
 There are the following features, enhancements, and bug fixes in this release:
 
-*   Exception in Version19.5 "Stream was not writable" raised on saving after watermarking
+* Exception in Version 19.5 "Stream was not writable" raised on saving after watermarking
 
 ### All Changes
 

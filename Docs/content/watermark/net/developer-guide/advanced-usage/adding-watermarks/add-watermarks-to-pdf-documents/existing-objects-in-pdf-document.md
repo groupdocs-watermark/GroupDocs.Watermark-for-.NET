@@ -6,17 +6,17 @@ weight: 2
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 ## Removing watermark from a particular page
 
 Removing watermark from a particular page of PDF document using GroupDocs.Watermark consists of following steps.
 
-1.  Load the document 
-2.  Create and initialize Image/text search criteria 
-3.  Find watermarks
-4.  Remove watermarks
-5.  Save the document
+1. Load the document
+2. Create and initialize Image/text search criteria
+3. Find watermarks
+4. Remove watermarks
+5. Save the document
 
 Following code sample removes watermarks from a particular page.
 
@@ -48,7 +48,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOp
 
 ## Working with XObjects
 
-#### Extracting information about all XObjects in PDF document
+### Extracting information about all XObjects in PDF document
 
 Using GroupDocs.Watermark for .NET, you can extract information about all the [XObjects](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.pdf/pdfxobject) in a PDF document. Following code sample performs this functionality.
 
@@ -387,7 +387,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOp
 
 GroupDocs.Watermark allows you to edit and replace the [text](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.pdf/pdfartifact/properties/text) of the particular artifacts. You can also replace artifact's [text with formatting](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.pdf/pdfshape/properties/formattedtextfragments) as shown in the below code samples.
 
-##### Replacing text
+##### Replacing artifact text
 
 **AdvancedUsage.AddingWatermarks.AddWatermarksToPdf.PdfReplaceTextForParticularArtifact**
 
@@ -411,7 +411,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOp
 }
 ```
 
-##### Replacing text with formatting
+##### Replacing artifact text with formatting
 
 **AdvancedUsage.AddingWatermarks.AddWatermarksToPdf.PdfReplaceTextForParticularArtifactWithFormatting**
 
@@ -554,7 +554,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOp
 }
 ```
 
-#### Adding watermark to all image annotations 
+#### Adding watermark to all image annotations
 
 Similar to the other types, the watermark can be added to [image](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.pdf/pdfshape/properties/image) annotations in PDF documents as shown in the below code sample.
 
@@ -595,7 +595,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOp
 
 GroupDocs.Watermark allows you to edit and replace the [text](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.pdf/pdfshape/properties/text) of the particular annotations. You can also replace annotation's [text with formatting](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.pdf/pdfshape/properties/formattedtextfragments) as shown in the below code samples.
 
-##### Replacing text
+##### Replacing annotation text
 
 **AdvancedUsage.AddingWatermarks.AddWatermarksToPdf.PdfReplaceTextForParticularAnnotation**
 
@@ -607,7 +607,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOp
     PdfContent pdfContent = watermarker.GetContent<PdfContent>();
     foreach (PdfAnnotation annotation in pdfContent.Pages[0].Annotations)
     {
-        // Replace text 
+        // Replace text
         if (annotation.Text.Contains("Test"))
         {
             annotation.Text = "Passed";
@@ -619,7 +619,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOp
 }
 ```
 
-##### Replacing text with formatting
+##### Replacing annotation text with formatting
 
 **AdvancedUsage.AddingWatermarks.AddWatermarksToPdf.PdfReplaceTextForParticularAnnotationWithFormatting**
 
@@ -677,10 +677,8 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOp
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

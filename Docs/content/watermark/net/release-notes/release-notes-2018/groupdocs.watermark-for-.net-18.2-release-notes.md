@@ -6,7 +6,7 @@ weight: 4
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 18.2.{{< /alert >}}
 
@@ -14,7 +14,7 @@ hideChildren: False
 
 There is the following new feature in this monthly release:
 
-*   Implement ability to edit Word document objects that can be considered as watermarks
+* Implement ability to edit Word document objects that can be considered as watermarks
 
 ## Full List of Issues Covering all Changes in this Release
 

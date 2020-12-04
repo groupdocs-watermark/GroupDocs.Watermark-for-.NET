@@ -6,7 +6,7 @@ weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 The watermarks in Visio documents are usually represented by shapes. But sometimes document headers&footers can also be used to display text that can be considered as the watermark. GroupDocs.Watermark API allows you to find and remove watermarks of both types in Visio document.
 
@@ -14,11 +14,11 @@ The watermarks in Visio documents are usually represented by shapes. But somet
 
 Removing watermark from a particular page of a Visio document using GroupDocs.Watermark consists of following steps.
 
-1.  Load the document
-2.  Create and initialize image/text search criteria
-3.  [Find](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.contentpart/search/methods/1) possible watermarks
-4.  Remove found watermarks
-5.  Save the document
+1. Load the document
+2. Create and initialize image/text search criteria
+3. [Find](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.contentpart/search/methods/1) possible watermarks
+4. Remove found watermarks
+5. Save the document
 
 Following code sample shows how to remove watermark from a particular page.
 
@@ -309,10 +309,8 @@ using (Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOp
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

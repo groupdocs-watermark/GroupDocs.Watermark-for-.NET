@@ -6,7 +6,7 @@ weight: 1
 description: "GroupDocs.Watermark for .NET API presents a wide range of features related to watermark: adding, searching, modifying, removing and more."
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 ## Watermark
 
@@ -14,156 +14,93 @@ A watermark is an image or text that is intentionally superimposed onto document
 
 GroupDocs.Watermark for .NET API presents a wide range of features related to watermark. Some key features are listed below.
 
-1.  Adding text/image watermark to supported document formats
-2.  Searching and removing text/image watermark in supported document formats
-3.  Searching watermarks in particular objects
-4.  Adding watermark to images inside a document
-5.  Modifying existing watermark objects in supported document formats
-6.  Extracting information of watermark objects in a document
-7.  PDF document rasterization
-8.  Getting document information
-9.  Searching watermarks by text formatting (font, color etc)
-10.  Modifying hyperlinks associated with document entities (all formats)
-11.  Setting background image for charts in Excel and PowerPoint document
-12.  Modifying PDF and email attachments
-13.  Using *Dynabic.Metered* account to use API in licensed mode
+1. Adding text/image watermark to supported document formats
+2. Searching and removing text/image watermark in supported document formats
+3. Searching watermarks in particular objects
+4. Adding watermark to images inside a document
+5. Modifying existing watermark objects in supported document formats
+6. Extracting information of watermark objects in a document
+7. PDF document rasterization
+8. Getting document information
+9. Searching watermarks by text formatting (font, color etc)
+10. Modifying hyperlinks associated with document entities (all formats)
+11. Setting background image for charts in Excel and PowerPoint document
+12. Modifying PDF and email attachments
+13. Using *Dynabic.Metered* account to use API in licensed mode
 
 ## Add watermark
 
 Following are the watermark types that can be added to each supported document format.
 
-| Document Format | Watermark Type |
-| --- | --- |
-| PDF | XObject (image and text) |
-| 
- | Artifact (image and text)  |
-| 
-
- | Annotation (image and text) |
-| Word | Shape (image and text) |
-| Excel | Shape (image and text) |
-| 
-
- | Header & Footer (image and text) |
-| 
-
- | Background image |
-| PowerPoint | Shape (image and text) |
-| Visio | Shape (image and text) |
+| Document Format      | Watermark Type |
+| -------------------- | --- |
+| PDF                  | XObject (image and text) |
+|                      | Artifact (image and text)  |
+|                      | Annotation (image and text) |
+| Word                 | Shape (image and text) |
+| Excel                | Shape (image and text) |
+|                      | Header & Footer (image and text) |
+|                      | Background image |
+| PowerPoint           | Shape (image and text) |
+| Visio                | Shape (image and text) |
 | Raster Image Formats | Text |
-| 
-
- | Image |
-| Multi-page tiff | Text |
-| 
-
- | Image |
-| Animated gif | Text |
-| 
-
- | Image |
+|                      | Image |
+| Multi-page tiff      | Text |
+|                      | Image |
+| Animated gif         | Text |
+|                      | Image |
 
 ## Search watermark
 
 Following are the watermark types that can be found using GroupDocs.Watermark.
 
-| Format | Watermark type |
-| --- | --- |
-| PDF | XObject (image and text) |
-| 
- | Artifact (image and text) |
-| 
-
- | Annotation (image and text) |
-| 
-
- | Regular text |
-| Word | Shape (image and text) |
-| 
-
- | Regular text |
-| 
-
- | Hyperlinks |
-| Excel | Shape (image and text) |
-| 
-
- | Header&Footer (image and text) |
-| 
-
- | Background image |
-| 
-
- | Text and formulas in cells |
-| 
-
- | Hyperlinks |
+| Format     | Watermark type |
+| ---------- | --- |
+| PDF        | XObject (image and text) |
+|            | Artifact (image and text) |
+|            | Annotation (image and text) |
+|            | Regular text |
+| Word       | Shape (image and text) |
+|            | Regular text |
+|            | Hyperlinks |
+| Excel      | Shape (image and text) |
+|            | Header&Footer (image and text) |
+|            | Background image |
+|            | Text and formulas in cells |
+|            | Hyperlinks |
 | PowerPoint | Shape (image and text) |
-| 
-
- | Hyperlinks |
-| Visio | Shape (image and text) |
-| 
-
- | Diagram comments |
-| 
-
- | Hyperlinks |
-| Email | Attached and embedded images |
-| 
-
- | Subject and body text fragments |
+|            | Hyperlinks |
+| Visio      | Shape (image and text) |
+|            | Diagram comments |
+|            | Hyperlinks |
+| Email      | Attached and embedded images |
+|            | Subject and body text fragments |
 
 ## Remove watermark
 
 Following are the watermark types that can be removed using GroupDocs.Watermark.
 
-| Format | Watermark type |
-| --- | --- |
-| PDF | XObject (image and text) |
-| 
- | Artifact (image and text) |
-| 
-
- | Annotation (image and text) |
-| 
-
- | Regular text |
-| Word | Shape (image and text) |
-| 
-
- | Regular text |
-| 
-
- | Hyperlinks |
-| Excel | Shape (image and text) |
-| 
-
- | Header&Footer (image and text) |
-| 
-
- | Background image |
-| 
-
- | Text and formulas in cells |
-| 
-
- | Hyperlinks |
+| Format     | Watermark type |
+| ---------- | --- |
+| PDF        | XObject (image and text) |
+|            | Artifact (image and text) |
+|            | Annotation (image and text) |
+|            | Regular text |
+| Word       | Shape (image and text) |
+|            | Regular text |
+|            | Hyperlinks |
+| Excel      | Shape (image and text) |
+|            | Header&Footer (image and text) |
+|            | Background image |
+|            | Text and formulas in cells |
+|            | Hyperlinks |
 | PowerPoint | Shape (image and text) |
-| 
-
- | Hyperlinks |
-| Visio | Shape (image and text) |
-| 
-
- | Diagram comments |
-| 
-
- | Hyperlinks |
-| Email | Attached and embedded images |
-| 
-
- | Subject and body text fragments |
+|            | Hyperlinks |
+| Visio      | Shape (image and text) |
+|            | Diagram comments |
+|            | Hyperlinks |
+| Email      | Attached and embedded images |
+|            | Subject and body text fragments |
 
 ## Document information extraction
 
@@ -177,6 +114,6 @@ set proper watermark position inside document, apply appropriate watermark styl
 
 Supported image formats for document preview are:
 
-*   PNG;
-*   JPG;
-*   BMP.
+* PNG;
+* JPG;
+* BMP.

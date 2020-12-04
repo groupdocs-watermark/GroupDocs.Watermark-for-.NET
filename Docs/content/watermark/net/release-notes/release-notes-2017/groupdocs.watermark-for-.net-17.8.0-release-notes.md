@@ -6,7 +6,7 @@ weight: 5
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 17.8.0.{{< /alert >}}
 
@@ -14,8 +14,8 @@ hideChildren: False
 
 There are the following features and enhancements in this release:
 
-*   Ability to specify which objects should be included in watermark search
-*   Ability to specify Dynabic.Metered account to run GroupDocs.Watermark in licensed mode
+* Ability to specify which objects should be included in watermark search
+* Ability to specify Dynabic.Metered account to run GroupDocs.Watermark in licensed mode
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -54,21 +54,21 @@ Set searchable objects globally (for all documents that will be created after th
 ```csharp
 Document.DefaultSearchableObjects = new SearchableObjects
 {
-	WordsSearchableObjects = WordsSearchableObjects.Hyperlinks | WordsSearchableObjects.Text,
-	CellsSearchableObjects = CellsSearchableObjects.HeadersFooters,
-	SlidesSearchableObjects = SlidesSearchableObjects.SlidesBackgrounds | SlidesSearchableObjects.Shapes,
-	DiagramSearchableObjects = DiagramSearchableObjects.None,
-	PdfSearchableObjects = PdfSearchableObjects.All
+    WordsSearchableObjects = WordsSearchableObjects.Hyperlinks | WordsSearchableObjects.Text,
+    CellsSearchableObjects = CellsSearchableObjects.HeadersFooters,
+    SlidesSearchableObjects = SlidesSearchableObjects.SlidesBackgrounds | SlidesSearchableObjects.Shapes,
+    DiagramSearchableObjects = DiagramSearchableObjects.None,
+    PdfSearchableObjects = PdfSearchableObjects.All
 };
 
 foreach (var file in Directory.GetFiles(@"D:\files"))
 {
-	using (var doc = Document.Load(file))
-	{
-		var watermarks = doc.FindWatermarks();
+    using (var doc = Document.Load(file))
+    {
+        var watermarks = doc.FindWatermarks();
 
-		// The code for working with found watermarks goes here.
-	}
+        // The code for working with found watermarks goes here.
+    }
 }
 ```
 
@@ -81,11 +81,11 @@ Set searchable objects for a particular document instance
 ```csharp
 using (var doc = Document.Load(@"D:\test.pdf"))
 {
-	// Search for hyperlinks only.
-	doc.SearchableObjects.PdfSearchableObjects = PdfSearchableObjects.Hyperlinks;
-	var watermarks = doc.FindWatermarks();
+    // Search for hyperlinks only.
+    doc.SearchableObjects.PdfSearchableObjects = PdfSearchableObjects.Hyperlinks;
+    var watermarks = doc.FindWatermarks();
 
-	// The code for working with found watermarks goes here.
+    // The code for working with found watermarks goes here.
 }
 ```
 

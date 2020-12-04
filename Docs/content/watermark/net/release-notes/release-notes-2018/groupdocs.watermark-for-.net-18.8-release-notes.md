@@ -6,7 +6,7 @@ weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 {{< alert style="info" >}}This page contains release notes for GroupDocs.Watermark for .NET 18.8.{{< /alert >}}
 
@@ -14,10 +14,10 @@ hideChildren: False
 
 There are the following features, enhancements, and bug fixes in this release:
 
-*   Ability to skip unreadable characters during text watermark search
-*   Protection of text watermark using unreadable characters for Slides
-*   SmartArt and CustomXml drawing types for Worksheets
-*   Fix locking watermark in PPTX, PPT
+* Ability to skip unreadable characters during text watermark search
+* Protection of text watermark using unreadable characters for Slides
+* SmartArt and CustomXml drawing types for Worksheets
+* Fix locking watermark in PPTX, PPT
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -87,15 +87,15 @@ Search for text watermarks with skipping unreadable characters:
 
 ```csharp
 string inputFileName = @"d:\input.pptx";
- 
+
 using (SlidesDocument document = Document.Load<SlidesDocument>(inputFileName))
 {
     string watermarkText = "Company name";
     TextSearchCriteria criterion = new TextSearchCriteria(watermarkText);
- 
+
     // Enabling skipping of unreadable characters
     criterion.SkipUnreadableCharacters = true;
- 
+
     PossibleWatermarkCollection result = document.FindWatermarks(criterion);
 }
 ```
@@ -119,17 +119,17 @@ Protect text watermark with unreadable characters:
 ```csharp
 string inputFileName = @"d:\input.pptx";
 string outputFileName = @"d:\output.pptx";
- 
+
 using (SlidesDocument document = Document.Load<SlidesDocument>(inputFileName))
 {
     TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
- 
+
     SlidesShapeSettings settings = new SlidesShapeSettings();
     settings.IsLocked = true;
     settings.ProtectWithUnreadableCharacters = true;
- 
+
     document.AddWatermark(watermark, settings);
- 
+
     document.Save(outputFileName);
 }
 ```

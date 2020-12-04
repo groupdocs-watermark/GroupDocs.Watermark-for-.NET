@@ -6,7 +6,7 @@ weight: 9
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 Microsoft Word allows the user to divide and format the [document](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.wordprocessing/wordprocessingcontent) into multiple [sections](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.wordprocessing/wordprocessingcontent/properties/sections). Defining sections in the document enables the user to set specific page layout and formatting for different parts of the document. An example of the sections is headers and footers. Headers and footers are used to display text or any graphical object on all the pages.
 
@@ -14,12 +14,12 @@ Microsoft Word allows the user to divide and format the [document](https://apire
 
 GroupDocs.Watermark API allows you to add watermark objects in the headers and footers of the page. Adding watermark to a section of a Word document using GroupDocs.Watermark consists of following steps.
 
-1.  Load the document 
-2.  Create and initialize watermark object 
-3.  Set watermark properties
-4.  Create [WordProcessingWatermarkSectionOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.wordprocessing/wordprocessingwatermarksectionoptions) and set [SectionIndex](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.wordprocessing/wordprocessingwatermarksectionoptions/properties/sectionindex)
-5.  Add watermark to the section of the document
-6.  Save the document
+1. Load the document
+2. Create and initialize watermark object
+3. Set watermark properties
+4. Create [WordProcessingWatermarkSectionOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.wordprocessing/wordprocessingwatermarksectionoptions) and set [SectionIndex](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.wordprocessing/wordprocessingwatermarksectionoptions/properties/sectionindex)
+5. Add watermark to the section of the document
+6. Save the document
 
 Following code adds watermark to the headers of a particular section.
 
@@ -43,7 +43,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadO
 
 The code snippet above adds watermark to the first section (to all headers of this section). So, it will be displayed on all pages belonging to the section.
 
-## Getting page size 
+## Getting page size
 
 If for some reasons you want to use absolute sizing and positioning, you may also need to get some [page properties](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.wordprocessing/wordprocessingsection/properties/pagesetup) for a section. GroupDocs.Watermark allows you to extract information about a particular section.
 
@@ -228,7 +228,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadO
 }
 ```
 
-### Setting different headers or footers 
+### Setting different headers or footers
 
 Using GroupDocs.Watermark API, you can also set [different](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.wordprocessing/wordprocessingpagesetup/properties/differentfirstpageheaderfooter) headers or footers for [even and odd](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.wordprocessing/wordprocessingpagesetup/properties/oddandevenpagesheaderfooter) numbered pages and for the first page of the document (as shown in below example).
 
@@ -250,16 +250,19 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadO
 
 ## Advanced use cases
 
+* [Existing objects in word processing document]({{< ref "existing-objects-in-word-processing-document" >}} "Existing objects in word processing document")
+* [Locking watermark in word processing document]({{< ref "locking-watermark-in-word-processing-document" >}} "Locking watermark in word processing document")
+* [Protecting word processing documents]({{< ref "protecting-word-processing-documents" >}} "Protecting word processing documents")
+* [Watermarks in word processing document]({{< ref "watermarks-in-word-processing-document" >}} "Watermarks in word processing document")
+
 ## More resources
 
 ### GitHub examples
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

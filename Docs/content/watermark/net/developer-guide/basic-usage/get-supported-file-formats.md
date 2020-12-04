@@ -6,12 +6,12 @@ weight: 2
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 GroupDocs.Watermark allows to get the [list of all supported file formats]({{< ref "watermark/net/getting-started/supported-document-formats.md" >}}) by following the below steps:
 
-*   Call [GetSupportedFileTypes](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/filetype/methods/getsupportedfiletypes)of [FileType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/filetype) class;
-*   Enumerate through the collection of [FileType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/filetype)objects*.*
+* Call [GetSupportedFileTypes](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/filetype/methods/getsupportedfiletypes)of [FileType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/filetype) class;
+* Enumerate through the collection of [FileType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/filetype)objects*.*
 
 The following code sample demonstrates how to get supported file formats list.
 
@@ -35,10 +35,8 @@ To learn more about document watermarking features and get familiar how to manag
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

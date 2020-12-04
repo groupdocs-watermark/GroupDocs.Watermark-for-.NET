@@ -6,17 +6,17 @@ weight: 3
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 ## Adding watermark to all pages of a particular type
 
 Using GroupDocs.Watermark, you can add watermark to all pages of a particular type in a document. It consists of following steps.
 
-1.  Load the document
-2.  Create and initialize watermark object
-3.  Set watermark properties
-4.  Add watermark by specifying page type using [PlacementType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.diagram/diagramshapewatermarkoptions/properties/placementtype) of [DiagramShapeWatermarkOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.diagram/diagramshapewatermarkoptions)
-5.  Save the document
+1. Load the document
+2. Create and initialize watermark object
+3. Set watermark properties
+4. Add watermark by specifying page type using [PlacementType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.diagram/diagramshapewatermarkoptions/properties/placementtype) of [DiagramShapeWatermarkOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.diagram/diagramshapewatermarkoptions)
+5. Save the document
 
 Following code shows how to add watermark to a particular type of the pages.
 
@@ -128,16 +128,16 @@ using (Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOp
 
 ## Advanced use cases
 
+* [Existing objects in diagram document]({{< ref "existing-objects-in-diagram-document" >}} "Existing objects in diagram document")
+
 ## More resources
 
 ### GitHub examples
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

@@ -6,7 +6,7 @@ weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 Watermarks in Word documents are usually represented by shapes. Using GroupDocs.Watermark API you can easily remove shape of any type from any level of document structure.
 
@@ -14,11 +14,11 @@ Watermarks in Word documents are usually represented by shapes. Using GroupDocs.
 
 Removing watermark from a particular section of a Word document using GroupDocs.Watermark consists of following steps.
 
-1.  Load the document 
-2.  Create and initialize [image](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagesearchcriteria) or [text](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/textsearchcriteria) search criteria  
-3.  [Find](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents/contentpart/methods/search) possible watermarks
-4.  Remove found watermarks 
-5.  Save the document
+1. Load the document
+2. Create and initialize [image](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/imagesearchcriteria) or [text](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.search.searchcriteria/textsearchcriteria) search criteria  
+3. [Find](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents/contentpart/methods/search) possible watermarks
+4. Remove found watermarks
+5. Save the document
 
 Following code sample shows how to remove watermark from a particular section.
 
@@ -357,10 +357,8 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadO
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

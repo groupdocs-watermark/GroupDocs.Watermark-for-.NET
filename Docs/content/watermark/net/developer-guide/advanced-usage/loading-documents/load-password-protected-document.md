@@ -6,13 +6,13 @@ weight: 4
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 Some document formats also support content encryption. To load these type of documents you will have to provide the password. GroupDocs.Watermark API allows you to load content of these documents to manage watermark.
 
 ## Load password-protected document of any supported format
 
-The following example demonstrates how to load an encrypted document of any supported format using the password. If the password is incorrect, [InvalidPasswordException ](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.exceptions/invalidpasswordexception)is thrown.
+The following example demonstrates how to load an encrypted document of any supported format using the password. If the password is incorrect, [InvalidPasswordException](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.exceptions/invalidpasswordexception)is thrown.
 
 **AdvancedUsage.LoadingDocuments.LoadPasswordProtectedDocument**
 
@@ -29,7 +29,7 @@ using (Watermarker watermarker = new Watermarker(filePath, loadOptions))
     watermarker.Add(watermark);
 
     watermarker.Save(Constants.OutProtectedDocumentDocx);
-} 
+}
 ```
 
 ## Load password-protected word processing document
@@ -55,11 +55,11 @@ using (Watermarker watermarker = new Watermarker(filePath, loadOptions))
 
 The following [LoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options/loadoptions) descendants use [Password](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options/loadoptions/properties/password) property:
 
-*   [DiagramLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.diagram/diagramloadoptions)
-*   [PdfLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.pdf/pdfloadoptions)
-*   [PresentationLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.presentation/presentationloadoptions)
-*   [SpreadsheetLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.spreadsheet/spreadsheetloadoptions)
-*   [WordProcessingLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.wordprocessing/wordprocessingloadoptions)
+* [DiagramLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.diagram/diagramloadoptions)
+* [PdfLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.pdf/pdfloadoptions)
+* [PresentationLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.presentation/presentationloadoptions)
+* [SpreadsheetLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.spreadsheet/spreadsheetloadoptions)
+* [WordProcessingLoadOptions](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.options.wordprocessing/wordprocessingloadoptions)
 
 ## More resources
 
@@ -67,10 +67,8 @@ The following [LoadOptions](https://apireference.groupdocs.com/net/watermark/gro
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

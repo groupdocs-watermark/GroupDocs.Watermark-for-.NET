@@ -6,14 +6,14 @@ weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 GroupDocs.Watermark allows to get document information which includes:
 
-*   [FileType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/idocumentinfo/properties/filetype)
-*   [PageCount](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/idocumentinfo/properties/pagecount)
-*   [Size](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/idocumentinfo/properties/size)
-*   [IsEncrypted](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/idocumentinfo/properties/isencrypted)
+* [FileType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/idocumentinfo/properties/filetype)
+* [PageCount](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/idocumentinfo/properties/pagecount)
+* [Size](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/idocumentinfo/properties/size)
+* [IsEncrypted](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.common/idocumentinfo/properties/isencrypted)
 
 The following code samples demonstrate how to get document information.
 
@@ -64,10 +64,8 @@ To learn more about document watermarking features and get familiar how to manag
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

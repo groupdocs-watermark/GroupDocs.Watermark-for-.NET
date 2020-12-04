@@ -6,18 +6,14 @@ weight: 3
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 Since version 18.6, GroupDocs.Watermark provides a simplified way of protecting the Word documents with the password. The API allows you to protect as well as unprotect the Word documents. The following protection types are supported:
 
-*   *AllowOnlyRevisions*: user can only add revision marks to the document.
-    
-*   *AllowOnlyComments*: user can only modify comments in the document.
-    
-*   *AllowOnlyFormFields*: user can only enter data in the form fields in the document.
-    
-*   *ReadOnly*: no changes are allowed to the document.
-    
+* *AllowOnlyRevisions*: user can only add revision marks to the document.
+* *AllowOnlyComments*: user can only modify comments in the document.
+* *AllowOnlyFormFields*: user can only enter data in the form fields in the document.
+* *ReadOnly*: no changes are allowed to the document.
 
 The protection types are added to the [*WordProcessingProtectionType*](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.contents.wordprocessing/wordprocessingprotectiontype) enum. Following code samples demonstrate how to protect and unprotect Word documents.
 
@@ -65,10 +61,8 @@ using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadO
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

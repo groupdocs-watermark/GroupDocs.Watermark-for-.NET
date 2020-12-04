@@ -6,7 +6,7 @@ weight: 2
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 Following code snippet shows how to add text watermark to a document. If the document consists of multiple parts (pages, worksheets, slides, frames etc), the watermark will be added to all of them.
 
@@ -130,7 +130,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InImagePng))
 
 ### Size types
 
-In most cases, to add good looking watermark, you should consider the size of the page/slide/frame on which it will be placed. [ SizingType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermark/properties/sizingtype) and [ScaleFactor ](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermark/properties/scalefactor)properties can be used to scale the watermark depending on the parent size.
+In most cases, to add good looking watermark, you should consider the size of the page/slide/frame on which it will be placed. [SizingType](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermark/properties/sizingtype) and [ScaleFactor](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermark/properties/scalefactor)properties can be used to scale the watermark depending on the parent size.
 
 **AdvancedUsage.AddingTextWatermarks.AddWatermarkWithSizeType**
 
@@ -181,15 +181,13 @@ using (Watermarker watermarker = new Watermarker(Constants.InTestDocx))
 
 If rotation angle is set, it is assumed that watermark size is equal to axis-aligned bounding box size. The following picture illustrates what is the watermark bounding box and how it is used for sizing and positioning. The picture shows a result of execution of the above code snippet. The actual watermark bounds are colored in blue and the bounding box is colored in red. As you can see, the bounding box size is used to calculate watermark relative size.
 
-![](watermark/net/images/adding-text-watermarks.png)
+![adding-text-watermarks](watermark/net/images/adding-text-watermarks.png)
 
 ### Considering parent margins
 
 For most document formats you can set page margins when working with a document. By default, GroupDocs.Watermark ignores document margins and uses maximum available space for watermarking as shown in below image.
 
-![](watermark/net/images/adding-text-watermarks_1.png)
-
-  
+![adding-text-watermarks_1](watermark/net/images/adding-text-watermarks_1.png)
 
 As you can see, the watermark goes beyond page margins. To change this behavior, set [ConsiderParentMargins](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermark/properties/considerparentmargins) property to true (as shown in below example).
 
@@ -218,7 +216,7 @@ using (Watermarker watermarker = new Watermarker(Constants.InInputVsdx))
 
 Now, the watermark is aligned with respect to page margins.
 
-![](watermark/net/images/adding-text-watermarks_2.png)
+![adding-text-watermarks_2](watermark/net/images/adding-text-watermarks_2.png)
 
 ## Watermark in documents of different types
 
@@ -230,10 +228,8 @@ Watermarks in documents of different types are represented by different objects.
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking App
 

@@ -3,10 +3,10 @@ id: supported-document-formats
 url: watermark/net/supported-document-formats
 title: Supported Document Formats
 weight: 2
-description: " "
+description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 The following table indicates the file formats that GroupDocs.Watermark can work with.
 
@@ -39,7 +39,7 @@ The following table indicates the file formats that GroupDocs.Watermark can wor
 | [MSG](https://wiki.fileformat.com/email/msg/) | Outlook Email Message Format | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) |   |   |   | Watermark management is available for attached documents and images. |
 | [ODT](https://wiki.fileformat.com/word-processing/odt/) | ODF Text Document. | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) |   |
 | [PDF](https://wiki.fileformat.com/view/pdf/) | PDF (Adobe Portable Document) format | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | Watermark searching and removing is not available for rasterized pages. |
-| [BMP](https://wiki.fileformat.com/image/bmp/) | Bitmap Picture (BMP) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | 
+| [BMP](https://wiki.fileformat.com/image/bmp/) | Bitmap Picture (BMP) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) |
  |   |   |
 | [GIF](https://wiki.fileformat.com/image/gif/) | Graphics Interchange Format (GIF) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) |   |   |   |
 | [JPG](https://wiki.fileformat.com/image/jpeg) / [JPEG](https://wiki.fileformat.com/image/jpeg) / JPE   | Joint Photographic Experts Group (JPEG) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) | ![(tick)](watermark/net/images/check.png) |   |   |   |

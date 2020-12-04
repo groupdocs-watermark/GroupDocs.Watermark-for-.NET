@@ -6,18 +6,21 @@ weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Watermark for .NET
-hideChildren: False
+hideChildren: True
 ---
 GroupDocs.Watermark library provides ability to manipulate with different watermark types such as [TextWatermark](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.watermarks/textwatermark), [ImageWatermark](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark.watermarks/imagewatermark). These watermarks could be added to document, updated, removed, or searched inside already watermarked documents. Our product also provides information about document type and structure - file type, size, pages count, etc. and generates document pages preview based on provided options.  
 
 Here are main GroupDocs.Watermark API concepts:
 
-*   [Watermarker](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker) is the main class that contains all required methods for manipulating with document watermarks.
-    
-*   Most part of methods expects different options to add, update, search or remove watermarks inside document.
-    
-*   [Watermarker](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker) class implements [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) interface to correctly release used resources - like safely closing document streams when all operations completed.
-    
+* [Watermarker](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker) is the main class that contains all required methods for manipulating with document watermarks.
+* Most part of methods expects different options to add, update, search or remove watermarks inside document.
+* [Watermarker](https://apireference.groupdocs.com/net/watermark/groupdocs.watermark/watermarker) class implements [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) interface to correctly release used resources - like safely closing document streams when all operations completed.
+
+## Articles in this section
+
+* [Get supported file formats]({{< ref "get-supported-file-formats" >}} "Get supported file formats")
+* [Get document info]({{< ref "get-document-info" >}} "Get document info")
+* [Add text or image watermark]({{< ref "add-text-or-image-watermark" >}} "Add text or image watermark")
 
 ## Referencing required namespaces
 
@@ -58,10 +61,8 @@ To learn more about document watermarking features and get familiar how to manag
 
 You may easily run the code above and see the feature in action in our GitHub examples:
 
-*   [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
-    
-*   [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
-    
+* [GroupDocs.Watermark for .NET examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET)
+* [GroupDocs.Watermark for Java examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java)
 
 ### Free online document watermarking app
 
