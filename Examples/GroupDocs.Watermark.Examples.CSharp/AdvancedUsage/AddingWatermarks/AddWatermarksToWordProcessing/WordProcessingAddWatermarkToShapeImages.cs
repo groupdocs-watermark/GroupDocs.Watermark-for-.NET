@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Contents.WordProcessing;
+using GroupDocs.Watermark.Options.WordProcessing;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
 {
-    using Common;
-    using Contents.WordProcessing;
-    using Options.WordProcessing;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to add watermark to images in a document.
     /// </summary>

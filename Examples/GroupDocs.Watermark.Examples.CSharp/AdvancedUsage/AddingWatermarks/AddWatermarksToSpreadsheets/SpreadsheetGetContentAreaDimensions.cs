@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using GroupDocs.Watermark.Contents.Spreadsheet;
+using GroupDocs.Watermark.Options.Spreadsheet;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using System;
-    using Contents.Spreadsheet;
-    using Options.Spreadsheet;
-
     /// <summary>
     /// This example shows how to get the size of the content area (range of cells which contains data).
     /// </summary>

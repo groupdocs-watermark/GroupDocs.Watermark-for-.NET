@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Search.SearchCriteria;
+using System;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.SearchingWatermarks
 {
-    using System;
-    using Search;
-    using Search.SearchCriteria;
-
     /// <summary>
     /// This example shows how to searche for image watermarks that resemble with a particular image.
     /// </summary>

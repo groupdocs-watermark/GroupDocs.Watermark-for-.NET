@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Search.Objects;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.SearchingWatermarks
 {
-    using System;
-    using Search;
-    using Search.Objects;
-
     /// <summary>
     /// This example shows how to set searchable objects for a particular Watermarker instance.
     /// </summary>

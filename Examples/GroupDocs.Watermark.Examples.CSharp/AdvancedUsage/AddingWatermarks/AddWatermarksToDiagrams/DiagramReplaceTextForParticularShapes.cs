@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Diagram;
+using GroupDocs.Watermark.Options.Diagram;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams
 {
-    using Contents.Diagram;
-    using Options.Diagram;
-
     /// <summary>
     /// This example shows how to replace shapes' text.
     /// </summary>

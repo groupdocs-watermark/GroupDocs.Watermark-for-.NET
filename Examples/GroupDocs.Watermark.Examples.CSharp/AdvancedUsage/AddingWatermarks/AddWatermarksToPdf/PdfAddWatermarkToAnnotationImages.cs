@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Contents.Pdf;
+using GroupDocs.Watermark.Options.Pdf;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
-    using Common;
-    using Contents.Pdf;
-    using Options.Pdf;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to add a watermark to image annotations in PDF documents.
     /// </summary>

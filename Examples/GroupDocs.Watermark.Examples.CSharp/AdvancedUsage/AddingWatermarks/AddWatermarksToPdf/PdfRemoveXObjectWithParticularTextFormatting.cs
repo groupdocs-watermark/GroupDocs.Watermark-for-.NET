@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Pdf;
+using GroupDocs.Watermark.Options.Pdf;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
-    using Contents.Pdf;
-    using Options.Pdf;
-    using Search;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to find and remove all XObjects containing text with a particular formatting from a PDF document.
     /// </summary>

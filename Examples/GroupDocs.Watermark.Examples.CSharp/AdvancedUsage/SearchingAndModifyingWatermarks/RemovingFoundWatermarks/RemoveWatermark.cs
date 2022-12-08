@@ -2,10 +2,10 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Search;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.RemovingFoundWatermarks
 {
-    using Search;
-
     /// <summary>
     /// This example shows how to find and remove a particular watermark from a document.
     /// </summary>

@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Options.Spreadsheet;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
 {
-    using Options.Spreadsheet;
-    using Watermarks;
-
     /// <summary>
     /// This examle demonstrates how to create a watermarker for the Spreadsheet document:
     /// </summary>

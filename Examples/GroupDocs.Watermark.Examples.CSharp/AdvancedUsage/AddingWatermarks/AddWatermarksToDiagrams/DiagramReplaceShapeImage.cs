@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Diagram;
+using GroupDocs.Watermark.Options.Diagram;
+using System.IO;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams
 {
-    using System.IO;
-    using Contents.Diagram;
-    using Options.Diagram;
-
     /// <summary>
     /// This example shows how to replace the image of particular shapes.
     /// </summary>

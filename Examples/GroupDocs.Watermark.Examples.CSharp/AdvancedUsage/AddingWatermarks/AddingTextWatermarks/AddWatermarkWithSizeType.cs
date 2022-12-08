@@ -2,10 +2,10 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingTextWatermarks
 {
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to consider the size of the page/slide/frame on which a watermark will be placed.
     /// </summary>

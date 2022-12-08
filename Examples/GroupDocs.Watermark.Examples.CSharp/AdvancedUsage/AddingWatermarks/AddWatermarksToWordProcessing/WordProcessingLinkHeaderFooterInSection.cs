@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents;
+using GroupDocs.Watermark.Contents.WordProcessing;
+using GroupDocs.Watermark.Options.WordProcessing;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
 {
-    using Contents;
-    using Contents.WordProcessing;
-    using Options.WordProcessing;
-
     /// <summary>
     /// This example shows how to link the header/footer.
     /// </summary>

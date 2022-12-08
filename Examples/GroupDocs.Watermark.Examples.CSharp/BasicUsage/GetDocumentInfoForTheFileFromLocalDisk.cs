@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using GroupDocs.Watermark.Common;
+
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
-    using System;
-    using Common;
-
     /// <summary>
     /// This example demostrates how to get document information from the local file.
     /// </summary>

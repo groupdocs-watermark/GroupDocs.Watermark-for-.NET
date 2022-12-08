@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents;
+using GroupDocs.Watermark.Options.WordProcessing;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
 {
-    using Contents;
-    using Options.WordProcessing;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to apply some text effects to the shape watermarks.
     /// </summary>

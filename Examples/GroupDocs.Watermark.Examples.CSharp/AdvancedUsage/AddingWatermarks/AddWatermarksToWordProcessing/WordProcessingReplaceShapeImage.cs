@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.WordProcessing;
+using GroupDocs.Watermark.Options.WordProcessing;
+using System.IO;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
 {
-    using System.IO;
-    using Contents.WordProcessing;
-    using Options.WordProcessing;
-
     /// <summary>
     /// This example shows how to replace the image of the particular shapes in a Word document.
     /// </summary>

@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Search.SearchCriteria;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.ModifingFoundWatermarkProperties
 {
-    using System;
-    using Search;
-    using Search.SearchCriteria;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to replace the watermark's text with formatting.
     /// </summary>
@@ -29,7 +29,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
                         watermark.FormattedTextFragments.Clear();
                         watermark.FormattedTextFragments.Add("passed", new Font("Calibri", 19, FontStyle.Bold), Color.Red, Color.Aqua);
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         // Found entity may not support text editing
                         // Passed arguments can have inappropriate value

@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using System.IO;
+using GroupDocs.Watermark.Contents.Email;
+using GroupDocs.Watermark.Options.Email;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments
 {
-    using System;
-    using System.IO;
-    using Contents.Email;
-    using Options.Email;
-
     /// <summary>
     /// This example shows how to get the information about the attachments in an email message.
     /// </summary>

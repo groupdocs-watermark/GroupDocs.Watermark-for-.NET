@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Search;
+using System;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.SearchingWatermarks
 {
-    using System;
-    using Search;
-
     /// <summary>
     /// This example shows how to find and get all possible watermarks in a document.
     /// </summary>

@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System.IO;
+using GroupDocs.Watermark.Contents.Presentation;
+using GroupDocs.Watermark.Options.Presentation;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPresentations
 {
-    using System.IO;
-    using Contents.Presentation;
-    using Options.Presentation;
-
     /// <summary>
     /// This example shows how to set the background image for a chart inside PowerPoint document.
     /// </summary>

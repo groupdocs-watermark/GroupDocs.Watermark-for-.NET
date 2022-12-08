@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using GroupDocs.Watermark.Contents.WordProcessing;
+using GroupDocs.Watermark.Options.WordProcessing;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
 {
-    using System;
-    using Contents.WordProcessing;
-    using Options.WordProcessing;
-
     /// <summary>
     /// This example shows how to get some page properties for a section.
     /// </summary>

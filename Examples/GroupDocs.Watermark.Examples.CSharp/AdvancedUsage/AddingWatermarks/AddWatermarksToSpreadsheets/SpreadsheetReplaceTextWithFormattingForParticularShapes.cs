@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Spreadsheet;
+using GroupDocs.Watermark.Options.Spreadsheet;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using Contents.Spreadsheet;
-    using Options.Spreadsheet;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to replace the text of the shapes with formatted text.
     /// </summary>

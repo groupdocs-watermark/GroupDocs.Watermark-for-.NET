@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Options.WordProcessing;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
 {
-    using Common;
-    using Options.WordProcessing;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to set some additional options when adding shape watermark to a Word document.
     /// </summary>

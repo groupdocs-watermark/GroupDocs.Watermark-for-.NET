@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System.IO;
+using GroupDocs.Watermark.Contents.Spreadsheet;
+using GroupDocs.Watermark.Options.Spreadsheet;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using System.IO;
-    using Contents.Spreadsheet;
-    using Options.Spreadsheet;
-
     /// <summary>
     /// This example shows how to set the background image for a chart inside an Excel document.
     /// </summary>

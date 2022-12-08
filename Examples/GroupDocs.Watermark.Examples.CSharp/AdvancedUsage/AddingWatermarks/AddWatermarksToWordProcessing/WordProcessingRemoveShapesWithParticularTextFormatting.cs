@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.WordProcessing;
+using GroupDocs.Watermark.Options.WordProcessing;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
 {
-    using Contents.WordProcessing;
-    using Options.WordProcessing;
-    using Search;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to find and remove the shapes with a particular text formatting.
     /// </summary>

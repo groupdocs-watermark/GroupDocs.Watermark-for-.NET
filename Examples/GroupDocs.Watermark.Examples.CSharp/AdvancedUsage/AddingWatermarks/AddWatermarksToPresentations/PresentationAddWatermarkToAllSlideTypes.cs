@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Presentation;
+using GroupDocs.Watermark.Options.Presentation;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPresentations
 {
-    using Contents.Presentation;
-    using Options.Presentation;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to access each type of the slides in a PowerPoint presentation.
     /// </summary>

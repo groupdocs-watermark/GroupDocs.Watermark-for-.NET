@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Presentation;
+using GroupDocs.Watermark.Options.Presentation;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPresentations
 {
-    using Contents.Presentation;
-    using Options.Presentation;
-
     /// <summary>
     /// This example shows how to remove the background image of a particular slide.
     /// </summary>

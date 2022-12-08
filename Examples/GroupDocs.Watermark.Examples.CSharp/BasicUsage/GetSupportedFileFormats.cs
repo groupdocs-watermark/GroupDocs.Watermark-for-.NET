@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using System.Collections.Generic;
+using GroupDocs.Watermark.Common;
+
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
-    using System;
-    using System.Collections.Generic;
-    using Common;
-
     public static class GetSupportedFileFormats
     {
         /// <summary>

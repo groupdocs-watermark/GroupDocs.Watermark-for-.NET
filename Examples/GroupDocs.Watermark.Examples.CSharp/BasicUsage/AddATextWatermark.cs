@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
-    using Common;
-    using Watermarks;
-
     /// <summary>
     /// This example demostrates how to add a text watermark to a local document.
     /// </summary>

@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System.IO;
+using GroupDocs.Watermark.Contents.Spreadsheet;
+using GroupDocs.Watermark.Options.Spreadsheet;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using System.IO;
-    using Contents.Spreadsheet;
-    using Options.Spreadsheet;
-
     /// <summary>
     /// This example shows how to to add linked attachments in Excel document.
     /// </summary>
@@ -23,12 +23,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 SpreadsheetWorksheet worksheet = content.Worksheets[0];
 
                 // Add the attachment
-                worksheet.Attachments.AddLink(Constants.InDocumentDocx, // Source file path
-                                              File.ReadAllBytes(Constants.DocumentPreviewPng), // Preview image content
-                                              50, // X-coordinate of the attachment frame
-                                              100, // Y-coordinate of the attachment frame
-                                              200, // Attachment frame width
-                                              400); // Attachment frame height
+                worksheet.Attachments.AddLink(
+                    Constants.InDocumentDocx, // Source file path
+                    File.ReadAllBytes(Constants.DocumentPreviewPng), // Preview image content
+                    50, // X-coordinate of the attachment frame
+                    100, // Y-coordinate of the attachment frame
+                    200, // Attachment frame width
+                    400); // Attachment frame height
 
                 // Save changes
                 watermarker.Save(Constants.OutSpreadsheetXlsx);

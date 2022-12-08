@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Options.Spreadsheet;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using Options.Spreadsheet;
-    using Watermarks;
-
     /// <summary>
     /// This example show how to add background watermark to all worksheets of Excel document.
     /// </summary>

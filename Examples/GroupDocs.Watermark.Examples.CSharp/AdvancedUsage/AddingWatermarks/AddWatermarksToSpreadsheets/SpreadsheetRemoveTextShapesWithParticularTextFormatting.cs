@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Spreadsheet;
+using GroupDocs.Watermark.Options.Spreadsheet;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using Contents.Spreadsheet;
-    using Options.Spreadsheet;
-    using Search;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to find and remove the shapes with a particular text formatting from an Excel document.
     /// </summary>

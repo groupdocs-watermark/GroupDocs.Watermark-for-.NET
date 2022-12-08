@@ -2,10 +2,10 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingImageWatermarks
 {
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to add image watermark from a local file.
     /// </summary>

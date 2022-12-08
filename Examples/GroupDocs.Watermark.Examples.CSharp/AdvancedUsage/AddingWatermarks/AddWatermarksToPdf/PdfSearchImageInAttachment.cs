@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using GroupDocs.Watermark.Contents.Image;
+using GroupDocs.Watermark.Options.Pdf;
+using GroupDocs.Watermark.Search.Objects;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
-    using System;
-    using Contents.Image;
-    using Options.Pdf;
-    using Search.Objects;
-
     /// <summary>
     /// This example shows how to search for all the images attachments in a PDF document.
     /// </summary>

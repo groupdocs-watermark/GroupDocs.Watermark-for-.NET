@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Watermarks;
+using System.IO;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingImageWatermarks
 {
-    using System.IO;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to an image watermark from stream.
     /// </summary>

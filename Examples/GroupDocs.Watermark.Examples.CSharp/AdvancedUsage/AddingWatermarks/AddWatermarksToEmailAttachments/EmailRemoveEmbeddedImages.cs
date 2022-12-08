@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System.Text.RegularExpressions;
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Contents.Email;
+using GroupDocs.Watermark.Options.Email;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments
 {
-    using System.Text.RegularExpressions;
-    using Common;
-    using Contents.Email;
-    using Options.Email;
-
     /// <summary>
     /// This example shows how to remove the embedded images from the body of the email message.
     /// </summary>

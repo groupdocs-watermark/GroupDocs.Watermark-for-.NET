@@ -1,38 +1,38 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Watermark.Examples.CSharp.Framework", "GroupDocs.Watermark.Examples.CSharp.Framework\GroupDocs.Watermark.Examples.CSharp.Framework.csproj", "{246DF6F3-910E-44B1-989F-126C47B15711}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GroupDocs.Watermark.Examples.CSharp", "GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.shproj", "{31154EC6-5BD1-4011-85FD-6A19474B36BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Watermark.Examples.CSharp.Core", "GroupDocs.Watermark.Examples.CSharp.Core\GroupDocs.Watermark.Examples.CSharp.Core.csproj", "{3A916066-9CEF-4C79-952A-F74FCC9FA731}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Watermark.Examples.CSharp.Framework", "GroupDocs.Watermark.Examples.CSharp.Framework\GroupDocs.Watermark.Examples.CSharp.Framework.csproj", "{DF06A8DF-EB0B-4CAE-A999-6E03345FCCC7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Watermark.Examples.CSharp.Core", "GroupDocs.Watermark.Examples.CSharp.Core\GroupDocs.Watermark.Examples.CSharp.Core.csproj", "{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{246df6f3-910e-44b1-989f-126c47b15711}*SharedItemsImports = 4
-		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{31154ec6-5bd1-4011-85fd-6a19474b36bc}*SharedItemsImports = 13
-		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{3a916066-9cef-4c79-952a-f74fcc9fa731}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{246DF6F3-910E-44B1-989F-126C47B15711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{246DF6F3-910E-44B1-989F-126C47B15711}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{246DF6F3-910E-44B1-989F-126C47B15711}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{246DF6F3-910E-44B1-989F-126C47B15711}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A916066-9CEF-4C79-952A-F74FCC9FA731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A916066-9CEF-4C79-952A-F74FCC9FA731}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A916066-9CEF-4C79-952A-F74FCC9FA731}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A916066-9CEF-4C79-952A-F74FCC9FA731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF06A8DF-EB0B-4CAE-A999-6E03345FCCC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF06A8DF-EB0B-4CAE-A999-6E03345FCCC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF06A8DF-EB0B-4CAE-A999-6E03345FCCC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF06A8DF-EB0B-4CAE-A999-6E03345FCCC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {88394EDF-3C58-420B-8AD8-A805B3813FA8}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{31154ec6-5bd1-4011-85fd-6a19474b36bc}*SharedItemsImports = 13
+		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{bfa3a864-a9b4-43ed-9ff8-f0c72dfd7e3c}*SharedItemsImports = 5
+		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{df06a8df-eb0b-4cae-a999-6e03345fccc7}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal

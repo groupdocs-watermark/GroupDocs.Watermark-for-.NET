@@ -2,14 +2,14 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using GroupDocs.Watermark.Options.Spreadsheet;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Search.Objects;
+using GroupDocs.Watermark.Search.SearchCriteria;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using System;
-    using Options.Spreadsheet;
-    using Search;
-    using Search.Objects;
-    using Search.SearchCriteria;
-
     /// <summary>
     /// This example shows how to search for all the images and watermarkable attachments in Excel document.
     /// </summary>

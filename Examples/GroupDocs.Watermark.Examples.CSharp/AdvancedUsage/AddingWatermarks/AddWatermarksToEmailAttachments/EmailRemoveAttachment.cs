@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Contents.Email;
+using GroupDocs.Watermark.Options.Email;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments
 {
-    using Common;
-    using Contents.Email;
-    using Options.Email;
-
     /// <summary>
     /// This example shows how to remove any particular attachment from an email message.
     /// </summary>

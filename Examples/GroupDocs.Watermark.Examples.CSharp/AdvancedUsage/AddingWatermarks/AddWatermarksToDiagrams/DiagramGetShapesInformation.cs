@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Diagram;
+using GroupDocs.Watermark.Options.Diagram;
+using System;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams
 {
-    using System;
-    using Contents.Diagram;
-    using Options.Diagram;
-
     /// <summary>
     /// This example shows how to get information about all the shapes in a Diagram document.
     /// </summary>

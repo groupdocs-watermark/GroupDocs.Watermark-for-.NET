@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Options.Email;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Search.Objects;
+using GroupDocs.Watermark.Search.SearchCriteria;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments
 {
-    using Options.Email;
-    using Search;
-    using Search.Objects;
-    using Search.SearchCriteria;
-
     /// <summary>
     /// This example shows how to search for a text in the subject as well as in the body of the email message.
     /// </summary>

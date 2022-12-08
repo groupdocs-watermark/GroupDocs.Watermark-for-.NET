@@ -2,26 +2,26 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingImageWatermarks;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingTextWatermarks;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToImages;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPresentations;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SavingDocuments;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.ModifingFoundWatermarkProperties;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.RemovingFoundWatermarks;
+using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.SearchingWatermarks;
+using GroupDocs.Watermark.Examples.CSharp.BasicUsage;
+using GroupDocs.Watermark.Examples.CSharp.QuickStart;
+
 namespace GroupDocs.Watermark.Examples.CSharp
 {
-    using System;
-    using AdvancedUsage.AddingWatermarks.AddingImageWatermarks;
-    using AdvancedUsage.AddingWatermarks.AddingTextWatermarks;
-    using AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams;
-    using AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments;
-    using AdvancedUsage.AddingWatermarks.AddWatermarksToImages;
-    using AdvancedUsage.AddingWatermarks.AddWatermarksToPdf;
-    using AdvancedUsage.AddingWatermarks.AddWatermarksToPresentations;
-    using AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets;
-    using AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing;
-    using AdvancedUsage.LoadingDocuments;
-    using AdvancedUsage.SavingDocuments;
-    using AdvancedUsage.SearchingAndModifyingWatermarks.ModifingFoundWatermarkProperties;
-    using AdvancedUsage.SearchingAndModifyingWatermarks.RemovingFoundWatermarks;
-    using AdvancedUsage.SearchingAndModifyingWatermarks.SearchingWatermarks;
-    using BasicUsage;
-    using QuickStart;
-
     internal class RunExamples
     {
         private static void Main()

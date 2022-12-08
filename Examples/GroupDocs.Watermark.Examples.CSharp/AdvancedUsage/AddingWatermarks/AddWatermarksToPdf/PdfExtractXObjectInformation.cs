@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Pdf;
+using GroupDocs.Watermark.Options.Pdf;
+using System;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
-    using System;
-    using Contents.Pdf;
-    using Options.Pdf;
-
     /// <summary>
     /// This example shows how to extract information about all the XObjects in a PDF document.
     /// </summary>

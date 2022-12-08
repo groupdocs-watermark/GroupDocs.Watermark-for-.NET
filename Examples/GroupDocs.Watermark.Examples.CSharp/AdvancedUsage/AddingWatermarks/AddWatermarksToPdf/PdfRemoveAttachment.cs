@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Contents.Pdf;
+using GroupDocs.Watermark.Options.Pdf;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
-    using Common;
-    using Contents.Pdf;
-    using Options.Pdf;
-
     /// <summary>
     /// This example shows how to remove attachments from the PDF document.
     /// </summary>

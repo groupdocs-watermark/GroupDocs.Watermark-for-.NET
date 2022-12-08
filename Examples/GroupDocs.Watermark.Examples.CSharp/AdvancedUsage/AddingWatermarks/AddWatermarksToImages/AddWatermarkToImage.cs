@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Options.Image;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToImages
 {
-    using Options.Image;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to add watermark to some particular frame(s).
     /// </summary>

@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System.IO;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SavingDocuments
 {
-    using System.IO;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to save the document to the specified stream.
     /// </summary>

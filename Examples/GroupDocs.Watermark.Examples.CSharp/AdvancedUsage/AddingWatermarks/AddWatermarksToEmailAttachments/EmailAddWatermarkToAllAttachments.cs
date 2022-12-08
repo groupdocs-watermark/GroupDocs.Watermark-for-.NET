@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Contents.Email;
+using GroupDocs.Watermark.Options.Email;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments
 {
-    using Common;
-    using Contents.Email;
-    using Options.Email;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to add watermark to all the attachments of supported types in an email message.
     /// </summary>

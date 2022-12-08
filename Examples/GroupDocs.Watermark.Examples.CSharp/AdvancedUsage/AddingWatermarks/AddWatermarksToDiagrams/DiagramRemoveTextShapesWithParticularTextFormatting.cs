@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Diagram;
+using GroupDocs.Watermark.Options.Diagram;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams
 {
-    using Contents.Diagram;
-    using Options.Diagram;
-    using Search;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to find and remove the shapes with a particular text formatting.
     /// </summary>

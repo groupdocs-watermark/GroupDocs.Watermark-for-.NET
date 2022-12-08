@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using System.IO;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Search.SearchCriteria;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.ModifingFoundWatermarkProperties
 {
-    using System;
-    using System.IO;
-    using Search;
-    using Search.SearchCriteria;
-
     /// <summary>
     /// This example shows how to replace the image of the found watermarks.
     /// </summary>

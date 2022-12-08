@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Options;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
 {
-    using Options;
-    using Watermarks;
-
     /// <summary>
     /// This example demontrates how to load an encrypted document using the password.
     /// </summary>

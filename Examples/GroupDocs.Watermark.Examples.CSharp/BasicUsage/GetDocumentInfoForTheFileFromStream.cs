@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using System.IO;
+using GroupDocs.Watermark.Common;
+
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
-    using System;
-    using System.IO;
-    using Common;
-
     /// <summary>
     /// This example demonstrates how to get document information from the file stream.
     /// </summary>

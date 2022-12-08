@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+using System.IO;
+
 namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
 {
-    using System;
-    using System.IO;
-
     /// <summary>
     ///     This example demonstrates how to set license from stream.
     /// </summary>

@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Pdf;
+using GroupDocs.Watermark.Options.Pdf;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
-    using Contents.Pdf;
-    using Options.Pdf;
-
     /// <summary>
     /// This example shows how to remove a particular annotation from a PDF document.
     /// </summary>

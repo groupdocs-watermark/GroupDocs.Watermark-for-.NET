@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System.IO;
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Options.Spreadsheet;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
-    using System.IO;
-    using Common;
-    using Options.Spreadsheet;
-    using Watermarks;
-
     /// <summary>
     /// This example demonstrates how to add an image watermark to a document from a stream.
     /// </summary>

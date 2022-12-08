@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Pdf;
+using GroupDocs.Watermark.Options.Pdf;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Search.SearchCriteria;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
-    using Contents.Pdf;
-    using Options.Pdf;
-    using Search;
-    using Search.SearchCriteria;
-
     /// <summary>
     /// This example shows how to remove watermarks from a particular page.
     /// </summary>

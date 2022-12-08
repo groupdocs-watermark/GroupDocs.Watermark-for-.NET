@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Options.Pdf;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
 {
-    using Options.Pdf;
-    using Watermarks;
-
     public static class HelloWorld
     {
         public static void Run()

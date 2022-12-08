@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents;
+using GroupDocs.Watermark.Contents.Spreadsheet;
+using GroupDocs.Watermark.Options.Spreadsheet;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using Contents;
-    using Contents.Spreadsheet;
-    using Options.Spreadsheet;
-
     /// <summary>
     /// This example shows how to  clear a particular section of header and footer.
     /// </summary>
@@ -22,8 +22,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 SpreadsheetContent content = watermarker.GetContent<SpreadsheetContent>();
 
                 SpreadsheetHeaderFooterSection section = content.Worksheets[0]
-                                                                .HeadersFooters[OfficeHeaderFooterType.HeaderEven]
-                                                                .Sections[SpreadsheetHeaderFooterSectionType.Left];
+                    .HeadersFooters[OfficeHeaderFooterType.HeaderEven]
+                    .Sections[SpreadsheetHeaderFooterSectionType.Left];
                 section.Image = null;
                 section.Script = null;
 

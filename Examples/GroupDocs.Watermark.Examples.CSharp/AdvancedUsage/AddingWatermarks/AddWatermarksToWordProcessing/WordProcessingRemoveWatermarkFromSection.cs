@@ -2,13 +2,13 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.WordProcessing;
+using GroupDocs.Watermark.Options.WordProcessing;
+using GroupDocs.Watermark.Search;
+using GroupDocs.Watermark.Search.SearchCriteria;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
 {
-    using Contents.WordProcessing;
-    using Options.WordProcessing;
-    using Search;
-    using Search.SearchCriteria;
-
     /// <summary>
     /// This example shows how to remove watermark from a particular section.
     /// </summary>

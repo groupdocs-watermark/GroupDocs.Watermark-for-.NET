@@ -2,10 +2,10 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System.IO;
+
 namespace GroupDocs.Watermark.Examples.CSharp
 {
-    using System.IO;
-
     public static class Constants
     {
         public const string ResourcesPath = @"..\..\..\Resources\";

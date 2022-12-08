@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents;
+using GroupDocs.Watermark.Options.Spreadsheet;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
-    using Contents;
-    using Options.Spreadsheet;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to apply text effects when adding shape watermark in Excel worksheet.
     /// </summary>

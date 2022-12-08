@@ -2,10 +2,10 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using System;
+
 namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
 {
-    using System;
-
     /// <summary>
     /// This example demonstrates how to set Metered license.
     /// Learn more about Metered license at https://purchase.groupdocs.com/faqs/licensing/metered.

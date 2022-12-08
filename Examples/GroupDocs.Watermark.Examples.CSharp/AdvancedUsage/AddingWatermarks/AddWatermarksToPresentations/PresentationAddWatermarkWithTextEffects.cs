@@ -2,12 +2,12 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents;
+using GroupDocs.Watermark.Options.Presentation;
+using GroupDocs.Watermark.Watermarks;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPresentations
 {
-    using Contents;
-    using Options.Presentation;
-    using Watermarks;
-
     /// <summary>
     /// This example shows how to apply text effects when adding shape watermark to a PowerPoint slide.
     /// </summary>

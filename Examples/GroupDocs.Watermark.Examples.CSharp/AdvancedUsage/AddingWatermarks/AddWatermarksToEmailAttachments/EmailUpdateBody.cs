@@ -2,11 +2,11 @@
 //   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
 // </copyright>
 
+using GroupDocs.Watermark.Contents.Email;
+using GroupDocs.Watermark.Options.Email;
+
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments
 {
-    using Contents.Email;
-    using Options.Email;
-
     /// <summary>
     /// This example shows how to modify the body and subject of an email message.
     /// </summary>
