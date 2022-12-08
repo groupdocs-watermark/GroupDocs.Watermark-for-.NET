@@ -1,7 +1,3 @@
-// <copyright company="Aspose Pty Ltd">
-//   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
-// </copyright>
-
 using GroupDocs.Watermark.Contents.Pdf;
 using GroupDocs.Watermark.Options.Pdf;
 using System;

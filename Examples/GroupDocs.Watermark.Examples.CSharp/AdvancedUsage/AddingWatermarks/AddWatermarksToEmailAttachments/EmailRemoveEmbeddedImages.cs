@@ -1,7 +1,3 @@
-// <copyright company="Aspose Pty Ltd">
-//   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
-// </copyright>
-
 using System.Text.RegularExpressions;
 using GroupDocs.Watermark.Common;
 using GroupDocs.Watermark.Contents.Email;

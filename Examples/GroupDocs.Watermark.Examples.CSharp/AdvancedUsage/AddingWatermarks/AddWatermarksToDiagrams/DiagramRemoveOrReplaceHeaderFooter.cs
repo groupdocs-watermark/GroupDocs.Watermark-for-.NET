@@ -1,8 +1,4 @@
-﻿// <copyright company="Aspose Pty Ltd">
-//   Copyright (C) 2011-2020 GroupDocs. All Rights Reserved.
-// </copyright>
-
-using GroupDocs.Watermark.Contents.Diagram;
+﻿using GroupDocs.Watermark.Contents.Diagram;
 using GroupDocs.Watermark.Options.Diagram;
 using GroupDocs.Watermark.Watermarks;
 
