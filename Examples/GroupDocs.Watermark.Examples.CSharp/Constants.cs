@@ -4,7 +4,11 @@ namespace GroupDocs.Watermark.Examples.CSharp
 {
     public static class Constants
     {
-        public const string ResourcesPath = @"..\..\..\Resources\";
+#if CORE
+        public static string ResourcesPath = @"..\..\..\..\Resources\";
+#else
+        public static string ResourcesPath = @"..\..\..\Resources\";
+#endif
 
         public static readonly string LicenseFilePath = Path.Combine(ResourcesPath, "GroupDocs.Watermark.NET.lic");
 
