@@ -36,6 +36,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPdf\PdfAddAttachment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPdf\PdfAddPrintOnlyAnnotationWatermark.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPdf\PdfAddWatermarks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPdf\PdfAddWatermarksToSpecificPages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPdf\PdfAddWatermarkToAllAttachments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPdf\PdfAddWatermarkToAnnotationImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPdf\PdfAddWatermarkToImageArtifacts.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPresentations\PresentationAddWatermarkToSlide.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPresentations\PresentationAddWatermarkToSlideBackgroundImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPresentations\PresentationAddWatermarkToSlideImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPresentations\PresentationAddWatermarkToSpecificSlides.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPresentations\PresentationAddWatermarkWithImageEffects.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPresentations\PresentationAddWatermarkWithSlidesShapeSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToPresentations\PresentationAddWatermarkWithTextEffects.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToSpreadsheets\SpreadsheetAddWatermarkToAttachment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToSpreadsheets\SpreadsheetAddWatermarkToBackgroundImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToSpreadsheets\SpreadsheetAddWatermarkToImagesInHeaderFooter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToSpreadsheets\SpreadsheetAddWatermarkToSpecificWorksheet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToSpreadsheets\SpreadsheetAddWatermarkToWorksheet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToSpreadsheets\SpreadsheetAddWatermarkToWorksheetImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToSpreadsheets\SpreadsheetAddWatermarkUsingShapeSettings.cs" />
@@ -123,6 +126,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToWordProcessing\WordProcessingAddWatermarkToSection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToWordProcessing\WordProcessingAddWatermarkToSectionImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToWordProcessing\WordProcessingAddWatermarkToShapeImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToWordProcessing\WordProcessingAddWatermarkToSpecificPages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToWordProcessing\WordProcessingAddWatermarkWithImageEffects.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToWordProcessing\WordProcessingAddWatermarkWithShapeSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToWordProcessing\WordProcessingAddWatermarkWithTextEffects.cs" />
