@@ -71,6 +71,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //AddWatermarkWithSizeType.Run();
             //AddTextWatermarkWithRotationAngle.Run();
             //AddWatermarkWithParentMargin.Run();
+            //AddTextTiledWatermark.Run();            
 
             #endregion
 
@@ -78,6 +79,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             //AddImageWatermark.Run();
             //AddImageWatermarkUsingStream.Run();
+            //AddImageTiledWatermark.Run();
 
             #endregion
 
@@ -132,7 +134,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //PdfAddWatermarkWithPageMarginType.Run();
             //PdfAddWatermarkToAllAttachments.Run();
             //PdfAddWatermarksToSpecificPages.Run();
-            
+
             //PdfAddArtifactWatermark.Run();
             //PdfAddAnnotationWatermark.Run();
             //PdfAddPrintOnlyAnnotationWatermark.Run();

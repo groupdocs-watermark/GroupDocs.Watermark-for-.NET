@@ -13,9 +13,9 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
         public static void Run()
         {
             // Constants.InDocumentXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\document.xlsx"
-            using (FileStream stream = File.Open(Constants.InDocumentXlsx, FileMode.Open, FileAccess.ReadWrite))
+            using (FileStream stream = File.Open(Constants.InDocumentPdf, FileMode.Open, FileAccess.ReadWrite))
             {
-                using (Watermarker watermarker = new Watermarker(stream, new SpreadsheetLoadOptions()))
+                using (Watermarker watermarker = new Watermarker(stream))
                 {
                     using (ImageWatermark watermark = new ImageWatermark(Constants.LogoPng))
                     {
@@ -24,7 +24,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
                         watermarker.Add(watermark);
                     }
 
-                    watermarker.Save(Constants.OutDocumentXlsx);
+                    watermarker.Save(Constants.OutDocumentPdf);
                 }
             }
         }

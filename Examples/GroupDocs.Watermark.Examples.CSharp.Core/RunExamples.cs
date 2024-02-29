@@ -71,6 +71,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //AddWatermarkWithSizeType.Run();
             //AddTextWatermarkWithRotationAngle.Run();
             //AddWatermarkWithParentMargin.Run();
+            //AddTextTiledWatermark.Run();            
 
             #endregion
 
@@ -78,6 +79,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             //AddImageWatermark.Run();
             //AddImageWatermarkUsingStream.Run();
+            //AddImageTiledWatermark.Run();
 
             #endregion
 
@@ -131,6 +133,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //PdfGetDimensions.Run();
             //PdfAddWatermarkWithPageMarginType.Run();
             //PdfAddWatermarkToAllAttachments.Run();
+            //PdfAddWatermarksToSpecificPages.Run();
 
             //PdfAddArtifactWatermark.Run();
             //PdfAddAnnotationWatermark.Run();
@@ -179,6 +182,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //PresentationAddWatermarkWithSlidesShapeSettings.Run();
             //PresentationAddWatermarkWithTextEffects.Run();
             //PresentationAddWatermarkWithImageEffects.Run();
+            //PresentationAddWatermarkToSpecificSlides.Run();
 
             //PresentationGetSlideBackgroundsInformation.Run();
             //PresentationRemoveSlideBackground.Run();
@@ -202,6 +206,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //SpreadsheetAddTextWatermarkAsBackground.Run();
             //SpreadsheetAddImageWatermarkIntoHeaderFooter.Run();
             //SpreadsheetAddTextWatermarkIntoHeaderFooter.Run();
+            //SpreadsheetAddWatermarkToSpecificWorksheet.Run();
 
             //SpreadsheetGetInformationOfWorksheetBackgrounds.Run();
             //SpreadsheetRemoveWorksheetBackground.Run();
@@ -243,6 +248,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //WordProcessingLinkAllHeaderFooterInSection.Run();
             //WordProcessingAddImageWatermarkToAllHeaders.Run();
             //WordProcessingSetDifferentFirstPageHeaderFooter.Run();
+            //WordProcessingAddWatermarkToSpecificPages.Run();
 
             //WordProcessingAddLockedWatermarkToAllPages.Run();
             //WordProcessingAddLockedWatermarkToParticularPages.Run();

@@ -9,6 +9,8 @@
     <Import_RootNamespace>GroupDocs.Watermark.Examples.CSharp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingImageWatermarks\AddImageTiledWatermark.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingTextWatermarks\AddTextTiledWatermark.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToEmailAttachments\EmailAddAttachment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToEmailAttachments\EmailAddEmbeddedImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingImageWatermarks\AddImageWatermark.cs" />
