@@ -32,7 +32,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     watermarker.Add(imageWatermark);
                 }
 
-                watermarker.Save(@"d:\GroupDocs\_data\_test_results\WATERMARKNET-PageSetup\presentation.pptx");
+                watermarker.Save(Constants.OutPresentationPptx);
             }
         }
     }
