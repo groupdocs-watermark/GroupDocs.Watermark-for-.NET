@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using GroupDocs.Watermark.Watermarks;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SavingDocuments
@@ -10,9 +11,11 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SavingDocuments
     {
         public static void Run()
         {
-            // Constants.InTestDoc is an absolute or relative path to your document. Ex: @"C:\Docs\test.doc"
-            File.Copy(Constants.InTestDoc, Constants.OutTestDoc);
-            using (Watermarker watermarker = new Watermarker(Constants.OutTestDoc))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SaveDocumentToTheSameFileOrStream).Name}\n");
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(Constants.InTestDoc));
+
+            File.Copy(Constants.InTestDoc, outputFileName);
+            using (Watermarker watermarker = new Watermarker(outputFileName))
             {
                 // watermarking goes here
                 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 12));

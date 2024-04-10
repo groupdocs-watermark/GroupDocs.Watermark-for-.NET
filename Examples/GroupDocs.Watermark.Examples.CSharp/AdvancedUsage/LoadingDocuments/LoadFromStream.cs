@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using GroupDocs.Watermark.Watermarks;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
@@ -10,8 +11,12 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
     {
         public static void Run()
         {
-            // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: @"C:\Docs\document.docx"
-            using (Stream document = File.OpenRead(Constants.InDocumentDocx))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(LoadFromLocalDisk).Name}\n");
+
+            string documentPath = Constants.InDocumentDocx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            using (Stream document = File.OpenRead(documentPath))
             using (Watermarker watermarker = new Watermarker(document))
             {
                 // use watermarker methods to manage watermarks
@@ -19,7 +24,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
 
                 watermarker.Add(watermark);
 
-                watermarker.Save(Constants.OutDocumentDocx);
+                watermarker.Save(outputFileName);
             }
         }
     }

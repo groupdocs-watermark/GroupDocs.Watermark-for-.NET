@@ -1,5 +1,7 @@
 using GroupDocs.Watermark.Contents.Spreadsheet;
+using GroupDocs.Watermark.Options.Presentation;
 using GroupDocs.Watermark.Options.Spreadsheet;
+using System;
 using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
@@ -11,9 +13,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\spreadsheet.xlsx"
-            SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-            using (Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SpreadsheetAddAttachment).Name}\n");
+
+            string documentPath = Constants.InSpreadsheetXlsx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new SpreadsheetLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 SpreadsheetContent content = watermarker.GetContent<SpreadsheetContent>();
                 SpreadsheetWorksheet worksheet = content.Worksheets[0];
@@ -31,7 +37,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     400); // Attachment frame height
 
                 // Save changes
-                watermarker.Save(Constants.OutSpreadsheetXlsx);
+                watermarker.Save(outputFileName);
             }
         }
     }

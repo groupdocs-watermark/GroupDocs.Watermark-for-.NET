@@ -12,9 +12,12 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            EmailLoadOptions loadOptions = new EmailLoadOptions();
-            // Constants.InMessageMsg is an absolute or relative path to your document. Ex: @"C:\Docs\message.msg"
-            using (Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailExtractAllAttachments).Name}\n");
+
+            string documentPath = Constants.InMessageMsg;
+
+            var loadOptions = new EmailLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 EmailContent content = watermarker.GetContent<EmailContent>();
                 foreach (EmailAttachment attachment in content.Attachments)

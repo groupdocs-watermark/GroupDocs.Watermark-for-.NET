@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using GroupDocs.Watermark.Contents.Spreadsheet;
 using GroupDocs.Watermark.Options.Spreadsheet;
@@ -11,9 +12,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-            // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\spreadsheet.xlsx"
-            using (Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SpreadsheetSetBackgroundImageForChart).Name}\n");
+
+            string documentPath = Constants.InSpreadsheetXlsx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new SpreadsheetLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 SpreadsheetContent content = watermarker.GetContent<SpreadsheetContent>();
 
@@ -21,7 +26,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 content.Worksheets[0].Charts[0].ImageFillFormat.Transparency = 0.5;
                 content.Worksheets[0].Charts[0].ImageFillFormat.TileAsTexture = true;
 
-                watermarker.Save(Constants.OutSpreadsheetXlsx);
+                watermarker.Save(outputFileName);
             }
         }
     }

@@ -11,6 +11,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine($"[Example Basic Usage] # {typeof(GetSupportedFileFormats).Name}\n");
+
             IEnumerable<FileType> supportedFileTypes = FileType.GetSupportedFileTypes();
             foreach (FileType fileType in supportedFileTypes)
             {

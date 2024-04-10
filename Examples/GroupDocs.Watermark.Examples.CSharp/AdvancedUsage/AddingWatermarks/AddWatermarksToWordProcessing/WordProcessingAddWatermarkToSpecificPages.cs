@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using GroupDocs.Watermark.Options.WordProcessing;
 using GroupDocs.Watermark.Watermarks;
 
@@ -12,9 +14,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-            // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: @"C:\Docs\document.docx"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(WordProcessingAddWatermarkToSpecificPages).Name}\n");
+
+            string documentPath = Constants.InDocumentDocx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new WordProcessingLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 TextWatermark textWatermark = new TextWatermark("DRAFT", new Font("Arial", 42));
                 textWatermark.PagesSetup = new PagesSetup
@@ -22,7 +28,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     Pages = new List<int> { 2, 3 }
                 };
                 watermarker.Add(textWatermark);
-                watermarker.Save(Constants.OutDocumentDocx);
+                watermarker.Save(outputFileName);
             }
         }
     }

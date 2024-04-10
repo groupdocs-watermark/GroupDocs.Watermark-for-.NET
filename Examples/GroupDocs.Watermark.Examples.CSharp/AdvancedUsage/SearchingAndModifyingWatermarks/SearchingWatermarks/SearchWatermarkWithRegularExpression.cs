@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Text.RegularExpressions;
 using GroupDocs.Watermark.Search;
 using GroupDocs.Watermark.Search.SearchCriteria;
@@ -12,8 +13,12 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
     {
         public static void Run()
         {
-            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SearchWatermarkWithRegularExpression).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 Regex regex = new Regex(@"^Â© \d{4}$");
 

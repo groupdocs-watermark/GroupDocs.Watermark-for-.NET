@@ -1,5 +1,7 @@
 using GroupDocs.Watermark.Common;
 using GroupDocs.Watermark.Watermarks;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingTextWatermarks
 {
@@ -10,8 +12,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            // Constants.InTestDocx is an absolute or relative path to your document. Ex: @"C:\Docs\test.docx"
-            using (Watermarker watermarker = new Watermarker(Constants.InTestDocx))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddTextWatermarkWithRotationAngle).Name}\n");
+
+            string documentPath = Constants.InTestDocx;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 Font font = new Font("Calibri", 8);
                 TextWatermark watermark = new TextWatermark("Test watermark", font);
@@ -24,7 +31,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 watermark.RotateAngle = 45;
 
                 watermarker.Add(watermark);
-                watermarker.Save(Constants.OutTestDocx);
+                watermarker.Save(outputFileName);
             }
         }
     }

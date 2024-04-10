@@ -1,5 +1,6 @@
 using GroupDocs.Watermark.Search;
 using System;
+using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.SearchingWatermarks
 {
@@ -10,8 +11,12 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
     {
         public static void Run()
         {
-            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SearchWatermark).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 PossibleWatermarkCollection possibleWatermarks = watermarker.Search();
                 foreach (PossibleWatermark possibleWatermark in possibleWatermarks)

@@ -1,5 +1,7 @@
 ﻿using GroupDocs.Watermark.Options.Spreadsheet;
 using GroupDocs.Watermark.Watermarks;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
 {
@@ -10,17 +12,20 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
     {
         public static void Run()
         {
-            // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\spreadsheet.xlsx"
-            string filePath = Constants.InSpreadsheetXlsx;
-            SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-            using (Watermarker watermarker = new Watermarker(filePath, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(LoadingDocumentOfSpecificFormat).Name}\n");
+
+            string documentPath = Constants.InSpreadsheetXlsx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new SpreadsheetLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 // use watermarker methods to manage watermarks in the Spreadsheet document
                 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 12));
 
                 watermarker.Add(watermark);
 
-                watermarker.Save(Constants.OutSpreadsheetXlsx);
+                watermarker.Save(outputFileName);
             }
         }
     }

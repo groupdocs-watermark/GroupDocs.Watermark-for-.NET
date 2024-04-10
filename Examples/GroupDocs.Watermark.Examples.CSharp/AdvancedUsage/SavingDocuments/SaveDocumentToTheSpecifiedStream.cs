@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using GroupDocs.Watermark.Watermarks;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SavingDocuments
@@ -12,7 +13,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SavingDocuments
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                // Constants.InTestDoc is an absolute or relative path to your document. Ex: @"C:\Docs\test.doc"
+                Console.WriteLine($"[Example Advanced Usage] # {typeof(SaveDocumentToTheSpecifiedStream).Name}\n");
+
                 using (Watermarker watermarker = new Watermarker(Constants.InTestDoc))
                 {
                     // watermarking goes here

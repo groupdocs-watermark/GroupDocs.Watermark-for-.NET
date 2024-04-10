@@ -1,5 +1,6 @@
 using GroupDocs.Watermark.Contents.WordProcessing;
 using GroupDocs.Watermark.Options.WordProcessing;
+using System;
 using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToWordProcessing
@@ -11,9 +12,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-            // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: @"C:\Docs\document.docx"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(WordProcessingReplaceShapeImage).Name}\n");
+
+            string documentPath = Constants.InDocumentDocx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new WordProcessingLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 WordProcessingContent content = watermarker.GetContent<WordProcessingContent>();
 
@@ -27,7 +32,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 }
 
                 // Save document
-                watermarker.Save(Constants.OutDocumentDocx);
+                watermarker.Save(outputFileName);
             }
         }
     }

@@ -2,6 +2,8 @@ using GroupDocs.Watermark.Contents.Diagram;
 using GroupDocs.Watermark.Options.Diagram;
 using GroupDocs.Watermark.Search;
 using GroupDocs.Watermark.Watermarks;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams
 {
@@ -12,9 +14,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(DiagramRemoveTextShapesWithParticularTextFormatting).Name}\n");
+
+            string documentPath = Constants.InDiagramVsdx;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
             DiagramLoadOptions loadOptions = new DiagramLoadOptions();
-            // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: @"C:\Docs\diagram.vsdx"
-            using (Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions))
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 DiagramContent content = watermarker.GetContent<DiagramContent>();
                 foreach (DiagramPage page in content.Pages)
@@ -32,7 +39,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     }
                 }
 
-                watermarker.Save(Constants.OutDiagramVsdx);
+                watermarker.Save(outputFileName);
             }
         }
     }

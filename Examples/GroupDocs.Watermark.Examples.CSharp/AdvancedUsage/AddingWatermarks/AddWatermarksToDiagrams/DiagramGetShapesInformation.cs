@@ -1,6 +1,7 @@
 using GroupDocs.Watermark.Contents.Diagram;
 using GroupDocs.Watermark.Options.Diagram;
 using System;
+using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams
 {
@@ -11,9 +12,12 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(DiagramGetShapesInformation).Name}\n");
+
+            string documentPath = Constants.InDiagramVsdx;
+
             DiagramLoadOptions loadOptions = new DiagramLoadOptions();
-            // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: @"C:\Docs\diagram.vsdx"
-            using (Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions))
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 DiagramContent content = watermarker.GetContent<DiagramContent>();
                 foreach (DiagramPage page in content.Pages)

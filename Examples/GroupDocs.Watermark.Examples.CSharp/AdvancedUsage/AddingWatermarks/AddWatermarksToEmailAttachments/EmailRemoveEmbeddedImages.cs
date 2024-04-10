@@ -1,3 +1,5 @@
+using System.IO;
+using System;
 using System.Text.RegularExpressions;
 using GroupDocs.Watermark.Common;
 using GroupDocs.Watermark.Contents.Email;
@@ -12,9 +14,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            EmailLoadOptions loadOptions = new EmailLoadOptions();
-            // Constants.InMessageMsg is an absolute or relative path to your document. Ex: @"C:\Docs\message.msg"
-            using (Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailRemoveEmbeddedImages).Name}\n");
+
+            string documentPath = Constants.InMessageMsg;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
+            var loadOptions = new EmailLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 EmailContent content = watermarker.GetContent<EmailContent>();
                 for (int i = content.EmbeddedObjects.Count - 1; i >= 0; i--)
@@ -30,7 +37,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     }
                 }
 
-                watermarker.Save(Constants.OutMessageMsg);
+                watermarker.Save(outputFileName);
             }
         }
     }

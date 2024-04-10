@@ -2,6 +2,8 @@ using GroupDocs.Watermark.Common;
 using GroupDocs.Watermark.Contents.Spreadsheet;
 using GroupDocs.Watermark.Options.Spreadsheet;
 using GroupDocs.Watermark.Watermarks;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToSpreadsheets
 {
@@ -12,9 +14,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-            // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\spreadsheet.xlsx"
-            using (Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SpreadsheetAddWatermarkToImagesInHeaderFooter).Name}\n");
+
+            string documentPath = Constants.InSpreadsheetXlsx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new SpreadsheetLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 // Initialize image or text watermark
                 TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
@@ -40,7 +46,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     }
                 }
 
-                watermarker.Save(Constants.OutSpreadsheetXlsx);
+                watermarker.Save(outputFileName);
             }
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using GroupDocs.Watermark.Search;
 using GroupDocs.Watermark.Search.SearchCriteria;
 
@@ -11,8 +12,12 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
     {
         public static void Run()
         {
-            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(ModifyTextInFoundWatermarks).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
                 PossibleWatermarkCollection watermarks = watermarker.Search(searchCriteria);
@@ -32,7 +37,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
                 }
 
                 // Save document
-                watermarker.Save(Constants.OutDocumentPdf);
+                watermarker.Save(outputFileName);
             }
         }
     }

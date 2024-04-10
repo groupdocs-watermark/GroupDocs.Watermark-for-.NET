@@ -3,6 +3,8 @@ using GroupDocs.Watermark.Contents.Image;
 using GroupDocs.Watermark.Contents.Pdf;
 using GroupDocs.Watermark.Options.Pdf;
 using GroupDocs.Watermark.Watermarks;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
@@ -13,9 +15,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            PdfLoadOptions loadOptions = new PdfLoadOptions();
-            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(PdfAddWatermarkToImages).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
+            var loadOptions = new PdfLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 // Initialize image or text watermark
                 TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
@@ -36,7 +43,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     image.Add(watermark);
                 }
 
-                watermarker.Save(Constants.OutDocumentPdf);
+                watermarker.Save(outputFileName);
             }
         }
     }

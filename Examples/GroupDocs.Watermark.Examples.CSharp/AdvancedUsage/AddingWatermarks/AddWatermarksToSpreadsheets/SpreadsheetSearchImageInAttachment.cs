@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using GroupDocs.Watermark.Options.Spreadsheet;
 using GroupDocs.Watermark.Search;
 using GroupDocs.Watermark.Search.Objects;
@@ -17,9 +18,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
             WatermarkerSettings settings = new WatermarkerSettings();
             settings.SearchableObjects.SpreadsheetSearchableObjects = SpreadsheetSearchableObjects.AttachedImages;
 
-            SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-            // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\spreadsheet.xlsx"
-            using (Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions, settings))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SpreadsheetSearchImageInAttachment).Name}\n");
+
+            string documentPath = Constants.InSpreadsheetXlsx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new SpreadsheetLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 // Specify sample image to compare document images with
                 ImageSearchCriteria criteria = new ImageDctHashSearchCriteria(Constants.AttachmentPng);

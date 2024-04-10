@@ -1,5 +1,7 @@
 using GroupDocs.Watermark.Options.Presentation;
 using GroupDocs.Watermark.Watermarks;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPresentations
 {
@@ -10,9 +12,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            PresentationLoadOptions loadOptions = new PresentationLoadOptions();
-            // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: @"C:\Docs\presentation.pptx"
-            using (Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(PresentationAddWatermarkWithImageEffects).Name}\n");
+
+            string documentPath = Constants.InPresentationPptx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new PresentationLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 using (ImageWatermark watermark = new ImageWatermark(Constants.LogoPng))
                 {
@@ -29,7 +35,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     watermarker.Add(watermark, options);
                 }
 
-                watermarker.Save(Constants.OutPresentationPptx);
+                watermarker.Save(outputFileName);
             }
         }
     }

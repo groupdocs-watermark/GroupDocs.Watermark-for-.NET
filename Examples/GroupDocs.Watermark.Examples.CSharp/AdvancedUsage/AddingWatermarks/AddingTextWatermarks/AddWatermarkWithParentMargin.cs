@@ -1,5 +1,7 @@
 using GroupDocs.Watermark.Common;
 using GroupDocs.Watermark.Watermarks;
+using System;
+using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingTextWatermarks
 {
@@ -10,8 +12,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            // Constants.InInputVsdx is an absolute or relative path to your document. Ex: @"C:\Docs\input.vsdx"
-            using (Watermarker watermarker = new Watermarker(Constants.InInputVsdx))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddWatermarkWithParentMargin).Name}\n");
+
+            string documentPath = Constants.InInputVsdx;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 42));
                 watermark.HorizontalAlignment = HorizontalAlignment.Right;
@@ -26,7 +33,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 watermark.ConsiderParentMargins = true;
 
                 watermarker.Add(watermark);
-                watermarker.Save(Constants.OutInputVsdx);
+                watermarker.Save(outputFileName);
             }
         }
     }

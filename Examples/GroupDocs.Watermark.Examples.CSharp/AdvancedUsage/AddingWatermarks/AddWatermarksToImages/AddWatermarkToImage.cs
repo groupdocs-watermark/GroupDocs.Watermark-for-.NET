@@ -1,5 +1,8 @@
+using GroupDocs.Watermark.Options.Email;
 using GroupDocs.Watermark.Options.Image;
 using GroupDocs.Watermark.Watermarks;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToImages
 {
@@ -10,9 +13,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            // Constants.InImageTiff is an absolute or relative path to your document. Ex: @"C:\Docs\image.tiff"
-            TiffImageLoadOptions loadOptions = new TiffImageLoadOptions();
-            using (Watermarker watermarker = new Watermarker(Constants.InImageTiff, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddWatermarkToImage).Name}\n");
+
+            string documentPath = Constants.InImageTiff;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
+            var loadOptions = new TiffImageLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 // Initialize text or image watermark
                 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
@@ -22,7 +30,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 options.FrameIndex = 0;
 
                 watermarker.Add(watermark, options);
-                watermarker.Save(Constants.OutImageTiff);
+                watermarker.Save(outputFileName);
             }
         }
     }

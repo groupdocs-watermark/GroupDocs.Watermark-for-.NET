@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using GroupDocs.Watermark.Contents.WordProcessing;
 using GroupDocs.Watermark.Options.WordProcessing;
 
@@ -11,9 +12,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-            // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: @"C:\Docs\document.docx"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(WordProcessingGetSectionProperties).Name}\n");
+
+            string documentPath = Constants.InDocumentDocx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new WordProcessingLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 WordProcessingContent content = watermarker.GetContent<WordProcessingContent>();
 

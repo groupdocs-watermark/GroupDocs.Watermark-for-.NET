@@ -3,6 +3,8 @@ using GroupDocs.Watermark.Contents.Image;
 using GroupDocs.Watermark.Contents.Presentation;
 using GroupDocs.Watermark.Options.Presentation;
 using GroupDocs.Watermark.Watermarks;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPresentations
 {
@@ -13,9 +15,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            PresentationLoadOptions loadOptions = new PresentationLoadOptions();
-            // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: @"C:\Docs\presentation.pptx"
-            using (Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(PresentationAddWatermarkToSlideImages).Name}\n");
+
+            string documentPath = Constants.InPresentationPptx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new PresentationLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
                 watermark.HorizontalAlignment = HorizontalAlignment.Center;
@@ -34,7 +40,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     image.Add(watermark);
                 }
 
-                watermarker.Save(Constants.OutPresentationPptx);
+                watermarker.Save(outputFileName);
             }
         }
     }

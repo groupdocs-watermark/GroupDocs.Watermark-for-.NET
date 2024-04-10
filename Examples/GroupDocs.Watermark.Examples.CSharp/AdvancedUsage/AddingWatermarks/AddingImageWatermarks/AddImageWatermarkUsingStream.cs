@@ -1,4 +1,5 @@
 using GroupDocs.Watermark.Watermarks;
+using System;
 using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingImageWatermarks
@@ -10,8 +11,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            // Constants.WatermarkJpg is an absolute or relative path to your document. Ex: @"C:\Docs\watermark.jpg"
-            using (Stream watermarkStream = File.OpenRead(Constants.WatermarkJpg))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddImageWatermarkUsingStream).Name}\n");
+
+            string documentPath = Constants.WatermarkJpg;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
+            using (Stream watermarkStream = File.OpenRead(documentPath))
             {
                 using (Watermarker watermarker = new Watermarker(Constants.InImagePng))
                 {
@@ -21,7 +27,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                         // Add watermark to the document
                         watermarker.Add(watermark);
 
-                        watermarker.Save(Constants.OutImagePng);
+                        watermarker.Save(outputFileName);
                     }
                 }
             }

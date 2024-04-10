@@ -11,9 +11,11 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-            // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\spreadsheet.xlsx"
-            using (Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SpreadsheetGetShapesInformation).Name}\n");
+
+            string documentPath = Constants.InSpreadsheetXlsx;
+            var loadOptions = new SpreadsheetLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 SpreadsheetContent content = watermarker.GetContent<SpreadsheetContent>();
                 foreach (SpreadsheetWorksheet worksheet in content.Worksheets)

@@ -2,6 +2,8 @@ using GroupDocs.Watermark.Options.Email;
 using GroupDocs.Watermark.Search;
 using GroupDocs.Watermark.Search.Objects;
 using GroupDocs.Watermark.Search.SearchCriteria;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments
 {
@@ -12,9 +14,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            EmailLoadOptions loadOptions = new EmailLoadOptions();
-            // Constants.InMessageMsg is an absolute or relative path to your document. Ex: @"C:\Docs\message.msg"
-            using (Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailSearchTextInBody).Name}\n");
+
+            string documentPath = Constants.InMessageMsg;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
+            var loadOptions = new EmailLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 SearchCriteria criteria = new TextSearchCriteria("test", false);
 
@@ -28,7 +35,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 watermarks.Clear();
 
                 // Save changes
-                watermarker.Save(Constants.OutMessageMsg);
+                watermarker.Save(outputFileName);
             }
         }
     }

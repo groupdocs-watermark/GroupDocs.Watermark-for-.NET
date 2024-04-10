@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using GroupDocs.Watermark.Options;
 
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
@@ -7,12 +8,16 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
     {
         public static void Run()
         {
-            // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: @"C:\Docs\diagram.vsdx"
-            using (Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx))
+            Console.WriteLine($"[Example Basic Usage] # {typeof(GenerateDocumentPreview).Name}\n");
+
+            string documentPath = Constants.InDiagramVsdx;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 CreatePageStream createPageStreamDelegate = delegate(int number)
                 {
-                    string previewImageFileName = Path.Combine(Constants.OutputPath, string.Format("page{0}.png", number));
+                    string previewImageFileName = Path.Combine(outputDirectory, string.Format("page{0}.png", number));
                     return File.OpenWrite(previewImageFileName);
                 };
 

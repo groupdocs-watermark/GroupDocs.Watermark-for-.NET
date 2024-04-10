@@ -1,4 +1,6 @@
 using GroupDocs.Watermark.Search;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.RemovingFoundWatermarks
 {
@@ -9,8 +11,12 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
     {
         public static void Run()
         {
-            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(RemoveWatermark).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 PossibleWatermarkCollection possibleWatermarks = watermarker.Search();
 
@@ -20,7 +26,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
                 // Remove specified possible watermark from the document.
                 possibleWatermarks.Remove(possibleWatermarks[0]);
 
-                watermarker.Save(Constants.OutDocumentPdf);
+                watermarker.Save(outputFileName);
             }
         }
     }

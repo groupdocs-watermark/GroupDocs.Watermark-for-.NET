@@ -12,10 +12,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
     {
         public static void Run()
         {
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(ModifyImageInFoundWatermarks).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
             byte[] imageData = File.ReadAllBytes(Constants.ImagePng);
 
-            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 // Search watermark matching a particular image
                 SearchCriteria searchCriteria = new ImageDctHashSearchCriteria(Constants.LogoBmp);
@@ -36,7 +40,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
                 }
 
                 // Save document
-                watermarker.Save(Constants.OutDocumentPdf);
+                watermarker.Save(outputFileName);
             }
         }
     }

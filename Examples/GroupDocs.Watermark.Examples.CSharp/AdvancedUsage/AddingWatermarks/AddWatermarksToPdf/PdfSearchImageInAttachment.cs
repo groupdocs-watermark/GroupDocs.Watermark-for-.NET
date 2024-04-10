@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using GroupDocs.Watermark.Contents.Image;
 using GroupDocs.Watermark.Options.Pdf;
 using GroupDocs.Watermark.Search.Objects;
@@ -12,9 +13,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            PdfLoadOptions loadOptions = new PdfLoadOptions();
-            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(PdfSearchImageInAttachment).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
+            var loadOptions = new PdfLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 // Consider only the attached images
                 watermarker.SearchableObjects.PdfSearchableObjects = PdfSearchableObjects.AttachedImages;

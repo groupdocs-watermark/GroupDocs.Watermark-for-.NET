@@ -1,4 +1,6 @@
 using GroupDocs.Watermark.Watermarks;
+using System;
+using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingImageWatermarks
 {
@@ -9,8 +11,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddImageTiledWatermark).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
             // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: @"C:\Docs\presentation.pptx"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 // Use path to the image as constructor parameter
                 using (ImageWatermark watermark = new ImageWatermark(Constants.ProtectJpg))
@@ -36,7 +44,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     // Add watermark to the document
                     watermarker.Add(watermark);
 
-                    watermarker.Save(Constants.OutDocumentPdf);
+                    watermarker.Save(outputFileName);
                 }
             }
         }

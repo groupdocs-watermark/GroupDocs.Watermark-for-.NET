@@ -1,5 +1,7 @@
 using GroupDocs.Watermark.Common;
 using GroupDocs.Watermark.Watermarks;
+using System;
+using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
@@ -10,15 +12,21 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
     {
         public static void Run()
         {
+            Console.WriteLine($"[Example Basic Usage] # {typeof(AddATextWatermark).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
             // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 TextWatermark watermark = new TextWatermark("top secret", new Font("Arial", 36));
                 watermark.ForegroundColor = Color.Red;
                 watermark.HorizontalAlignment = HorizontalAlignment.Center;
                 watermark.VerticalAlignment = VerticalAlignment.Center;
                 watermarker.Add(watermark);
-                watermarker.Save(Constants.OutDocumentPdf);
+                watermarker.Save(outputFileName);
             }
         }
     }

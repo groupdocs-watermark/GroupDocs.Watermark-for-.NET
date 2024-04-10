@@ -2,6 +2,8 @@ using GroupDocs.Watermark.Contents.Pdf;
 using GroupDocs.Watermark.Options.Pdf;
 using GroupDocs.Watermark.Search;
 using GroupDocs.Watermark.Search.SearchCriteria;
+using System.IO;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
@@ -12,9 +14,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            PdfLoadOptions loadOptions = new PdfLoadOptions();
-            // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-            using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions))
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(PdfRemoveWatermark).Name}\n");
+
+            string documentPath = Constants.InDocumentPdf;
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
+
+            var loadOptions = new PdfLoadOptions();
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 // Initialize search criteria
                 ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(Constants.LogoPng);
@@ -29,7 +36,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     possibleWatermarks.RemoveAt(i);
                 }
 
-                watermarker.Save(Constants.OutDocumentPdf);
+                watermarker.Save(outputFileName);
             }
         }
     }

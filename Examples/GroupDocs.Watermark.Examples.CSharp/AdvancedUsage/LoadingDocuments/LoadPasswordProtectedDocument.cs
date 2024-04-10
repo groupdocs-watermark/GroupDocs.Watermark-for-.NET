@@ -1,5 +1,7 @@
 ﻿using GroupDocs.Watermark.Options;
 using GroupDocs.Watermark.Watermarks;
+using System;
+using System.IO;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
 {
@@ -10,18 +12,21 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
     {
         public static void Run()
         {
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(LoadPasswordProtectedDocument).Name}\n");
+
+            string documentPath = Constants.InProtectedDocumentDocx;
+            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+
             LoadOptions loadOptions = new LoadOptions();
             loadOptions.Password = "P@$$w0rd";
-            // Constants.InProtectedDocumentDocx is an absolute or relative path to your document. Ex: @"C:\Docs\protected-document.docx"
-            string filePath = Constants.InProtectedDocumentDocx;
-            using (Watermarker watermarker = new Watermarker(filePath, loadOptions))
+            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 // use watermarker methods to manage watermarks in the document
                 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 12));
 
                 watermarker.Add(watermark);
 
-                watermarker.Save(Constants.OutProtectedDocumentDocx);
+                watermarker.Save(outputFileName);
             }
         }
     }

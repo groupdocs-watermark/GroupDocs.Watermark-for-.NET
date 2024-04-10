@@ -12,6 +12,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
     {
         public static void Run()
         {
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(SearchWatermarkInParticularObjectsAllInstances).Name}\n");
+
             WatermarkerSettings settings = new WatermarkerSettings();
             settings.SearchableObjects = new SearchableObjects
             {
