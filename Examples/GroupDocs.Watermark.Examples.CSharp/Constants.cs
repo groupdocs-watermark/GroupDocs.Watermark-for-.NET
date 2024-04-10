@@ -5,7 +5,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
 {
     public static class Constants
     {
-#if CORE
+#if NETCOREAPP3_1_OR_GREATER
         public static string ResourcesPath = @"..\..\..\..\Resources\";
 #else
         public static string ResourcesPath = @"..\..\..\Resources\";

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GroupDocs.Watermark" Version="24.3.0" />
+  </ItemGroup>
+
+  <Import Project="..\GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems" Label="Shared" />
+
+</Project>

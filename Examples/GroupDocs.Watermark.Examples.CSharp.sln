@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Watermark.Example
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Watermark.Examples.CSharp.Core", "GroupDocs.Watermark.Examples.CSharp.Core\GroupDocs.Watermark.Examples.CSharp.Core.csproj", "{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Watermark.Examples.CSharp.Net", "GroupDocs.Watermark.Examples.CSharp.Net\GroupDocs.Watermark.Examples.CSharp.Net.csproj", "{D67173DA-FCBA-4520-AB9F-87C625B96398}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFA3A864-A9B4-43ED-9FF8-F0C72DFD7E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67173DA-FCBA-4520-AB9F-87C625B96398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67173DA-FCBA-4520-AB9F-87C625B96398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67173DA-FCBA-4520-AB9F-87C625B96398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67173DA-FCBA-4520-AB9F-87C625B96398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -33,6 +39,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{31154ec6-5bd1-4011-85fd-6a19474b36bc}*SharedItemsImports = 13
 		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{bfa3a864-a9b4-43ed-9ff8-f0c72dfd7e3c}*SharedItemsImports = 5
+		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{d67173da-fcba-4520-ab9f-87c625b96398}*SharedItemsImports = 5
 		GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems*{df06a8df-eb0b-4cae-a999-6e03345fccc7}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
