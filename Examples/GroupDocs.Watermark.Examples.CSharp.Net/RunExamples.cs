@@ -72,6 +72,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //AddTextWatermarkWithRotationAngle.Run();
             //AddWatermarkWithParentMargin.Run();
             //AddTextTiledWatermark.Run();            
+            //AddTextWatermarkWithCustomFont.Run();
 
             #endregion
 

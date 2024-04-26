@@ -15,6 +15,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
         public static readonly string DocumentsPath = Path.Combine(ResourcesPath, @"SampleFiles\Documents");
         public static readonly string ImagesPath = Path.Combine(ResourcesPath, @"SampleFiles\Images");
+        public static readonly string FontsPath = Path.Combine(ResourcesPath, @"SampleFiles\Fonts");
         public static readonly string OutputPath = Path.Combine(ResourcesPath, @"SampleFiles\Output");
 
         public static readonly string InDiagramVsdx = Path.Combine(DocumentsPath, "diagram.vsdx");
