@@ -11,10 +11,11 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddTextWatermarkWithCustomFont).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddTextWatermarkWithCustomFont).Name}");
 
             string documentPath = Constants.InImagePng;
-            string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
+            string outputDirectory = Constants.GetOutputDirectoryPath();
+            string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
             string fontsFolder = Path.GetFullPath(Constants.FontsPath);
 
             using (Watermarker watermarker = new Watermarker(documentPath))
@@ -37,6 +38,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
 
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Watermark added successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

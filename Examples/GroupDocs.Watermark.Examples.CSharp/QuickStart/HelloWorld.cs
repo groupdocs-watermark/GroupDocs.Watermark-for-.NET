@@ -10,7 +10,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
         public static void Run()
         {
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("[Example Quick start] # HelloWorld\n");
+            Console.WriteLine("[Example Quick start] # HelloWorld");
 
             string documentPath = Constants.InDocumentPdf; // NOTE: Put here actual path for your document
 
@@ -28,6 +28,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
 
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Watermark added successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

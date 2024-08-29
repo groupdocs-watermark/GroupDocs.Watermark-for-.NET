@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddWatermarkToImagesInsideDocument).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddWatermarkToImagesInsideDocument).Name}");
 
             string documentPath = Constants.InDocumentPdf;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -60,6 +60,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
 
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Watermark added successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

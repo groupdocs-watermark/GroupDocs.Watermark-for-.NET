@@ -12,7 +12,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(DiagramRemoveShape).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(DiagramRemoveShape).Name}");
 
             string documentPath = Constants.InDiagramVsdx;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -31,6 +31,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
 
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Shape removed successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

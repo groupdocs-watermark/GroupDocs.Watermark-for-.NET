@@ -11,7 +11,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddImageWatermarkUsingStream).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddImageWatermarkUsingStream).Name}");
 
             string documentPath = Constants.WatermarkJpg;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -31,6 +31,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                     }
                 }
             }
+
+            Console.WriteLine($"Watermark added successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

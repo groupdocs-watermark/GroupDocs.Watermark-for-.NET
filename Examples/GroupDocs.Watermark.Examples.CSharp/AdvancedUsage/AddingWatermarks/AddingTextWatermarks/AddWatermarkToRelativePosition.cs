@@ -12,7 +12,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddWatermarkToRelativePosition).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(AddWatermarkToRelativePosition).Name}");
 
             string documentPath = Constants.InImagePng;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -32,6 +32,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 watermarker.Add(watermark);
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Watermark added successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

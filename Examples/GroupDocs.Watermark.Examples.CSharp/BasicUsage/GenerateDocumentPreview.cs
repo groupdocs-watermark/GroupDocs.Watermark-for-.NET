@@ -8,7 +8,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Basic Usage] # {typeof(GenerateDocumentPreview).Name}\n");
+            Console.WriteLine($"[Example Basic Usage] # {typeof(GenerateDocumentPreview).Name}");
 
             string documentPath = Constants.InDiagramVsdx;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -34,6 +34,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
                 
                 watermarker.GeneratePreview(previewOptions);
             }
+
+            Console.WriteLine($"Preview generated successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

@@ -13,7 +13,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Basic Usage] # {typeof(AddAnImageWatermark).Name}\n");
+            Console.WriteLine($"[Example Basic Usage] # {typeof(AddAnImageWatermark).Name}");
 
             string documentPath = Constants.InDocumentPdf;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -34,6 +34,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
                     watermarker.Save(outputFileName);
                 }
             }
+
+            Console.WriteLine($"Watermark added successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

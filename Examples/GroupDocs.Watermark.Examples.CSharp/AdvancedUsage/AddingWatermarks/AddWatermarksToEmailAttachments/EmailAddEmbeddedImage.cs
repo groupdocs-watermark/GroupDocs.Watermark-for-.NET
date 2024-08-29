@@ -27,6 +27,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 content.HtmlBody = string.Format("<html><body>This is an embedded image: <img src=\"cid:{0}\"></body></html>", embeddedObject.ContentId);
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Embedded image added successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

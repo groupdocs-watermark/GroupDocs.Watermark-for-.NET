@@ -13,7 +13,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailRemoveAttachment).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailRemoveAttachment).Name}");
 
             string documentPath = Constants.InMessageMsg;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -37,6 +37,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 // Save changes
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Attachment removed successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

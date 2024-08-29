@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(DiagramRemoveWatermark).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(DiagramRemoveWatermark).Name}");
 
             string documentPath = Constants.InDiagramVsdx;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -37,6 +37,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
 
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Watermark removed successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

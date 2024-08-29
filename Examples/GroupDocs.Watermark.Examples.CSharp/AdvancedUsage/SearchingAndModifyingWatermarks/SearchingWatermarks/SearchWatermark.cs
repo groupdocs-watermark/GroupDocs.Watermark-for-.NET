@@ -26,12 +26,14 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
                         Console.WriteLine(possibleWatermark.ImageData.Length);
                     }
 
-                    Console.WriteLine(possibleWatermark.Text);
-                    Console.WriteLine(possibleWatermark.X);
-                    Console.WriteLine(possibleWatermark.Y);
-                    Console.WriteLine(possibleWatermark.RotateAngle);
-                    Console.WriteLine(possibleWatermark.Width);
-                    Console.WriteLine(possibleWatermark.Height);
+                    Console.WriteLine($"Text {possibleWatermark.Text}");
+                    Console.WriteLine($"X {possibleWatermark.X}");
+                    Console.WriteLine($"Y {possibleWatermark.Y}");
+                    Console.WriteLine($"RotateAngle {possibleWatermark.RotateAngle}");
+                    Console.WriteLine($"Width {possibleWatermark.Width}");
+                    Console.WriteLine($"Height {possibleWatermark.Height}");
+                    Console.WriteLine($"PageNumber {possibleWatermark.PageNumber}");
+                    Console.WriteLine("");
                 }
             }
         }

@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailAddWatermarkToAllAttachments).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailAddWatermarkToAllAttachments).Name}");
 
             string documentPath = Constants.InMessageMsg;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -46,6 +46,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 // Save changes
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Watermark added successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

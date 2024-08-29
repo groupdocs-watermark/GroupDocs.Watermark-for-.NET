@@ -12,10 +12,10 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailExtractAllAttachments).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailExtractAllAttachments).Name}");
 
             string documentPath = Constants.InMessageMsg;
-
+            string outputDirectory = Constants.GetOutputDirectoryPath();
             var loadOptions = new EmailLoadOptions();
             using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
@@ -24,9 +24,11 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 {
                     Console.WriteLine("Name: {0}", attachment.Name);
                     Console.WriteLine("File format: {0}", attachment.GetDocumentInfo().FileType);
-                    File.WriteAllBytes(Path.Combine(Constants.OutputPath, attachment.Name), attachment.Content);
+                    File.WriteAllBytes(Path.Combine(outputDirectory, attachment.Name), attachment.Content);
                 }
             }
+
+            Console.WriteLine($"Attachments extracted successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }

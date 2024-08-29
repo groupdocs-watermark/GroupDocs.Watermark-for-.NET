@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
     {
         public static void Run()
         {
-            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailRemoveEmbeddedImages).Name}\n");
+            Console.WriteLine($"[Example Advanced Usage] # {typeof(EmailRemoveEmbeddedImages).Name}");
 
             string documentPath = Constants.InMessageMsg;
             string outputDirectory = Constants.GetOutputDirectoryPath();
@@ -39,6 +39,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
 
                 watermarker.Save(outputFileName);
             }
+
+            Console.WriteLine($"Embedded image removed successfully.\nCheck output in {outputDirectory}\n");
         }
     }
 }
