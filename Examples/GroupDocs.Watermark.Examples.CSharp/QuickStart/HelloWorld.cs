@@ -1,4 +1,4 @@
-﻿using GroupDocs.Watermark.Options.Pdf;
+﻿using GroupDocs.Watermark.Common;
 using GroupDocs.Watermark.Watermarks;
 using System;
 using System.IO;
@@ -17,15 +17,17 @@ namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
             string outputDirectory = Constants.GetOutputDirectoryPath();
             string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
 
-            PdfLoadOptions loadOptions = new PdfLoadOptions();
-            using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
+            using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 36, FontStyle.Bold | FontStyle.Italic));
-                PdfXObjectWatermarkOptions options = new PdfXObjectWatermarkOptions();
-                options.PageIndex = 0;
+                watermark.HorizontalAlignment = HorizontalAlignment.Center;
+                watermark.VerticalAlignment = VerticalAlignment.Center;
 
-                watermarker.Add(watermark, options);
+                watermark.Opacity = 0.4;
+                watermark.RotateAngle = 45;
+                watermark.ForegroundColor = Color.Red;
 
+                watermarker.Add(watermark);
                 watermarker.Save(outputFileName);
             }
 

@@ -10,9 +10,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingImageWatermarks\AddImageTiledWatermark.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingTextWatermarks\AddTextTiledWatermark.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\AddTextTiledWatermark.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingTextWatermarks\ReviewResultAboutAddedWatermarks.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingTextWatermarks\AddTextWatermarkWithCustomFont.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\AddTextWatermarkWithCustomFont.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToEmailAttachments\EmailAddAttachment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddWatermarksToEmailAttachments\EmailAddEmbeddedImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingImageWatermarks\AddImageWatermark.cs" />

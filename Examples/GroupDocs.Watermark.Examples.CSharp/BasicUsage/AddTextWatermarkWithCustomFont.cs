@@ -2,7 +2,7 @@ using GroupDocs.Watermark.Watermarks;
 using System.IO;
 using System;
 
-namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingTextWatermarks
+namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
     /// <summary>
     /// This example shows how to add text watermark with a custom font to a document.
@@ -28,7 +28,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
 
                 // Set watermark properties
                 watermark.ForegroundColor = Color.Blue;                
-                watermark.Opacity = 0.5;
+                watermark.Opacity = 0.4;
 
                 watermark.X = 10;
                 watermark.Y = 10;

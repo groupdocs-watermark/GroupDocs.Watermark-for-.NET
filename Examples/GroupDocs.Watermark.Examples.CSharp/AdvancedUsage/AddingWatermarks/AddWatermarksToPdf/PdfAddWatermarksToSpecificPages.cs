@@ -25,7 +25,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 TextWatermark textWatermark = new TextWatermark("This is a test watermark", new Font("Arial", 8));
                 textWatermark.PagesSetup = new PagesSetup
                 {
-                    OddPages = true
+                   Pages = new System.Collections.Generic.List<int> { 2}
                 };
                 
                 PdfArtifactWatermarkOptions textWatermarkOptions = new PdfArtifactWatermarkOptions();

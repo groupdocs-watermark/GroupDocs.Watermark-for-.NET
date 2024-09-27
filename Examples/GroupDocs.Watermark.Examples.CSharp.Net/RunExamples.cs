@@ -42,10 +42,10 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //GetSupportedFileFormats.Run();
             //GetDocumentInfoForTheFileFromLocalDisk.Run();
             //GetDocumentInfoForTheFileFromStream.Run();
-
             //AddATextWatermark.Run();
             //AddAnImageWatermark.Run();
-
+            //AddTextTiledWatermark.Run();
+            //AddTextWatermarkWithCustomFont.Run();
             //GenerateDocumentPreview.Run();
 
             #endregion
@@ -71,8 +71,6 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //AddWatermarkWithSizeType.Run();
             //AddTextWatermarkWithRotationAngle.Run();
             //AddWatermarkWithParentMargin.Run();
-            //AddTextTiledWatermark.Run();            
-            //AddTextWatermarkWithCustomFont.Run();
 
             #endregion
 

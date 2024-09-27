@@ -45,6 +45,8 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             //AddATextWatermark.Run();
             //AddAnImageWatermark.Run();
+            //AddTextTiledWatermark.Run();            
+            //AddTextWatermarkWithCustomFont.Run();
 
             //GenerateDocumentPreview.Run();
 
@@ -71,8 +73,6 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //AddWatermarkWithSizeType.Run();
             //AddTextWatermarkWithRotationAngle.Run();
             //AddWatermarkWithParentMargin.Run();
-            //AddTextTiledWatermark.Run();            
-            //AddTextWatermarkWithCustomFont.Run();
 
             #endregion
 

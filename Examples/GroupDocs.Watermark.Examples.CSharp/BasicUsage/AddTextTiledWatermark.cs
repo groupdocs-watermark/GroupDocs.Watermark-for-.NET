@@ -2,7 +2,7 @@ using GroupDocs.Watermark.Watermarks;
 using System.IO;
 using System;
 
-namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingTextWatermarks
+namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
     /// <summary>
     /// This example shows how to add text watermark to a document.
@@ -44,7 +44,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 watermark.ForegroundColor = Color.Red;
                 watermark.BackgroundColor = Color.Blue;
                 watermark.TextAlignment = TextAlignment.Right;
-                watermark.Opacity = 0.5;
+                watermark.Opacity = 0.4;
+                watermark.RotateAngle = 45;
 
                 // Add watermark
                 watermarker.Add(watermark);
