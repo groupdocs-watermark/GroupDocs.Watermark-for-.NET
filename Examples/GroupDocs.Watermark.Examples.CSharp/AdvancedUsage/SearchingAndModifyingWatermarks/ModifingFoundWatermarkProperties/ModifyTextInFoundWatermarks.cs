@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using GroupDocs.Watermark.Search;
 using GroupDocs.Watermark.Search.SearchCriteria;
@@ -19,7 +20,11 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
 
             using (Watermarker watermarker = new Watermarker(documentPath))
             {
-                TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
+                TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false)
+                {
+                    Pages = new List<int> { 1, 3 }
+                };
+              
                 PossibleWatermarkCollection watermarks = watermarker.Search(searchCriteria);
                 foreach (PossibleWatermark watermark in watermarks)
                 {

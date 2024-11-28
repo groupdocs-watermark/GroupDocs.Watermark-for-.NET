@@ -28,6 +28,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
                 // Configure tile options
                 watermark.TileOptions = new TileOptions()
                 {
+                    TileType = TileType.Straight,
                     RotateAroundOrigin = true,
                     LineSpacing = new MeasureValue()
                     {
