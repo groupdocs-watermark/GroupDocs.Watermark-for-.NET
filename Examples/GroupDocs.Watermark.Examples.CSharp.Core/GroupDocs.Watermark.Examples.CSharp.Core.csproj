@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Watermark" Version="24.11.0" />
+    <PackageReference Include="GroupDocs.Watermark" Version="24.12.0" />
   </ItemGroup>
 
   <Import Project="..\GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems" Label="Shared" />

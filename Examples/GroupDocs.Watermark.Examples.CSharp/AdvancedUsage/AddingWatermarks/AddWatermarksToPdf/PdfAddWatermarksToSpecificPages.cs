@@ -2,6 +2,7 @@ using GroupDocs.Watermark.Options.Pdf;
 using GroupDocs.Watermark.Watermarks;
 using System.IO;
 using System;
+using GroupDocs.Watermark.Common;
 
 namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToPdf
 {
@@ -28,6 +29,9 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                    Pages = new System.Collections.Generic.List<int> { 2}
                 };
                 
+                textWatermark.ForegroundColor = Color.Red;
+                textWatermark.HorizontalAlignment = HorizontalAlignment.Center;
+                textWatermark.VerticalAlignment = VerticalAlignment.Center;
                 PdfArtifactWatermarkOptions textWatermarkOptions = new PdfArtifactWatermarkOptions();
 
                 watermarker.Add(textWatermark, textWatermarkOptions);

@@ -1,6 +1,7 @@
 using GroupDocs.Watermark.Watermarks;
 using System.IO;
 using System;
+using GroupDocs.Watermark.Common;
 
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
@@ -30,8 +31,8 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
                 watermark.ForegroundColor = Color.Blue;                
                 watermark.Opacity = 0.4;
 
-                watermark.X = 10;
-                watermark.Y = 10;
+                watermark.HorizontalAlignment = HorizontalAlignment.Center;
+                watermark.VerticalAlignment = VerticalAlignment.Center;
 
                 // Add watermark
                 watermarker.Add(watermark);
