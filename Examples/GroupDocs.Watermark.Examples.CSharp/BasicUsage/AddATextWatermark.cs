@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
         {
             Console.WriteLine($"[Example Basic Usage] # {typeof(AddATextWatermark).Name}");
 
-            string documentPath = Constants.InDocumentPdf;
+            string documentPath = Constants.InDocumentDocx;
             string outputDirectory = Constants.GetOutputDirectoryPath();
             string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
 

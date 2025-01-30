@@ -1,8 +1,7 @@
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Watermarks;
 using System;
 using System.IO;
-using GroupDocs.Watermark.Common;
-using GroupDocs.Watermark.Options.Spreadsheet;
-using GroupDocs.Watermark.Watermarks;
 
 namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
@@ -15,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
         {
             Console.WriteLine($"[Example Basic Usage] # {typeof(AddAnImageWatermark).Name}");
 
-            string documentPath = Constants.InDocumentPdf;
+            string documentPath = Constants.InSpreadsheetXlsx;
             string outputDirectory = Constants.GetOutputDirectoryPath();
             string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
 
