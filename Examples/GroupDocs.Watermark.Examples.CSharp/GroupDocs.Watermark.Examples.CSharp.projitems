@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingImageWatermarks\AddImageTiledWatermark.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\LoadingDocuments\LoadingDocumentWithKnownType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\AddTextTiledWatermark.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\AddingWatermarks\AddingTextWatermarks\ReviewResultAboutAddedWatermarks.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\AddTextWatermarkWithCustomFont.cs" />
@@ -193,6 +194,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\GetDocumentInfoForTheFileFromLocalDisk.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\GetSupportedFileFormats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QuickStart\HelloWorldNew.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\HelloWorld.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetLicenseFromFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetLicenseFromStream.cs" />

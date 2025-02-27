@@ -61,6 +61,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
             //LoadingDocumentOfSpecificFormat.Run();
             //LoadPasswordProtectedDocument.Run();
             //LoadPasswordProtectedWordProcessingDocument.Run();
+            //LoadingDocumentWithKnownType.Run();
 
             #endregion
 
