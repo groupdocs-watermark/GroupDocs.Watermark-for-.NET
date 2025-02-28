@@ -22,6 +22,9 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
                 FileType = FileType.FromExtension(Path.GetExtension(documentPath))
             };
 
+            // Or set the FormatFamily property directly when using a stream, for example:
+            loadOptions.FormatFamily = FormatFamily.Spreadsheet;
+
             using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
                 TextWatermark watermark = new TextWatermark("Test\nwatermark", new Font("Arial", 12));
