@@ -19,11 +19,12 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.LoadingDocuments
 
             var loadOptions = new Options.LoadOptions()
             {
+                //specifying file type eliminates the need for format detection, enabling faster document opening
                 FileType = FileType.FromExtension(Path.GetExtension(documentPath))
             };
 
             // Or set the FormatFamily property directly when using a stream, for example:
-            loadOptions.FormatFamily = FormatFamily.Spreadsheet;
+            //loadOptions.FormatFamily = FormatFamily.Spreadsheet;
 
             using (Watermarker watermarker = new Watermarker(documentPath, loadOptions))
             {
