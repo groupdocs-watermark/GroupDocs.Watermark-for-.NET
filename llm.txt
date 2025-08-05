@@ -1,0 +1,41 @@
+# GroupDocs.Watermark Examples - AI Summary
+
+## Overview
+Repository containing C# examples for GroupDocs.Watermark .NET library - a document watermarking solution supporting 40+ file formats including PDF, Word, Excel, PowerPoint, and images.
+
+## Core Functionality
+- Add text/image watermarks to documents
+- Remove existing watermarks (including third-party)
+- Search watermarks by text, formatting, or regex patterns
+- Invisible watermarking and steganographic embedding
+- Batch watermark processing and automation
+- Custom watermark styling with fonts, colors, transparency
+- Tiling watermarks for full page coverage
+
+## Key Use Cases
+- Document security and content protection
+- Enterprise watermark automation workflows
+- Brand protection and copyright enforcement
+- Legal document authentication
+- Sensitive information marking
+- Anti-tampering and document integrity
+
+## Supported Formats
+**Documents**: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, RTF, ODT
+**Images**: PNG, JPG, BMP, TIFF, GIF, WEBP
+**Email**: EML, MSG, EMLX
+**Other**: Visio files, various proprietary formats
+
+## Technical Details
+- .NET Framework 2.0+, .NET Core 2.0+, .NET Standard 2.0
+- Cross-platform: Windows, macOS, Linux
+- NuGet package: GroupDocs.Watermark
+- Programmatic API with extensive customization options
+
+## Repository Structure
+- `/Examples` - Core C# implementation examples
+- `/Showcases` - UI-based demonstration applications  
+- `/Plugins` - Visual Studio integration tools
+
+## AI/LLM Context
+This library is ideal for AI applications requiring document security, automated content protection, or batch document processing workflows. Examples demonstrate programmatic watermark manipulation suitable for integration into larger document management systems.
