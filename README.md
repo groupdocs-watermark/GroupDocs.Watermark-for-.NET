@@ -1,101 +1,142 @@
-# Document Watermark API
+# GroupDocs.Watermark Examples - Protect Documents with Watermarks
 
-GroupDocs.Watermark is an on-premise library to [add text & image watermarks to documents](https://products.groupdocs.com/watermark/net) of different formats. It also provides an easy way to search and remove previously added watermarks (including watermarks added by third-party tools). Supported file formats include Microsoft Word, PowerPoint, Excel & PDF documenst as well as images such as BMP, PNG, GIF, TIFF, JPEG, and many more.
+**Document security** made simple with comprehensive watermarking solutions. This repository contains practical examples demonstrating how to **add watermark**, **create watermark**, **remove watermark**, and implement **invisible watermarking for documents** using GroupDocs.Watermark for .NET.
 
-<p align="center">
+## 🔐 Document Security & Content Protection Features
 
-  <a title="Download complete GroupDocs.Watermark for .NET source code" href="https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/archive/api-v2.zip">
-	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
-  </a>
-</p>
+**Protect documents with watermarks** across 40+ file formats with enterprise-grade **content protection with watermarking** capabilities:
 
-Directory | Description
---------- | -----------
-[Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Examples)  | C# examples and sample files that will help you learn how to use product features. 
-[Showcases](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Showcases)  | The open source UI-based project that can help integrate GroupDocs.Watermark API in front end applications. 
-[Plugins](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Plugins)  | Contains Visual Studio plugins related to GroupDocs.Watermark.
+- **Custom watermark** creation with personalized text and images
+- **Customize watermark** appearance, positioning, and transparency
+- **Custom fonts** support for branded watermarking solutions
+- **Watermark automation for enterprise** workflows
+- Advanced search and removal capabilities
+- **Invisible watermarking for documents** with steganographic techniques
 
-## Watermark Features
+## 📁 Repository Structure
 
-- Add text & image watermark to [40+ document formats](https://docs.groupdocs.com/watermark/net/supported-document-formats/).
-- Search and remove text and image watermarks.
-- Search watermarks in particular objects.
-- Apply watermark to images embedded in documents.
-- Extract information of watermark objects.
-- Perform PDF document rasterization.
-- Fetch document's basic information.
-- Search watermarks by formatting (font, color etc.).
-- Set background image for charts in Excel & PowerPoint files.
+| Directory | Description |
+|-----------|-------------|
+| [Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Examples) | Complete C# examples showing **how to watermark files** and implement document security |
+| [LiveDemos](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET/tree/master/Demos/LiveDemos) | UI-based applications demonstrating **watermark in** real-world scenarios |
 
-## Supported Formats for Watermarking
+## 🚀 Quick Start - How to Watermark Documents
 
-**Microsoft Word:** DOC, DOT, DOCX, DOCM, DOTX, DOTM, RTF\
-**Microsoft Excel:** XLSX, XLSM, XLTM, XLT, XLTX, XLS\
-**Microsoft PowerPoint:** PPTX, PPTM, PPSX, PPSM, POTX, POTM, PPT, PPS\
-**Microsoft Visio:** VSD, VDX, VSDX, VSTX, VSS, VSSX, VSDM, VSSM, VSTM, VTX, VSX\
-**OpenOffice:** ODT\
-**Email:** EML, EMLX, OFT, MSG\
-**Fixed Layout:** PDF\
-**Image:** BMP, GIF, JPG/JPEG/JPE, JP2, PNG, TIFF, WEBP
+### Add Watermark to Documents
 
-## Develop & Deploy GroupDocs.Watermark Anywhere
-
-**Microsoft Windows:** Microsoft Windows Desktop & Server (x86, x64), Windows Azure\
-**macOS:** Mac OS X\
-**Linux:** Ubuntu, OpenSUSE, CentOS, and others\
-**Development Environments:** Microsoft Visual Studio, Xamarin.Android, Xamarin.IOS, Xamarin.Mac, MonoDevelop, JetBrains Rider\
-**Supported Frameworks:** .NET Framework 2.0 or higher, Mono Framework 2.6.7 or higher, .NET Standard 2.0, .NET Core 2.0 & 2.1
-
-## Get Started with GroupDocs.Watermark for .NET
-
-Are you ready to give GroupDocs.Watermark for .NET a try? Simply execute `Install-Package GroupDocs.Watermark` from Package Manager Console in Visual Studio to fetch & reference GroupDocs.Watermark assembly in your project. If you already have GroupDocs.Watermark for .Net and want to upgrade it, please execute `Update-Package GroupDocs.Watermark` to get the latest version.
-
-## Add Watermark to Images on a PDF Page
+Learn **how to watermark** your documents with this simple example:
 
 ```csharp
-PdfLoadOptions loadOptions = new PdfLoadOptions();
-// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions))
+using GroupDocs.Watermark;
+using GroupDocs.Watermark.Common;
+using GroupDocs.Watermark.Watermarks;
+
+// Specify an absolute or relative path to your document.
+using (Watermarker watermarker = new Watermarker("C:\\Docs\\contract.docx"))
 {
-    // initialize image or text watermark
-    TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
+    // Specify the desired text and font for the watermark
+    TextWatermark watermark = new TextWatermark("Contract Draft", 
+        new Font("Arial", 60, FontStyle.Bold));
+    // Specify font color and text opacity, rotation and alignments
+    watermark.ForegroundColor = Color.DarkGreen;
+    watermark.Opacity = 0.5;
     watermark.HorizontalAlignment = HorizontalAlignment.Center;
     watermark.VerticalAlignment = VerticalAlignment.Center;
-    watermark.RotateAngle = 45;
-    watermark.SizingType = SizingType.ScaleToParentDimensions;
-    watermark.ScaleFactor = 1;
-
-    PdfContent pdfContent = watermarker.GetContent<PdfContent>();
-
-    // get all images from the first page
-    WatermarkableImageCollection images = pdfContent.Pages[0].FindImages();
-
-    // add watermark to all found images
-    foreach (WatermarkableImage image in images)
-    {
-        image.Add(watermark);
-    }
-
-    watermarker.Save(Constants.OutDocumentPdf);
+    // Apply the watermark
+    watermarker.Add(watermark);
+    // Save the resulting document
+    watermarker.Save("C:\\Docs\\watermarked-contract.docx");
 }
 ```
 
-## Search for Watermarks in a PDF using Regular Expression
+### Remove Watermark from Documents
+
+**How to remove watermark from a document** - multiple approaches available:
 
 ```csharp
-// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: @"C:\Docs\document.pdf"
-using (Watermarker watermarker = new Watermarker(Constants.InDocumentPdf))
+using GroupDocs.Watermark;
+using GroupDocs.Watermark.Search.SearchCriteria;
+using GroupDocs.Watermark.Search;
+
+using (Watermarker watermarker = new Watermarker("C:\\Docs\\watermarked-sample.docx"))
 {
-    Regex regex = new Regex(@"^Â© \d{4}$");
-
-    // search by regular expression
-    TextSearchCriteria textSearchCriteria = new TextSearchCriteria(regex);
-
-    // find possible watermarks using regular expression
-    PossibleWatermarkCollection possibleWatermarks = watermarker.Search(textSearchCriteria);
-
-    Console.WriteLine("Found {0} possible watermark(s).", possibleWatermarks.Count);
+    // Search watermark matching a particular text
+    TextSearchCriteria searchCriteria = new TextSearchCriteria("Contract Draft", false);
+    PossibleWatermarkCollection possibleWatermarks = watermarker.Search(searchCriteria);    
+    // Clear all found watermarks
+    possibleWatermarks.Clear();
+    // Save document
+    watermarker.Save("C:\\Docs\\clean-sample.docx");
 }
 ```
 
-[Home](https://www.groupdocs.com/) | [Product Page](https://products.groupdocs.com/watermark/net) | [Documentation](https://docs.groupdocs.com/watermark/net/) | [Demo](https://products.groupdocs.app/watermark/family) | [API Reference](https://apireference.groupdocs.com/watermark/net) | [Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-.NET) | [Blog](https://blog.groupdocs.com/category/watermark/) | [Search](https://search.groupdocs.com/) | [Free Support](https://forum.groupdocs.com/c/watermark) | [Temporary License](https://purchase.groupdocs.com/temporary-license)
+## 📋 Watermarking Examples by Use Case
+
+### Basic Watermarking Operations
+- **How to watermark in** PDF documents
+- **Create watermark** with custom fonts and styling
+- **Add watermark** to multiple pages simultaneously
+- **Customize watermark** transparency and rotation
+
+### Advanced Document Security
+- **Removing watermark from** third-party tools
+- **Delete watermark from** specific document areas
+- **Can you remove watermark from** password-protected files
+- **How to remove watermarks in** batch processing
+
+### Enterprise Solutions
+- **Watermark automation for enterprise** document workflows
+- **Content protection with watermarking** for sensitive documents
+- **Document security** compliance implementations
+- **Customized product** branding solutions
+
+## 🎯 Supported File Formats
+
+**How to watermark files** across multiple formats:
+
+**Documents:** PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, RTF  
+**Images:** PNG, JPG, BMP, TIFF, GIF, WEBP  
+**Email:** EML, MSG, EMLX  
+**Other:** Visio files (VSD, VSDX), OpenOffice (ODT)
+
+## 🔧 Installation & Setup
+
+Install via NuGet Package Manager:
+```
+Install-Package GroupDocs.Watermark
+```
+
+Or update existing installation:
+```
+Update-Package GroupDocs.Watermark
+```
+
+## 🌟 Advanced Features
+
+- **Invisible watermarking for documents** with steganographic embedding  
+- Search watermarks by formatting properties (font, color, size)
+- **Document security** with password protection integration
+- Batch processing for **watermark automation for enterprise**
+- **Custom watermark** templates for consistent branding
+- **Tiling watermarks** across entire document pages for comprehensive coverage
+
+## 📖 Documentation & Resources
+
+- [Complete API Documentation](https://docs.groupdocs.com/watermark/net/)
+- [Live Demo - **How to Watermark** Online](https://products.groupdocs.app/watermark/family)
+- [API Reference Guide](https://apireference.groupdocs.com/watermark/net)
+- [Developer Blog](https://blog.groupdocs.com/category/watermark/)
+
+## 🤝 Support & Community
+
+- [Free Support Forum](https://forum.groupdocs.com/c/watermark) - Get help with **how to remove watermark from free** community
+- [Search Documentation](https://docs.groupdocs.com/watermark/net/) - Find specific **watermark in** solutions
+- [Temporary License](https://purchase.groupdocs.com/temporary-license) - Test full features
+
+## 🏷️ Tags
+
+`document-security` `watermarking` `content-protection` `pdf-watermark` `document-watermark` `remove-watermark` `add-watermark` `custom-watermark` `enterprise-security` `watermark-automation`
+
+---
+
+**Start protecting your documents today!** Clone this repository to explore comprehensive examples of **how to watermark a** document, implement **document security**, and leverage **watermark automation for enterprise** solutions.
