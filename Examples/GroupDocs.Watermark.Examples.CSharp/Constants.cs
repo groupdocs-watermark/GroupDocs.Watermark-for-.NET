@@ -21,16 +21,19 @@ namespace GroupDocs.Watermark.Examples.CSharp
         public static readonly string InDiagramVsdx = Path.Combine(DocumentsPath, "diagram.vsdx");
         public static readonly string InDocumentDocx = Path.Combine(DocumentsPath, "document.docx");
         public static readonly string InDocumentPdf = Path.Combine(DocumentsPath, "document.pdf");
+        public static readonly string SamplePdf = Path.Combine(DocumentsPath, "sample.pdf");
         public static readonly string InImagePng = Path.Combine(DocumentsPath, "image.png");
         public static readonly string InImageTiff = Path.Combine(DocumentsPath, "image.tiff");
         public static readonly string InInputVsdx = Path.Combine(DocumentsPath, "input.vsdx");
         public static readonly string InMessageMsg = Path.Combine(DocumentsPath, "test.msg");
         public static readonly string InSampleMsg = Path.Combine(DocumentsPath, "empty.msg");
-        public static readonly string InPresentationPptx = Path.Combine(DocumentsPath, "presentation.pptx");
+        public static readonly string InPresentationPptx = Path.Combine(DocumentsPath, "document.pptx");
+        public static readonly string SamplePptx = Path.Combine(DocumentsPath, "sample.pptx");
         public static readonly string InProtectedDocumentDocx = Path.Combine(DocumentsPath, "protected-document.docx");
-        public static readonly string InSampleDocx = Path.Combine(DocumentsPath, "sample.docx");
+        public static readonly string SampleDocx = Path.Combine(DocumentsPath, "sample.docx");
         public static readonly string InSourceDocx = Path.Combine(DocumentsPath, "source.docx");
         public static readonly string InSpreadsheetXlsx = Path.Combine(DocumentsPath, "document.xlsx");
+        public static readonly string SampleXlsx = Path.Combine(DocumentsPath, "sample.xlsx");
         public static readonly string InTestDoc = Path.Combine(DocumentsPath, "test.doc");
         public static readonly string InTestDocx = Path.Combine(DocumentsPath, "test.docx");
 
@@ -42,7 +45,7 @@ namespace GroupDocs.Watermark.Examples.CSharp
         public static readonly string LogoBmp = Path.Combine(ImagesPath, "logo.bmp");
         public static readonly string LogoGif = Path.Combine(ImagesPath, "logo.gif");
         public static readonly string LogoJpg = Path.Combine(ImagesPath, "logo.jpg");
-        public static readonly string LogoPng = Path.Combine(ImagesPath, "logo.png");
+        public static readonly string LogoPng = Path.Combine(ImagesPath, "protected_logo_small.png");
         public static readonly string ProtectJpg = Path.Combine(ImagesPath, "protect.jpg");
         public static readonly string SampleJpg = Path.Combine(ImagesPath, "sample.jpg");
         public static readonly string TestPng = Path.Combine(ImagesPath, "test.png");

@@ -24,7 +24,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                 PdfContent pdfContent = watermarker.GetContent<PdfContent>();
 
                 // Add the attachment
-                pdfContent.Attachments.Add(File.ReadAllBytes(Constants.InSampleDocx), "sample doc", "sample doc as attachment");
+                pdfContent.Attachments.Add(File.ReadAllBytes(Constants.SampleDocx), "sample doc", "sample doc as attachment");
 
                 // Save changes
                 watermarker.Save(outputFileName);

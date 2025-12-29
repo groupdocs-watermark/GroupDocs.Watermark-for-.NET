@@ -1,6 +1,4 @@
-﻿using System;
-using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingImageWatermarks;
-using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingTextWatermarks;
+﻿using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingTextWatermarks;
 using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToDiagrams;
 using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToEmailAttachments;
 using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddWatermarksToImages;
@@ -15,6 +13,7 @@ using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWat
 using GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyingWatermarks.SearchingWatermarks;
 using GroupDocs.Watermark.Examples.CSharp.BasicUsage;
 using GroupDocs.Watermark.Examples.CSharp.QuickStart;
+using System;
 
 namespace GroupDocs.Watermark.Examples.CSharp
 {
@@ -39,14 +38,15 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             #region Basic Usage
 
-            //GetSupportedFileFormats.Run();
-            //GetDocumentInfoForTheFileFromLocalDisk.Run();
-            //GetDocumentInfoForTheFileFromStream.Run();
-            //AddATextWatermark.Run();
-            //AddAnImageWatermark.Run();
-            //AddTextTiledWatermark.Run();
-            //AddTextWatermarkWithCustomFont.Run();
-            //GenerateDocumentPreview.Run();
+            GetSupportedFileFormats.Run();
+            GetDocumentInfoForTheFileFromLocalDisk.Run();
+            GetDocumentInfoForTheFileFromStream.Run();
+            AddTextWatermark.Run();
+            AddImageWatermark.Run();
+            AddTextTiledWatermark.Run();
+            AddImageTiledWatermark.Run();
+            AddTextWatermarkWithCustomFont.Run();
+            GenerateDocumentPreview.Run();
 
             #endregion
 
@@ -65,7 +65,6 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             #region AddingTextWatermarks
 
-            //AddTextWatermark.Run();
             //AddWatermarkToAbsolutePosition.Run();
             //AddWatermarkToRelativePosition.Run();
             //AddWatermarkWithMarginType.Run();
@@ -75,21 +74,12 @@ namespace GroupDocs.Watermark.Examples.CSharp
 
             #endregion
 
-            #region AddingImageWatermarks
-
-            //AddImageWatermark.Run();
-            //AddImageWatermarkUsingStream.Run();
-            //AddImageTiledWatermark.Run();
-
-            #endregion
-
             #region AddWatermarksToDiagrams
 
             //DiagramAddWatermarkToAllPagesOfParticularType.Run();
             //DiagramAddWatermarkToSeparateBackgroundPage.Run();
             //DiagramAddWatermarkToParticularPage.Run();
             //DiagramLockWatermarkShape.Run();
-
             //DiagramRemoveWatermark.Run();
             //DiagramGetShapesInformation.Run();
             //DiagramRemoveShape.Run();
@@ -106,11 +96,9 @@ namespace GroupDocs.Watermark.Examples.CSharp
             #region AddWatermarksToEmailAttachments
 
             //EmailAddWatermarkToAllAttachments.Run();
-
             //EmailExtractAllAttachments.Run();
             //EmailRemoveAttachment.Run();
             //EmailAddAttachment.Run();
-
             //EmailUpdateBody.Run();
             //EmailAddEmbeddedImage.Run();
             //EmailRemoveEmbeddedImages.Run();

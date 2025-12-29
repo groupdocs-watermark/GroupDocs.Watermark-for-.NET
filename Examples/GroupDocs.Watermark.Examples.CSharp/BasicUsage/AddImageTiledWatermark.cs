@@ -2,7 +2,7 @@ using GroupDocs.Watermark.Watermarks;
 using System;
 using System.IO;
 
-namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.AddingImageWatermarks
+namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
 {
     /// <summary>
     /// This example shows how to add image watermark from a local file.
@@ -13,18 +13,20 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
         {
             Console.WriteLine($"[Example Advanced Usage] # {typeof(AddImageTiledWatermark).Name}");
 
-            string documentPath = Constants.InDocumentPdf;
+            string documentPath = Constants.SamplePdf;
             string outputDirectory = Constants.GetOutputDirectoryPath();
             string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
 
-            // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: @"C:\Docs\presentation.pptx"
             using (Watermarker watermarker = new Watermarker(documentPath))
             {
-                // Use path to the image as constructor parameter
-                using (ImageWatermark watermark = new ImageWatermark(Constants.ProtectJpg))
+                // Create image watermark
+                ImageWatermark watermark = new ImageWatermark(Constants.LogoPng)
                 {
-                    // Configure tile options with Offset style
-                    watermark.TileOptions = new TileOptions()
+                    Opacity = 0.25,
+                    RotateAngle = -30,
+                    IsBackground = true,
+
+                    TileOptions = new TileOptions()
                     {
                         TileType = TileType.Offset,
                         LineSpacing = new MeasureValue()
@@ -37,15 +39,13 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
                             MeasureType = TileMeasureType.Percent,
                             Value = 10
                         },
-                    };
+                    }
+                };
 
-                    watermark.RotateAngle = -30;
+                // Add watermark
+                watermarker.Add(watermark);
 
-                    // Add watermark to the document
-                    watermarker.Add(watermark);
-
-                    watermarker.Save(outputFileName);
-                }
+                watermarker.Save(outputFileName);
             }
 
             Console.WriteLine($"Watermark added successfully.\nCheck output in {outputDirectory}\n");

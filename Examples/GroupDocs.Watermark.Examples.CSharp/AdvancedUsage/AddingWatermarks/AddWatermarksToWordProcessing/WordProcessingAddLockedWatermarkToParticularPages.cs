@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
         {
             Console.WriteLine($"[Example Advanced Usage] # {typeof(WordProcessingAddLockedWatermarkToParticularPages).Name}\n");
 
-            string documentPath = Constants.InDocumentDocx;
+            string documentPath = Constants.SampleDocx;
             string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
 
             var loadOptions = new WordProcessingLoadOptions();

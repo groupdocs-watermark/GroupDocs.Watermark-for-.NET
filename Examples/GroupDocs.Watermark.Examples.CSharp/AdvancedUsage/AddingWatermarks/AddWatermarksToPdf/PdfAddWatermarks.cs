@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
         {
             Console.WriteLine($"[Example Advanced Usage] # {typeof(PdfAddWatermarks).Name}\n");
 
-            string documentPath = Constants.InDocumentPdf;
+            string documentPath = Constants.SamplePdf;
             string outputDirectory = Constants.GetOutputDirectoryPath();
             string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
 

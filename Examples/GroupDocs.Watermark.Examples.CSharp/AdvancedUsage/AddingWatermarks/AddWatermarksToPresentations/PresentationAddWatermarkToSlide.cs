@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.AddingWatermarks.Add
         {
             Console.WriteLine($"[Example Advanced Usage] # {typeof(PresentationAddWatermarkToSlide).Name}\n");
 
-            string documentPath = Constants.InPresentationPptx;
+            string documentPath = Constants.SamplePptx;
             string outputFileName = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileName(documentPath));
 
             var loadOptions = new PresentationLoadOptions();

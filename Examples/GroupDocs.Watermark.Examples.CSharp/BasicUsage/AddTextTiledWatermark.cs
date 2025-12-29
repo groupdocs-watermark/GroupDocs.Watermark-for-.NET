@@ -13,17 +13,23 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
         {
             Console.WriteLine($"[Example Advanced Usage] # {typeof(AddTextTiledWatermark).Name}");
 
-            string documentPath = Constants.InDocumentPdf;
+            string documentPath = Constants.SamplePdf;
             string outputDirectory = Constants.GetOutputDirectoryPath();
             string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
 
             using (Watermarker watermarker = new Watermarker(documentPath))
             {
                 // Initialize the font to be used for watermark
-                Font font = new Font("Arial", 19, FontStyle.Bold | FontStyle.Italic);
+                Font font = new Font("Arial", 10, FontStyle.Italic);
+
+                string userEmail = "useremail@mail.com";
+                string fileId = "1234-4a04-935f-3c83c3079a47";
+                string disclaimer = "Confidential - Do not distribute - Subject to NDA";
+
+                var watermarkText = $"{userEmail}\n{fileId}\n{disclaimer}";
 
                 // Create the watermark object
-                TextWatermark watermark = new TextWatermark("Test watermark", font);
+                TextWatermark watermark = new TextWatermark(watermarkText, font);
 
                 // Configure tile options
                 watermark.TileOptions = new TileOptions()
@@ -43,11 +49,10 @@ namespace GroupDocs.Watermark.Examples.CSharp.BasicUsage
                 };
 
                 // Set watermark properties
-                watermark.ForegroundColor = Color.Red;
-                watermark.BackgroundColor = Color.Blue;
-                watermark.TextAlignment = TextAlignment.Right;
-                watermark.Opacity = 0.4;
-                watermark.RotateAngle = 45;
+                watermark.ForegroundColor = Color.Gray;
+                watermark.Opacity = 0.4f;
+                watermark.RotateAngle = -45.0;
+                watermark.TextAlignment = TextAlignment.Center;
 
                 // Add watermark
                 watermarker.Add(watermark);

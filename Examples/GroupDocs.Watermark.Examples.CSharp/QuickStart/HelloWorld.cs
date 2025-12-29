@@ -12,20 +12,30 @@ namespace GroupDocs.Watermark.Examples.CSharp.QuickStart
             Console.WriteLine("\n--------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("[Example Quick start] # HelloWorld");
 
-            string documentPath = Constants.InDocumentPdf; // NOTE: Put here actual path for your document
+            string documentPath = Constants.SamplePdf; // NOTE: Put here actual path for your document
 
             string outputDirectory = Constants.GetOutputDirectoryPath();
             string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
 
             using (Watermarker watermarker = new Watermarker(documentPath))
             {
-                TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 36, FontStyle.Bold | FontStyle.Italic));
-                watermark.HorizontalAlignment = HorizontalAlignment.Center;
-                watermark.VerticalAlignment = VerticalAlignment.Center;
+                // Big bold font for a strong, visible watermark
+                Font font = new Font("Arial", 72, FontStyle.Bold);
 
-                watermark.Opacity = 0.4;
-                watermark.RotateAngle = 45;
-                watermark.ForegroundColor = Color.Red;
+                // Create text watermark
+                TextWatermark watermark = new TextWatermark("CONFIDENTIAL", font)
+                {
+                    // Appearance
+                    ForegroundColor = Color.Red,
+                    Opacity = 0.2,          // 0 = fully transparent, 1 = solid
+                    RotateAngle = 55,           // diagonal
+
+                    // Positioning
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    SizingType = SizingType.ScaleToParentDimensions,
+                    ScaleFactor = 1           // cover most of the page
+                };
 
                 watermarker.Add(watermark);
                 watermarker.Save(outputFileName);
