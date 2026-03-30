@@ -14,7 +14,7 @@ namespace GroupDocs.Watermark.Examples.CSharp.AdvancedUsage.SearchingAndModifyin
         {
             Console.WriteLine($"[Example Advanced Usage] # {typeof(InpaintImageArea).Name}\n");
 
-            string documentPath = Constants.SampleWithText;
+            string documentPath = Constants.SampleJpg;
             string outputDirectory = Constants.GetOutputDirectoryPath();
             string outputFileName = Path.Combine(outputDirectory, Path.GetFileName(documentPath));
 
