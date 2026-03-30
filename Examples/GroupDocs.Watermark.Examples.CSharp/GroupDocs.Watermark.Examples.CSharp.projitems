@@ -9,6 +9,7 @@
     <Import_RootNamespace>GroupDocs.Watermark.Examples.CSharp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SearchingAndModifyingWatermarks\RemovingFoundWatermarks\InpaintImageArea.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\AddImageTiledWatermark.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\LoadingDocuments\LoadingDocumentWithKnownType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\AddTextTiledWatermark.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\GetDocumentInfoForTheFileFromLocalDisk.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\GetSupportedFileFormats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QuickStart\HelloWorld - Copy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\HelloWorldNew.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\HelloWorld.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetLicenseFromFile.cs" />
