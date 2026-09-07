@@ -8,7 +8,7 @@
   <Import Project="..\GroupDocs.Watermark.Examples.CSharp\GroupDocs.Watermark.Examples.CSharp.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Watermark" Version="26.6.0" />
+    <PackageReference Include="GroupDocs.Watermark" Version="26.9.0" />
   </ItemGroup>
 
 </Project>
