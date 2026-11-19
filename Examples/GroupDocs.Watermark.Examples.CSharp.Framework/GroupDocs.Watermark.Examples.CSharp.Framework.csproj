@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>GroupDocs.Watermark.Examples.CSharp.Framework</RootNamespace>
     <AssemblyName>GroupDocs.Watermark.Examples.CSharp.Framework</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Watermark, Version=26.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\..\resources\Packages\GroupDocs.Watermark.Net45.26.9.0\lib\net45\GroupDocs.Watermark.dll</HintPath>
+    <Reference Include="GroupDocs.Watermark, Version=26.11.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\..\resources\Packages\GroupDocs.Watermark.Net48.26.11.0\lib\net48\GroupDocs.Watermark.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
